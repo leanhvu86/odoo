@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="mail_act_fleet_contract_to_renew" model="mail.activity.type">
+            <field name="name">Contract to Renew</field>
+            <field name="icon">fa-car</field>
+            <field name="res_model_id" ref="fleet.model_fleet_vehicle_log_contract"/>
+        </record>
+
+        <record id="mt_fleet_driver_updated" model="mail.message.subtype">
+            <field name="name">Changed Driver</field>
+            <field name="sequence">0</field>
+            <field name="res_model">fleet.vehicle</field>
+            <field name="default" eval="True"/>
+            <field name="description">Changed Driver</field>
+        </record>
+
+        <record id="mail_act_maintenance_request" model="mail.activity.type">
+            <field name="name">Maintenance Request</field>
+            <field name="icon">fa-wrench</field>
+            <field name="res_model_id" ref="model_sharevan_maintenance_request"/>
+        </record>
+
+<!--        <record id="mail_act_warehouse" model="mail.activity.type">-->
+<!--            <field name="name">Warehouse</field>-->
+<!--            <field name="icon">fa-warehouse</field>-->
+<!--            <field name="res_model_id" ref="model_sharevan_warehouse"/>-->
+<!--        </record>-->
+
+        <record id="mt_req_created" model="mail.message.subtype">
+            <field name="name">Request Created</field>
+            <field name="res_model">sharevan.maintenance.request</field>
+            <field name="default" eval="False"/>
+            <field name="hidden" eval="True"/>
+            <field name="description">Maintenance Request created</field>
+        </record>
+        <record id="mt_req_status" model="mail.message.subtype">
+            <field name="name">Status Changed</field>
+            <field name="res_model">sharevan.maintenance.request</field>
+            <field name="default" eval="True"/>
+            <field name="description">Status changed</field>
+        </record>
+
+    </data>
+</odoo>

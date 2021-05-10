@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="search_warehouse">
+            <div class="o_order_search_form" model="sharevan.warehouse">
+                <div id="load_lib_map" style="display: none">0</div> <!-- them vao de xem da load lib map chua -->
+                <form class="order-form">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-10 row">
+                                <div class="col-sm justify-content-center">
+                                    <t t-call="website_order_customer.order_input">
+                                        <t t-set="input_label">Mã kho hàng</t>
+                                        <t t-set="input_id">warehouse_code</t>
+                                        <!--                                        <t t-set="group_class">justify-content-center</t>-->
+                                        <t t-set="placeholder">Mã kho hàng</t>
+                                    </t>
+                                </div>
+                                <div class="col-sm">
+                                    <t t-call="website_order_customer.order_input">
+                                        <t t-set="input_label">Tên kho</t>
+                                        <!--                                        <t t-set="group_class">justify-content-center</t>-->
+                                        <t t-set="input_id">name</t>
+                                        <!--<t t-set="input_icon">fa-close</t>-->
+                                        <t t-set="placeholder">Ví dụ: kho Trần Duy Hưng</t>
+                                    </t>
+                                </div>
+                                <div class="col-sm justify-content-center">
+                                    <t t-call="website_order_customer.order_input">
+                                        <t t-set="input_label">Địa chỉ</t>
+                                        <t t-set="input_id">address</t>
+                                        <!--                                        <t t-set="group_class">justify-content-center</t>-->
+                                        <t t-set="placeholder">Ví dụ: 29BT1 Mễ Trì Hạ</t>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="col-sm d-flex align-items-center">
+                                <t t-call="website_order_customer.order_button">
+                                    <t t-set="button">button</t>
+                                    <t t-set="group_class">d-flex justify-content-end</t>
+                                    <t t-set="button_label">Tra cứu</t>
+                                    <t t-set="button_icon">fa-search</t>
+                                    <t t-set="button_class">search-button</t>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="d-flex align-items-start">
+                    <div class="p-1">
+                        <t t-call="website_order_customer.order_button">
+                            <t t-set="button">button</t>
+                            <t t-set="button_class">fa</t>
+                            <t t-set="button_label">Xuất dữ liệu</t>
+                            <t t-set="button_icon">fa-file-excel-o</t>
+                            <t t-set="button_id">exportExcel</t>
+                        </t>
+                    </div>
+                    <div class="p-1">
+                        <t t-call="website_order_customer.order_button">
+                            <t t-set="button_label">Thêm kho</t>
+                            <t t-set="button">button</t>
+                            <t t-set="button_class">fa</t>
+                            <t t-set="button_icon">fa-plus</t>
+                            <t t-set="button_id">exportExcel</t>
+                        </t>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <t t-call="website_order_customer.order_table">
+                        <t t-set="table_id">whSearchTable</t>
+                        <t t-set="headers" t-value="{
+                            'warehouse_code': 'Warehouse code',
+                            'name': 'Tên kho',
+                            'address': 'Địa chỉ',
+                            'phone': 'Số điện thoại'}"
+                        />
+                    </t>
+                </div>
+            </div>
+        </template>
+
+        <template id="search_bill_lading">
+            <div class="o_order_search_form" model="sharevan.bill.lading.detail"
+                method="search_bill_detail">
+                <form class="order-form">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-10 row">
+                                <div class="col-sm justify-content-center">
+                                    <t t-call="website_order_customer.order_input">
+                                        <t t-set="input_label">Mã đơn hàng</t>
+                                        <t t-set="input_id">name_seq</t>
+                                        <t t-set="placeholder">Mã đơn hàng</t>
+                                    </t>
+                                </div>
+                                <div class="col-sm">
+                                    <t t-call="website_order_customer.order_input">
+                                        <t t-set="input_label">Điểm bốc hàng</t>
+                                        <t t-set="input_id">address1</t>
+                                        <!--<t t-set="input_icon">fa-close</t>-->
+                                        <!--<t t-set="group_class">d-flex justify-content-end</t>-->
+                                        <t t-set="placeholder">Ví dụ: Khương Trung Hà Nội</t>
+                                    </t>
+                                </div>
+                                <div class="col-sm justify-content-center">
+                                    <t t-call="website_order_customer.order_input">
+                                        <t t-set="input_label">Điểm dỡ hàng</t>
+                                        <t t-set="input_id">address2</t>
+                                        <t t-set="placeholder">Ví dụ: 29BT1 Mễ Trì Hạ</t>
+                                    </t>
+                                </div>
+                                <div class="col-sm justify-content-center">
+                                    <t t-call="website_order_customer.order_input">
+                                        <t t-set="input_label">Ngày bốc hàng</t>
+                                        <t t-set="input_id">date_plan</t>
+                                        <t t-set="input_type">text</t>
+                                        <t t-set="placeholder">Từ ngày - đến ngày</t>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex align-items-center" style="padding:0px">
+                                <t t-call="website_order_customer.order_button">
+                                    <t t-set="button">button</t>
+                                    <t t-set="group_class">d-flex justify-content-end</t>
+                                    <t t-set="button_label">Tra cứu</t>
+                                    <t t-set="button_icon">fa-search</t>
+                                    <t t-set="button_class">search-button</t>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm justify-content-center">
+                                <t t-call="website_order_customer.order_input2">
+                                    <t t-set="input_label">Hiển thị</t>
+                                    <t t-set="input_id">temp_field</t>
+                                    <!--                                    <t t-set="group_class">d-flex justify-content-end</t>-->
+                                    <t t-set="placeholder">Dropdown here</t>
+                                </t>
+                            </div>
+                            <div class="col-8 d-flex justify-content-start">
+                                <t t-call="website_order_customer.order_button">
+                                    <t t-set="button">button</t>
+                                    <t t-set="button_class">fa</t>
+                                    <t t-set="button_label">Xuất dữ liệu</t>
+                                    <t t-set="button_icon">fa-file-excel-o</t>
+                                    <t t-set="button_id">exportExcel</t>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="p-2">
+                    <t t-call="website_order_customer.order_table">
+                        <t t-set="headers" t-value="{'name_seq': 'Mã đơn hàng',
+                                                         'status':'trạng thái',
+                                                        'address1':'Điểm bốc',
+                                                         'address2': 'Điểm dỡ'} "/>
+                        <t t-set="table_id">whSearchTable</t>
+                    </t>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

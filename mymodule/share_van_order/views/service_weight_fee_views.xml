@@ -1,0 +1,167 @@
+<odoo>
+    <data>
+        <record id='sharevan_service_weight_fee_form' model='ir.ui.view'>
+            <field name="name">sharevan.service.weight.fee.form</field>
+            <field name="model">sharevan.service.weight.fee</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="unit"/>
+                                <field name="fromW"/>
+                                <field name="toW"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="fee" widget="monetary"/>
+                                <field name="status"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sharevan_weight_fee_search" model="ir.ui.view">
+            <field name="name">sharevan.service.weight.fee.search</field>
+            <field name="model">sharevan.service.weight.fee</field>
+            <field name="arch" type="xml">
+                <search string="All Service Weight Fee">
+                    <field string="Name" name="name"
+                           filter_domain="['|', ('name', 'ilike', self)]"/>
+                    <field string="Unit" name="unit" filter_domain="[('unit', 'ilike', self)]"/>
+                    <field string="From Weight" name="fromW"/>
+                    <field string="To Weight" name="toW"/>
+                    <filter string="Fee" name="fee"/>
+                    <filter string="Status" name="status" domain="[('status', '=', 'running')]"/>
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter string="Name" name="groupby_name" context="{'group_by': 'name'}"/>
+                        <filter string="Unit" name="groupby_code" context="{'group_by': 'unit'}"/>
+                        <filter string="Status" name="groupby_status" context="{'group_by': 'status'}"/>
+                        <filter string="Fee" name="fee" context="{'group_by': 'fee'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id='sharevan_service_weight_fee_tree' model='ir.ui.view'>
+            <field name="name">sharevan.service.weight.fee.tree</field>
+            <field name="model">sharevan.service.weight.fee</field>
+            <field name="arch" type="xml">
+                <tree string="Parking point">
+
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_service_weight_fee_kanban' model='ir.ui.view'>
+            <field name="name">sharevan.service.weight.fee.kanban</field>
+            <field name="model">sharevan.service.weight.fee</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div>
+                                    <strong>
+                                        <field name="fromW"/>
+                                        <div>-</div>
+                                        <field name="toW"/>
+                                    </strong>
+                                </div>
+                                <div>
+                                    <span>
+                                        <field name="fee"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id='sharevan_service_weight_fee_action' model='ir.actions.act_window'>
+            <field name="name">Service weight fee</field>
+            <field name="res_model">sharevan.service.weight.fee</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+        </record>
+
+<!--        <menuitem name="Share van service weight fee" id="sharevan_service_weight_fee" parent="sharevan_order_menu_2"-->
+<!--                  action="sharevan_service_weight_fee_action" sequence="1001"/>-->
+
+
+        <record id='sharevan_subscribe_form' model='ir.ui.view'>
+            <field name="name">sharevan.subscribe.form</field>
+            <field name="model">sharevan.subscribe</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="subscribe_code" invisible="1"/>
+                                <field name="name"/>
+                                <field name="value"/>
+                                <field name="status"/>
+                            </group>
+                            <group>
+                                <field name="description" style='min-height:150px; min-width:600px;'/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_subscribe_search" model="ir.ui.view">
+            <field name="name">sharevan.subscribe.search</field>
+            <field name="model">sharevan.subscribe</field>
+            <field name="arch" type="xml">
+                <search string="Bill Subscribe">
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_subscribe_kanban' model='ir.ui.view'>
+            <field name="name">sharevan.subscribe.kanban</field>
+            <field name="model">sharevan.subscribe</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div>
+                                    <strong>
+                                        <field name="subscribe_code"/>
+
+                                    </strong>
+                                </div>
+                                <div class="float-right">
+                                    <field name="name"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id='sharevan_subscribe_action' model='ir.actions.act_window'>
+            <field name="name">Bill Subscribe</field>
+            <field name="res_model">sharevan.subscribe</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Bill Subscribe
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Subscribe" id="sharevan_subscribe" parent="sharevan_billing"
+                  action="sharevan_subscribe_action" sequence="1050"/>
+    </data>
+</odoo>

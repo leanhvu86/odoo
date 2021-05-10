@@ -1,0 +1,164 @@
+<odoo>
+    <data>
+        <record id='sharevan_service_distance_fee_form' model='ir.ui.view'>
+            <field name="name">sharevan.service.distance.fee.form</field>
+            <field name="model">sharevan.service.distance.fee</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="unit"/>
+                                <field name="fromD"/>
+                                <field name="toD"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="fee" widget="monetary"/>
+                                <field name="status"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sharevan_distance_fee_search" model="ir.ui.view">
+            <field name="name">sharevan.service.distance.fee.search</field>
+            <field name="model">sharevan.service.distance.fee</field>
+            <field name="arch" type="xml">
+                <search string="AllService Weight Fee">
+                    <field string="Name" name="name"
+                           filter_domain="['|', ('name', 'ilike', self)]"/>
+                    <field string="Unit" name="unit" filter_domain="[('unit', 'ilike', self)]"/>
+                    <field string="From Distance" name="fromD"/>
+                    <field string="To Distance" name="toD"/>
+                    <filter string="Fee" name="fee"/>
+                    <filter string="Status" name="status" domain="[('status', '=', 'running')]"/>
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter string="Name" name="groupby_name" context="{'group_by': 'name'}"/>
+                        <filter string="Unit" name="groupby_code" context="{'group_by': 'unit'}"/>
+                        <filter string="Status" name="groupby_status" context="{'group_by': 'status'}"/>
+                        <filter string="Fee" name="fee" context="{'group_by': 'fee'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id='sharevan_service_distance_fee_tree' model='ir.ui.view'>
+            <field name="name">sharevan.service.distance.fee.tree</field>
+            <field name="model">sharevan.service.distance.fee</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+
+                </form>
+            </field>
+        </record>
+
+        <record id='sharevan_service_distance_fee_kanban' model='ir.ui.view'>
+            <field name="name">sharevan.service.distance.fee.kanban</field>
+            <field name="model">sharevan.service.distance.fee</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+
+                </form>
+            </field>
+        </record>
+
+        <record id='sharevan_service_distance_fee_action' model='ir.actions.act_window'>
+            <field name="name">Service distance fee</field>
+            <field name="res_model">sharevan.service.distance.fee</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{'search_default_status': 'running'}</field>
+        </record>
+
+<!--        <menuitem name="Share van service distance fee" id="sharevan_service_distance_fee"-->
+<!--                  parent="sharevan_order_menu_2"-->
+<!--                  action="sharevan_service_distance_fee_action" sequence="1002"/>-->
+
+        <record id='sharevan_distance_compute_form' model='ir.ui.view'>
+            <field name="name">sharevan.distance.compute.form</field>
+            <field name="model">sharevan.distance.compute</field>
+            <field name="arch" type="xml">
+                <form string="Distance compute">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="name" readonly="1" force_save="1"/>
+                                <field name="from_seq" readonly="1" force_save="1"/>
+                                <field name="from_depot_id"
+                                       attrs="{'invisible': [('type', '!=', '0'), ('type', '!=', '1')]}"/>
+                                <field name="from_hub_id"
+                                       attrs="{'invisible': [('type', '!=', '2'), ('type', '!=', '3')]}"/>
+                                <field name="distance" readonly="1" force_save="1"/>
+                                <field name="time" readonly="1" force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="type"/>
+                                <field name="to_seq" readonly="1" force_save="1"/>
+                                <field name="to_depot_id"
+                                       attrs="{'invisible': [('type', '!=', '0'),('type', '!=', '3')]}"/>
+                                <field name="to_hub_id"
+                                       attrs="{'invisible': [('type', '!=', '1'), ('type', '!=', '2')]}"/>
+                                <field name="min_price" widget="monetary"/>
+                                <field name="max_price" widget="monetary"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id='sharevan_distance_compute_tree' model='ir.ui.view'>
+            <field name="name">sharevan.distance.compute.tree</field>
+            <field name="model">sharevan.distance.compute</field>
+            <field name="arch" type="xml">
+                <tree string="DLP Distance Compute">
+                    <field name="name_seq"/>
+                    <field name="name"/>
+                    <field name="from_seq"/>
+                    <field name="to_seq"/>
+                    <field name="distance"/>
+                    <field name="min_price" widget="monetary"/>
+                    <field name="max_price" widget="monetary"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+        <record id='sharevan_distance_compute_action' model='ir.actions.act_window'>
+            <field name="name">Distance compute</field>
+            <field name="res_model">sharevan.distance.compute</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Distance compute" id="sharevan_distance_compute" parent="sharevan_geography"
+                  action="sharevan_distance_compute_action" sequence="1101"/>
+
+
+        <record id="sharevan_career_search" model="ir.ui.view">
+            <field name="name">sharevan.career.search</field>
+            <field name="model">sharevan.career</field>
+            <field name="arch" type="xml">
+                <search string="Sharevan Company Career">
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_career_action' model='ir.actions.act_window'>
+            <field name="name">Sharevan Company Career</field>
+            <field name="res_model">sharevan.career</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Bill order package
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Company Career" id="sharevan_career" parent="staff_config"
+                  action="sharevan_career_action" sequence="11033"/>
+    </data>
+</odoo>

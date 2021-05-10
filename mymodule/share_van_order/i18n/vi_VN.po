@@ -1,0 +1,3741 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* share_van_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-29 03:58+0000\n"
+"PO-Revision-Date: 2021-01-29 03:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_country__status
+#: model:ir.model.fields,help:share_van_order.field_sharevan_zone_province__status
+msgid " 1:running , 2:deleted"
+msgstr "1: đang chạy, 2: đã xóa"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid " must does not contain special character"
+msgstr "không được chứa ký tự đặc biệt"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_rating_badges
+msgid " rating badges"
+msgstr "huy hiệu xếp hạng"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_routing_plan_day
+msgid " routing .plan. day"
+msgstr "định tuyến kế hoạch ngày "
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__in_province_price
+msgid "100 km"
+msgstr "100 km"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__in_zone_price
+msgid "300 km"
+msgstr "300 km"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "<span class=\"badge badge-warning float-right\">Approved</span>"
+msgstr "<span class = \" huy hiệu huy hiệu-cảnh báo float-right \"> Được chấp thuận </span>"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "<span class=\"badge badge-warning float-right\">Unapproved</span>"
+msgstr "<span class = \" huy hiệu huy hiệu-cảnh báo float-right \"> Không được chấp thuận </span>"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "<span class=\"badge badge-warning float-right\">Waitting</span>"
+msgstr "<span class = \" huy hiệu huy hiệu-cảnh báo float-right \"> Đang chờ </span>"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__out_zone_price
+msgid "> 300 km"
+msgstr "> 300 km"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "ABC123456789"
+msgstr "ABC123456789"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__accept_firebase_notification
+msgid "Accept Firebase Notification"
+msgstr "Chấp nhận thông báo Firebase"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.action_log_action
+#: model_terms:ir.ui.view,arch_db:share_van_order.action_log_tree
+msgid "Action Log"
+msgstr "Nhật ký hành động"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__active
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__active
+msgid "Active"
+msgstr "Có hiệu lực"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_product_type__active_shipping
+msgid "Active shipping"
+msgstr "Vận chuyển tích cực"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Add a export package routing"
+msgstr "Thêm định tuyến gói xuất"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Add a import package routing"
+msgstr "Thêm định tuyến gói nhập"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_approve_action
+msgid "Add a new maintenance request"
+msgstr "Thêm một yêu cầu bảo trì mới"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Add a product package"
+msgstr "Thêm một gói sản phẩm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Admin has not approved the bidding order!"
+msgstr "Admin chưa duyệt lệnh đấu thầu!"
+
+#. module: share_van_order
+#: model:res.groups,name:share_van_order.share_van_order_group_manager
+msgid "Administrator"
+msgstr "Quản trị viên"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+msgid "All DLP Area"
+msgstr "Tất cả vùng DLP"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+msgid "All Price Quotation"
+msgstr "Báo giá tất cả giá"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "All Service Weight Fee"
+msgstr "Tất cả phí dịch vụ trọng lượng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_search
+msgid "All Zone"
+msgstr "Tất cả các vùng"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_partner__lang
+#: model:ir.model.fields,help:share_van_order.field_res_partner_log__lang
+#: model:ir.model.fields,help:share_van_order.field_res_users__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+"Tất cả các email và tài liệu gửi đến liên hệ này sẽ được dịch qua ngôn ngữ "
+"này."
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "All vehicles"
+msgstr "Tất cả các loại xe"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+msgid "AllService Weight Fee"
+msgstr "Phí trọng lượng dịch vụ AllService"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_awards_level__amount
+msgid "Amount"
+msgstr "Số tiền"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+msgid "Are you sure you want to do this?"
+msgstr "Bạn có chắc bạn muốn làm điều này?"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Are you sure you want to start checking this bill?"
+msgstr "Bạn có chắc chắn muốn bắt đầu kiểm tra hóa đơn này không?"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_area
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_recurrent_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_form
+msgid "Area"
+msgstr "Khu vực"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_hub_view_action
+msgid "Area group"
+msgstr "Nhóm khu vực"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_hub
+msgid "Area group manager"
+msgstr "Người quản lý nhóm khu vực"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__driver_arrived_time
+msgid "Arrived time"
+msgstr "Đã đến giờ"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Attach File"
+msgstr "Đính kèm tệp"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__attach_image
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_plan__attach_image
+msgid "Attach Image"
+msgstr "Đính kèm hình ảnh"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+msgid "Attach file"
+msgstr "Đính kèm tập tin"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Attachment"
+msgstr "Tập tin đính kèm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Attention: Maintenance high level"
+msgstr "Chú ý: Mức độ bảo trì cao"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Authentication failed!"
+msgstr "Xác thực không thành công!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_kanban
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Availble capacity"
+msgstr "Dung lượng khả dụng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__name
+msgid "Award"
+msgstr "Giải thưởng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__award_company_id
+msgid "Award Company"
+msgstr "Công ty Giải thưởng"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_award_company
+msgid "Award company "
+msgstr "Công ty giải thưởng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_sharevan_awardslevel_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_sharevan_awards_level
+msgid "Awards level"
+msgstr "Mức thưởng"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_6
+msgid "BOL"
+msgstr "BOL"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_approve_action
+#: model:ir.ui.menu,name:share_van_order.bidding_approve
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Bidding Approve"
+msgstr "Phê duyệt đấu thầu"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_order
+msgid "Bidding Order"
+msgstr "Lệnh đấu thầu"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_view_search
+msgid "Bidding Order Infomation"
+msgstr "Thông tin đặt hàng đấu thầu"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_order_receive_action
+#: model:ir.ui.menu,name:share_van_order.bidding_order_receive
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_order_receive_view_tree
+msgid "Bidding Order Receive"
+msgstr "Nhận lệnh đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Order does not existed!"
+msgstr "Lệnh đấu thầu không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_package_action
+#: model:ir.ui.menu,name:share_van_order.bidding_package
+msgid "Bidding Package"
+msgstr "Gói thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Package does not existed!"
+msgstr "Gói thầu không tồn tại!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_order_receive_view_form
+msgid "Bidding Receive Details"
+msgstr "Chi tiết nhận giá thầu"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_vehicle
+msgid "Bidding Vehicle"
+msgstr "Phương tiện đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Vehicle does not existed with id "
+msgstr "Phương tiện đấu thầu không tồn tại với id"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Vehicle does not existed with id vehicle_id"
+msgstr "Phương tiện đấu thầu không tồn tại với id xe_id"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding Vehicle does not existed!"
+msgstr "Phương tiện đấu thầu không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bidding_vehicle_action
+msgid "Bidding Vehicles"
+msgstr "Phương tiện đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding has been approved"
+msgstr "Đấu thầu đã được chấp thuận"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding id can not null!"
+msgstr "Id đấu thầu không thể null!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_order_action
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_package
+msgid "Bidding order"
+msgstr "Lệnh đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order does not approved!"
+msgstr "Lệnh dự thầu không được duyệt!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order does not existed!"
+msgstr "Lệnh dự thầu không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order has been cancelled!"
+msgstr "Lệnh dự thầu đã bị hủy bỏ!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order has been returned!"
+msgstr "Lệnh đấu thầu đã được trả lại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding order id can not null!"
+msgstr "Id đặt hàng giá thầu không thể null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order id does not exist!"
+msgstr "Id đặt hàng giá thầu không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order must have Cargo!"
+msgstr "Lệnh dự thầu phải có Cargo!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding order not existed!"
+msgstr "Lệnh đấu thầu không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_bidding_notification
+msgid "Bidding order notification"
+msgstr "Thông báo đặt hàng đấu thầu"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_order_receive
+msgid "Bidding order receive"
+msgstr "Nhận lệnh đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "Bidding order received does not existed!"
+msgstr "Lệnh đấu thầu nhận được không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_order_return
+msgid "Bidding order return"
+msgstr "Trả lại đơn đặt hàng đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order return  does not existed!"
+msgstr "Trả lại lệnh đấu thầu không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order status null!"
+msgstr "Trạng thái đặt hàng đấu thầu null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order type null!"
+msgstr "Lệnh đấu thầu loại null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding package does not existed!"
+msgstr "Gói thầu không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding package has already been bidded! Bidding package id: "
+msgstr "Gói thầu đã được đấu thầu! Id gói thầu:"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding package id does not exist!"
+msgstr "Id gói thầu không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_vehicle
+msgid "Bidding vehicle"
+msgstr "Xe đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "Bidding vehicle does not existed!"
+msgstr "Phương tiện đấu thầu không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding vehicle id can not can not null!"
+msgstr "Id phương tiện đấu thầu can’t can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "Bidding vehicle id can not null!"
+msgstr "Id phương tiện đấu thầu không thể null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding vehicle not existed!"
+msgstr "Phương tiện đấu thầu không tồn tại!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Bill Package"
+msgstr "Gói hóa đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill Package routing export"
+msgstr "Xuất định tuyến gói hóa đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill Package routing import"
+msgstr "Nhập định tuyến gói hóa đơn"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bill_routing_action
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__bill_routing_id
+#: model:ir.ui.menu,name:share_van_order.sharevan_bill_routing
+msgid "Bill Routing"
+msgstr "Định tuyến Bill"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__name
+msgid "Bill Routing Code"
+msgstr "Mã định tuyến hóa đơn"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_subscribe_action
+msgid "Bill Subscribe"
+msgstr "Đăng ký Bill"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__change_bill_lading_detail_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__change_bill_lading_detail_id
+msgid "Bill detail change"
+msgstr "Thay đổi chi tiết hóa đơn"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bill_lading_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_bill_lading
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_tree
+msgid "Bill of Lading"
+msgstr "Vận đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+msgid "Bill of lading"
+msgstr "Vận đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Bill of lading detail"
+msgstr "Chi tiết vận đơn"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Bill of lading detail does not exist!"
+msgstr "Chi tiết vận đơn không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/routing_plan_day.py:0
+#, python-format
+msgid "Bill of lading id can not null !"
+msgstr "Id vận đơn không thể null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/routing_plan_day.py:0
+#, python-format
+msgid "Bill of lading id does not exist"
+msgstr "Id vận đơn không tồn tại"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bill_order_package_action
+msgid "Bill order package"
+msgstr "Gói đặt hàng hóa đơn"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_bill_order_package
+msgid "Bill order package "
+msgstr "Gói đặt hàng hóa đơn"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Bill package does not exist!"
+msgstr "Gói hóa đơn không tồn tại!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill package routing export"
+msgstr "Xuất định tuyến gói hóa đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill package routing import"
+msgstr "Nhập định tuyến gói hóa đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_tree
+msgid "Bill routing"
+msgstr "Định tuyến hóa đơn"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__code
+msgid "Bill routing Code"
+msgstr "Mã định tuyến hóa đơn"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_billing
+msgid "Billing config"
+msgstr "Cấu hình thanh toán"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__birthday
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__birthday
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__birthday
+msgid "Birthday"
+msgstr "Sinh nhật"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Brand"
+msgstr "Thương hiệu"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__1
+msgid "Business"
+msgstr "Kinh doanh"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_3
+msgid "CMS"
+msgstr "CMS"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_9
+msgid "CODE SHARE"
+msgstr "CODE SHARE"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__customer_manager
+msgid "CUSTOMER_MANAGER"
+msgstr "CUSTOMER_MANAGER"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__customer_stockman
+msgid "CUSTOMER_STOCKMAN"
+msgstr "CUSTOMER_STOCKMAN"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_employee_warehouse_view
+#: model:ir.ui.menu,name:share_van_order.sharevan_calandar_employee_menu
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_calendar
+msgid "Calendar employee"
+msgstr "Nhân viên lịch"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__-1
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__cancel_check
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__toogle
+msgid "Cancel check"
+msgstr "Hủy kiểm tra"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_kanban
+msgid "Capacity"
+msgstr "Dung lượng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__capacity_actual
+msgid "Capacity actual"
+msgstr "Dung lượng thực tế"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__capacity_vehicle
+msgid "Capacity vehicle"
+msgstr "Xe công suất"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_package__cargo_ids
+#: model:ir.ui.menu,name:share_van_order.cargo_manager
+msgid "Cargo"
+msgstr "Cargo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_view_search
+msgid "Cargo Infomation"
+msgstr "Thông tin hàng hóa"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.conf_cargoPrice
+msgid "Cargo Price"
+msgstr "Giá hàng hóa"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Cargo can not null!"
+msgstr "Cargo can’t null!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__code
+msgid "Cargo code"
+msgstr "Mã hàng hóa"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_cargo_detail
+msgid "Cargo detail"
+msgstr "Chi tiết hàng hóa"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Cargo does not exist!"
+msgstr "Hàng hóa không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Cargo id is null!"
+msgstr "Id hàng hóa là null!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_cargo_action
+#: model:ir.ui.menu,name:share_van_order.bidding_order_menu_1
+msgid "Cargo manager"
+msgstr "Người quản lý hàng hóa"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.conf_cargoPrice_action
+#: model:ir.model,name:share_van_order.model_sharevan_cargo_price
+msgid "Cargo price"
+msgstr "Giá hàng hóa"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Cargo with id does not existed in Bidding Order!"
+msgstr "Hàng hóa có id không tồn tại trong Lệnh dự thầu!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_cargo_price_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_price_view_tree
+msgid "CargoPrice"
+msgstr "CargoPrice"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+msgid "Check bill"
+msgstr "Kiểm tra hóa đơn"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__chooseDay
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__chooseDay
+msgid "Choose Date"
+msgstr "Chọn ngày"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__0
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__1
+msgid "Chủ nhật"
+msgstr "Chủ nhật"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__city_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__city_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__city_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__name
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__city_name
+msgid "City name"
+msgstr "Tên thành phố"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__claim_type
+msgid "Claim type"
+msgstr "Loại yêu cầu"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+msgid "Close time (Hours)"
+msgstr "Thời gian đóng cửa (Giờ)"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__code
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__code
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__code
+msgid "Code"
+msgstr "Mã"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_company
+msgid "Companies"
+msgstr "Công ty"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__company_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__company_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__partner_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__company_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_career
+msgid "Company Career"
+msgstr "Sự nghiệp công ty"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_company__company_type
+msgid "Company Type"
+msgstr "Loại hình công ty"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_company_award
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__company_award_id
+msgid "Company award"
+msgstr "Giải thưởng công ty"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Company does not exist!"
+msgstr "Công ty không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Company does not existed!"
+msgstr "Công ty không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__company_ranking
+msgid "Company ranking"
+msgstr "Xếp hạng công ty"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__company_type
+msgid "Company type"
+msgstr "Loại công ty"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Company's driver does not existed!"
+msgstr "Trình điều khiển của công ty không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_order_menu_3
+msgid "Config"
+msgstr "Cấu hình"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_2
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+msgid "Cost"
+msgstr "Chi phí"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_country
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__country_id
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+msgid "Country"
+msgstr "Quốc gia"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__create_bol
+msgid "Create BOL"
+msgstr "Tạo BOL"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.conf_cargoPrice_action
+msgid "Create a cargo price"
+msgstr "Tạo giá hàng hóa"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_employee_warehouse_view
+msgid "Create a clandar employee"
+msgstr "Tạo một nhân viên bí mật"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_company_view
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_driver_view
+msgid "Create a company"
+msgstr "Tạo công ty"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_reward_point_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_sharevan_awardslevel_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_title_award_action
+msgid "Create a new"
+msgstr "Tạo mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_action
+msgid "Create a new  Bidding Order"
+msgstr "Tạo một hàng hóa đấu thầu mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_cargo_action
+msgid "Create a new Bidding Cargo"
+msgstr "Tạo một hàng hóa đấu thầu mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bill_lading_view_action
+msgid "Create a new Bill of Lading"
+msgstr "Tạo vận đơn mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bill_order_package_action
+msgid "Create a new Bill order package"
+msgstr "Tạo một gói đơn đặt hàng Hóa đơn mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_insurance_action
+msgid "Create a new Insurance"
+msgstr "Tạo một Bảo hiểm mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_channel_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_notification_action
+msgid "Create a new Notifications"
+msgstr "Tạo một loại thông báo mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_notification_type_action1
+msgid "Create a new Notifications type"
+msgstr "Tạo một loại thông báo mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_price_action
+msgid "Create a new Zone price"
+msgstr "Tạo vùng giá mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_routing_plan_day_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_area_view_action
+msgid "Create a new area"
+msgstr "Tạo một khu vực mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_receive_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_package_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bidding_vehicle_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_driver_sos_action
+#: model_terms:ir.actions.act_window,help:share_van_order.size_standard_action
+msgid "Create a new contract"
+msgstr "Tạo một hợp đồng mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_rating_badges_action
+msgid "Create a new depot"
+msgstr "Tạo kho mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_hub_view_action
+msgid "Create a new hub"
+msgstr "Tạo một trung tâm mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_view_action
+msgid "Create a new product"
+msgstr "Tạo một sản phẩm mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_type_view_action
+msgid "Create a new product type"
+msgstr "Tạo một loại sản phẩm mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_service_type_view_action
+msgid "Create a new service type"
+msgstr "Tạo một loại dịch vụ mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_vehicle_action
+msgid "Create a new vehicle"
+msgstr "Tạo một phương tiện mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_view_action
+msgid "Create a new warehouse"
+msgstr "Tạo kho hàng mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_service_view_action
+msgid "Create a new warehouse service"
+msgstr "Tạo một dịch vụ kho hàng mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_recurrent_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_view_action
+msgid "Create a new zone"
+msgstr "Tạo vùng mới"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_assign_routing
+msgid "Create a sharevan driver assign routing"
+msgstr "Tạo định tuyến gán trình điều khiển sharevan"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_received
+msgid "Create a sharevan driver received revenue"
+msgstr "Tạo một tài xế sharevan nhận được doanh thu"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_bidding_vehicle_view
+msgid "Create a vehicle"
+msgstr "Tạo một phương tiện"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+msgid "Created Date"
+msgstr "Ngày tạo"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__create_date
+msgid "Created on"
+msgstr "Đã tạo trên"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__credit_limit
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__credit_limit
+msgid "Credit Limit"
+msgstr "Hạn mức tín dụng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_company_view
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__company_type__1
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__type__customer
+#: model:ir.ui.menu,name:share_van_order.bidding_order_menu_2
+#: model:ir.ui.menu,name:share_van_order.sharevan_company_menu
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_company__customer_type
+#: model:ir.model.fields,help:share_van_order.field_sharevan_bill_lading__company_type
+msgid "Customer Type"
+msgstr "Loại khách hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__3
+msgid "Customer cancel"
+msgstr "Khách hàng hủy bỏ"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+msgid "Customer information"
+msgstr "Thông tin khách hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__1
+msgid "Customer not found"
+msgstr "Không tìm thấy khách hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__customer_type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_lading__company_type
+msgid "Customer type"
+msgstr "Loại khách hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__cycle_type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__cycle_type
+msgid "Cycle type"
+msgstr "Loại chu kỳ"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__company_type__2
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__type__dlp
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__sbl_type__dlp
+msgid "DLP"
+msgstr "DLP"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_area_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_area
+msgid " DLP Area"
+msgstr "Khu vực DLP"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_compute_tree
+msgid "DLP Distance Compute"
+msgstr "Tính toán khoảng cách DLP"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_geography
+msgid "DLP Geography"
+msgstr "Địa lý DLP"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_zone_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_zone
+msgid "DLP Zone"
+msgstr "Khu DLP"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_zone_price_action
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_tree
+msgid "DLP Zone Price"
+msgstr "Giá vùng DLP"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_root
+msgid "DLP system"
+msgstr "Hệ thống DLP"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_goods_tree
+msgid "Date"
+msgstr "Ngày"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__day_of_month
+msgid "Day In Month"
+msgstr "Ngày trong tháng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__day_of_week
+msgid "Day Of Week"
+msgstr "Ngày trong tuần"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Delete"
+msgstr "Xóa"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_country__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_distance_fee__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_weight_fee__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_zone_province__status__deleted
+msgid "Deleted"
+msgstr "Đã xóa"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__department_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__department_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__department_name
+msgid "Department Name"
+msgstr "Tên bộ phận"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.conf_depot_action
+#: model:ir.actions.act_window,name:share_van_order.sharevan_depot_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_depot_view
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_assign_routing_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+msgid "Depot"
+msgstr "Kho"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+msgid "Depot Name"
+msgstr "Tên kho hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__depot_supply
+msgid "Depot Supply"
+msgstr "Cung cấp kho hàng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_depot_goods_action
+#: model:ir.ui.menu,name:share_van_order.menu_sharevan_depot_goods
+msgid "Depot goods"
+msgstr "Kho hàng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_depot_pricing_action
+#: model:ir.ui.menu,name:share_van_order.menu_sharevan_depot_pricing
+msgid "Depot pricing"
+msgstr "Định giá kho bãi"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Detail"
+msgstr "Chi tiết"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_form
+msgid "Detail information"
+msgstr "Thông tin chi tiết"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__discount_amount
+msgid "Discount amount"
+msgstr "Số tiền chiết khấu"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_distance_compute_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_distance_compute
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_compute_form
+msgid "Distance compute"
+msgstr "Máy tính khoảng cách"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.distance_unit_action
+#: model:ir.ui.menu,name:share_van_order.distance_unit
+msgid "Distance unit"
+msgstr "Đơn vị khoảng cách"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__district
+msgid "District"
+msgstr "Quận"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+msgid "Districts"
+msgstr "Quận"
+
+#. module: share_van_order
+#. openerp-web
+#: code:addons/share_van_order/static/src/xml/tree_view_button.xml:0
+#, python-format
+msgid "Download excel"
+msgstr "Tải xuống excel"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__status__draft
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__status__draft
+msgid "Draft"
+msgstr "Bản nháp"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__driver_id
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_driver_form_inherit
+msgid "Driver"
+msgstr "Tài xế"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+msgid "Driver Infomation"
+msgstr "Thông tin tài xế"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.driver_license
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_license_view_tree
+msgid "Driver License"
+msgstr "Bằng lái xe"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_driver_sos
+msgid "Driver SOS"
+msgstr "Tài xế SOS"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+msgid "Driver SOS Details"
+msgstr "Chi tiết tài xế SOS"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__driver_supply
+msgid "Driver Supply"
+msgstr "Cung cấp trình điều khiển"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_130
+msgid "Driver assign routing"
+msgstr "Định tuyến gán trình điều khiển"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_driver_assign_routing
+msgid "Driver assign routing in market place"
+msgstr "Trình điều khiển chỉ định định tuyến tại thị trường"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.driver_license_action
+msgid "Driver license"
+msgstr "Giấy phép lái xe"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_131
+msgid "Driver received"
+msgstr "Đã nhận được trình điều khiển"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Driver sos"
+msgstr "Trình điều khiển sos"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Drivers"
+msgstr "Trình điều khiển"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Dropdown menu"
+msgstr "Menu thả xuống"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Dịch vụ tại kho:"
+msgstr "Dịch vụ tại kho:"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_driver_sos_action
+msgid ""
+"Each contract (e.g.: leasing) may include several services\n"
+"                    (reparation, insurances, periodic maintenance)."
+msgstr ""
+"Mỗi hợp đồng (ví dụ: cho thuê) có thể bao gồm một số dịch vụ \ n"
+"(sửa chữa, bảo hiểm, bảo dưỡng định kỳ)."
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_receive_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_package_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bidding_vehicle_action
+#: model_terms:ir.actions.act_window,help:share_van_order.size_standard_action
+msgid ""
+"Each contract (e.g.: leasing) may include several services\n"
+"                (reparation, insurances, periodic maintenance)."
+msgstr ""
+"Mỗi hợp đồng (ví dụ: cho thuê) có thể bao gồm một số dịch vụ \ n"
+"(sửa chữa, bảo hiểm, bảo dưỡng định kỳ)."
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__economy
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__economy
+msgid "Economy"
+msgstr "Kinh tế"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__end_date
+msgid "End Date"
+msgstr "Ngày kết thúc"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__engagement_point
+msgid "Engagement point"
+msgstr "Điểm gắn kết"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_depot_goods__type__1
+msgid "Export"
+msgstr "Xuất khẩu"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__express
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__express
+msgid "Express"
+msgstr "Express"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "Extra Information"
+msgstr "Thông tin bổ sung"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Extra Infromations"
+msgstr "Thông tin bổ sung"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__extra_amount_percent
+msgid "Extra amount percent"
+msgstr "Thêm phần trăm số tiền"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__extra_cost
+msgid "Extra cost"
+msgstr "Chi phí bổ sung"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Extra information"
+msgstr "Thông tin bổ sung"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_product_type__extra_percent
+msgid "Extra per distance unit"
+msgstr "Thêm trên một đơn vị khoảng cách"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_product_type__extra_price
+msgid "Extra price per distance unit"
+msgstr "Giá thêm trên một đơn vị khoảng cách"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__extra_weight_cost
+msgid "Extra weight cost"
+msgstr "Chi phí trọng lượng thêm"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__extra_weight_price
+msgid "Extra weight price"
+msgstr "Giá thêm cân"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__fleet_driver
+msgid "FLEET_DRIVER"
+msgstr "FLEET_DRIVER"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__fleet_manager
+msgid "FLEET_MANAGER"
+msgstr "FLEET_MANAGER"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Fee"
+msgstr "CHI PHÍ"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_service_weight_fee
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__fee
+msgid "Fee by weight"
+msgstr "Phí theo trọng lượng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__gender__female
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__gender__female
+msgid "Female"
+msgstr "Nữ"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__2
+msgid "Finished"
+msgstr "Đã xong"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__fcm_token
+msgid "Firebase token"
+msgstr "Mã thông báo Firebase"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__company_type__0
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__type__fleet
+msgid "Fleet"
+msgstr "Fleet"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_fleet_driver_view
+msgid "Fleet Driver"
+msgstr "Tài xế fleet"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_fleet_driver
+msgid "Fleet driver"
+msgstr "Tài xế fleet"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_fleet_bidding_vehicle_view
+msgid "Fleet vehicle"
+msgstr "Xe fleet"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_approve_action
+msgid ""
+"Follow the process of the request and communicate with the collaborator."
+msgstr ""
+"Thực hiện theo quy trình của yêu cầu và giao tiếp với cộng tác viên."
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/models.py:0
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "Format email address \"Name <email@domain>"
+msgstr "Định dạng địa chỉ email \" Tên <email @ domain> "
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "Format website address e.g. https://www.odoo.com"
+msgstr "Định dạng địa chỉ trang web, ví dụ: https://www.odoo.com"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "Format zip code e.g. 1111111111"
+msgstr "Định dạng mã zip ví dụ: 1111111111"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__frequency
+msgid "Frequency"
+msgstr "Tần số"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__fromD
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__fromW
+msgid "From"
+msgstr "Từ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__from_date
+msgid "From Date"
+msgstr "Từ ngày"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.longhaul_bill_lading_detail_tree
+msgid "From Depot"
+msgstr "Từ kho"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+msgid "From Distance"
+msgstr "Từ xa"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "From Weight"
+msgstr "Từ Trọng lượng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__from_bill_lading_id
+msgid "From bill of lading"
+msgstr "Từ vận đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Future Activities"
+msgstr "Hoạt động trong tương lai"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Gen QR code"
+msgstr "Mã QR thế hệ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__gender
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__gender
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__gender
+msgid "Gender"
+msgstr "Giới tính"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__latitude
+msgid "Geo Latitude"
+msgstr "Vĩ độ địa lý"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__longitude
+msgid "Geo Longitude"
+msgstr "Kinh độ địa lý"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__4
+msgid "Giao nhanh"
+msgstr "Giao nhanh"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__good_transport_price
+msgid "Good transport area"
+msgstr "Khu vực giao thông tốt"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__good_transport_price
+msgid ""
+"Good transport price, province have a lot of trading and good price. For "
+"example: Ha Noi, HCM, Da Nang "
+msgstr ""
+"Giá vận chuyển tốt, tỉnh có buôn nhiều, giá tốt. Đối với"
+"ví dụ: Hà Nội, HCM, Đà Nẵng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_reward_point_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_sharevan_awardslevel_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_title_award_action
+msgid "Here you can add"
+msgstr "Ở đây bạn có thể thêm"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bill_lading_view_action
+msgid "Here you can add Bill of Lading"
+msgstr "Ở đây bạn có thể thêm"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_price_action
+msgid "Here you can add Zone price"
+msgstr "Ở đây bạn có thể thêm Zone price"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.conf_cargoPrice_action
+msgid "Here you can add a cargo price"
+msgstr "Ở đây bạn có thể thêm giá hàng hóa"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_routing_plan_day_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_area_view_action
+msgid "Here you can add area"
+msgstr "Ở đây bạn có thể thêm diện tích"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_company_view
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_employee_warehouse_view
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_driver_view
+msgid "Here you can add company"
+msgstr "Ở đây bạn có thể thêm công ty"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_rating_badges_action
+msgid "Here you can add depot"
+msgstr "Ở đây bạn có thể thêm kho"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_hub_view_action
+msgid "Here you can add hub"
+msgstr "Ở đây bạn có thể thêm trung tâm"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_view_action
+msgid "Here you can add product"
+msgstr "Ở đây bạn có thể thêm sản phẩm"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_type_view_action
+msgid "Here you can add product type"
+msgstr "Ở đây bạn có thể thêm loại sản phẩm"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_service_type_view_action
+msgid "Here you can add service type"
+msgstr "Ở đây bạn có thể thêm loại dịch vụ"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_assign_routing
+msgid "Here you can add sharevan driver assign routing"
+msgstr "Ở đây bạn có thể thêm định tuyến gán trình điều khiển sharevan"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_received
+msgid "Here you can add sharevan driver received revenue"
+msgstr "Ở đây bạn có thể thêm doanh thu nhận được của trình điều khiển sharevan"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_bidding_vehicle_view
+msgid "Here you can add vehicle"
+msgstr "Ở đây bạn có thể thêm phương tiện"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_view_action
+msgid "Here you can add warehouse"
+msgstr "Ở đây bạn có thể thêm kho"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_service_view_action
+msgid "Here you can add warehouse service"
+msgstr "Ở đây bạn có thể thêm dịch vụ kho hàng"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_recurrent_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_view_action
+msgid "Here you can add zone"
+msgstr "Ở đây bạn có thể thêm vùng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__hire_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__hire_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__hire_date
+msgid "Hire Date"
+msgstr "Ngày thuê"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_goods_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_pricing_action
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_goods_tree
+msgid "History of goods moving in and out of depots"
+msgstr "Lịch sử hàng hóa ra vào kho"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_tree
+msgid "Hub"
+msgstr "Trung tâm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+msgid "Hub Name"
+msgstr "Tên Hub"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__1
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__cycle_type__1
+msgid "Hàng ngày"
+msgstr "Hàng ngày"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__3
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__cycle_type__3
+msgid "Hàng tháng"
+msgstr "Hàng tháng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__2
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__cycle_type__2
+msgid "Hàng tuần"
+msgstr "Hàng tuần"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__id
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__id
+msgid "ID"
+msgstr "ID"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__identify_number
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__identify_number
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__identify_number
+msgid "Identify Number"
+msgstr "Xác định số"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__image_256
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_export__qr_code
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__qr_code
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_plan__qr_code
+msgid "Image"
+msgstr "Hình ảnh"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "Image identify"
+msgstr "Nhận dạng hình ảnh"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__image_identify_backsite
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__image_identify_backsite
+msgid "Image identify back side"
+msgstr "Hình ảnh xác định mặt sau"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__image_identify_frontsite
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__image_identify_frontsite
+msgid "Image identify front side"
+msgstr "Hình ảnh xác định mặt trước"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_depot_goods__type__0
+msgid "Import"
+msgstr "Nhập khẩu"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__0
+msgid "In Claim"
+msgstr "Đang yêu cầu bồi thường"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__in_province_price
+msgid "In province price"
+msgstr "Tại tỉnh giá"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__in_zone_price
+msgid "In zone price"
+msgstr "Trong vùng giá"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__2
+msgid "Individual"
+msgstr "Cá nhân"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__6
+msgid "Individual fleet"
+msgstr "Đội xe cá nhân"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__career_ids
+msgid "Industry"
+msgstr "Ngành công nghiệp"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_assign_routing_form
+msgid "Infomation"
+msgstr "Thông tin"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Information"
+msgstr "Thông tin"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_insurance
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__insurance_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day_detail__insurance_name
+msgid "Insurance"
+msgstr "Bảo hiểm"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_insurances
+msgid "Insurance "
+msgstr "Bảo hiểm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+msgid "Insurance Infomation"
+msgstr "Thông tin bảo hiểm"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_insurance_action
+msgid "Insurance Name"
+msgstr "Tên bảo hiểm"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__function
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__function
+msgid "Job Position"
+msgstr "Chức vụ"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__just_in_time
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__just_in_time
+msgid "Just In Time"
+msgstr "Đúng lúc"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_depot_goods
+msgid "Keep track of the good stored in warehouse"
+msgstr "Theo dõi những gì tốt được lưu trữ trong kho"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__lang
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__lang
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__lang
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Late Activities"
+msgstr "Hoạt động muộn"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__leave_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__leave_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__leave_date
+msgid "Leave Date"
+msgstr "Ngày nghỉ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__level
+msgid "Level"
+msgstr "Cấp độ"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+msgid "List Cargo"
+msgstr "Liệt kê hàng hóa"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "List bill of lading detail"
+msgstr "Danh sách chi tiết vận đơn"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "List bill package id null"
+msgstr "Liệt kê gói hóa đơn id null"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_export__qr_char_confirms
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__qr_char_confirms
+msgid "List char comfirm"
+msgstr "Danh sách char comfirm"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__3
+msgid "Logistics"
+msgstr "Logistics"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Main Infomations"
+msgstr "Thông tin chính"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Main information"
+msgstr "Thông tin chính"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Maintenance(s)"
+msgstr "Bảo trì (các)"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__gender__male
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__gender__male
+msgid "Male"
+msgstr "Nam"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_driver_sos_action
+msgid ""
+"Manage all your contracts (leasing, insurances, etc.) with\n"
+"                    their related services, costs. Odoo will automatically warn\n"
+"                    you when some contracts have to be renewed."
+msgstr ""
+"Quản lý tất cả các hợp đồng của bạn (cho thuê, bảo hiểm, v.v.) với \ n"
+"các dịch vụ, chi phí liên quan của họ. Odoo sẽ tự động cảnh báo \ n"
+"bạn khi một số hợp đồng phải được gia hạn."
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_receive_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_package_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bidding_vehicle_action
+#: model_terms:ir.actions.act_window,help:share_van_order.size_standard_action
+msgid ""
+"Manage all your contracts (leasing, insurances, etc.) with\n"
+"                their related services, costs. Odoo will automatically warn\n"
+"                you when some contracts have to be renewed."
+msgstr ""
+"Quản lý tất cả các hợp đồng của bạn (cho thuê, bảo hiểm, v.v.) với \ n"
+"các dịch vụ, chi phí liên quan của họ. Odoo sẽ tự động cảnh báo \ n"
+"bạn khi một số hợp đồng phải được gia hạn."
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_vehicle_action
+msgid ""
+"Manage your fleet by keeping track of the contracts, services, odometers and fuel logs associated to\n"
+"                    each vehicle."
+msgstr ""
+"Quản lý đội xe của bạn bằng cách theo dõi các hợp đồng, dịch vụ, đồng hồ đo đường và nhật ký nhiên liệu liên quan đến \ n"
+"mỗi phương tiện."
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Map"
+msgstr "Bản đồ"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_101
+msgid "Market place"
+msgstr "Địa điểm chợ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_type__max_person
+msgid "Max person"
+msgstr "Người tối đa"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_type__max_weight
+msgid "Max weight"
+msgstr "Trọng lượng tối đa"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Measure"
+msgstr "Đo lường"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.action_log_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_order_receive_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_order_package_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.size_standard_form
+msgid "Model"
+msgstr "Mẫu"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "More Information"
+msgstr "Thêm thông tin"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__5
+msgid "Một lần"
+msgstr "Một lần"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__name
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Name"
+msgstr "Tên"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_plan__name
+msgid "Name code"
+msgstr "Mã tên"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__nationality
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__nationality
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__nationality
+msgid "Nationality"
+msgstr "Quốc gia"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Need Action"
+msgstr "Cần hành đông"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__net_weight
+msgid "Net weight level"
+msgstr "Mức trọng lượng tịnh"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_package_routing.py:0
+#: code:addons/share_van_order/models/bill_package_routing.py:0
+#: code:addons/share_van_order/models/company_award.py:0
+#: code:addons/share_van_order/models/sharevan_recurrent.py:0
+#: code:addons/share_van_order/models/sharevan_recurrent.py:0
+#, python-format
+msgid "New"
+msgstr "Mới"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_form
+msgid "New depot pricing"
+msgstr "Định giá kho mới"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__normal
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__0
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__normal
+msgid "Normal"
+msgstr "Bình thường"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.menu_action_sharevan_notification
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_channel_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_notification_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_channel_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_tree
+msgid "Notification"
+msgstr "Thông báo"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_channel_action
+msgid "Notification channel"
+msgstr "Kênh thông báo"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.menu_notification
+msgid "Notification config"
+msgstr "Cấu hình thông báo"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_notification
+msgid "Notification send to users"
+msgstr "Gửi thông báo tới người dùng"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.menu_users_sharevan_type_notification1
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_search
+msgid "Notification type"
+msgstr "Loại thông báo"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_notification_action
+msgid "Notifications"
+msgstr "Thông báo"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_notification_type_action1
+msgid "Notifications type"
+msgstr "Loại thông báo"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__online
+msgid "Online"
+msgstr "Trực tuyến"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+msgid "Open time (Hours)"
+msgstr "Thời gian mở cửa (Giờ)"
+
+#. module: share_van_order
+#: model:ir.module.category,name:share_van_order.module_share_van_order_category
+msgid "Order"
+msgstr "Đặt hàng"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Order has been confirmed to received !"
+msgstr "Đơn hàng đã được xác nhận là đã nhận được!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "Order has been confirmed!"
+msgstr "Đơn hàng đã được xác nhận!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_lading__order_package_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__order_package_id
+msgid "Order package"
+msgstr "Gói đặt hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__2
+msgid "Order package change"
+msgstr "Thay đổi gói đặt hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__gender__other
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__gender__other
+msgid "Other"
+msgstr "Khác"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__out_zone_price
+msgid "Out zone price"
+msgstr "Giá ngoài vùng"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_package_menu
+msgid "Package"
+msgstr "Gói"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+msgid "Package Type"
+msgstr "Loại gói"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Parameters are invalid!"
+msgstr "Các thông số không hợp lệ!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.parcel_unit_action
+#: model:ir.ui.menu,name:share_van_order.parcel_unit
+msgid "Parcel unit"
+msgstr "Đơn vị bưu kiện"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__parity_price
+msgid "Parity price"
+msgstr "Giá ngang bằng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_vehicle_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_weight_fee_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.size_standard_tree
+msgid "Parking point"
+msgstr "Điểm đậu xe"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__pay_check
+msgid "Pay check"
+msgstr "Thanh toán séc"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__phone
+msgid "Phone"
+msgstr "Điện thoại"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__4
+msgid "Pick up fail"
+msgstr "Lấy hàng không thành công"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__point
+msgid "Point"
+msgstr "Điểm"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__point_expiration_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__point_expiration_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__point_expiration_date
+msgid "Point expiration date"
+msgstr "Ngày hết hạn điểm"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__staff_type
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__staff_type
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__staff_type
+msgid "Position"
+msgstr "Vị trí"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_view_search
+msgid "Price"
+msgstr "Giá"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.open_form_price_quotation
+#: model:ir.model,name:share_van_order.model_sharevan_price_quotation
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_price_quotation
+msgid "Price Quotation"
+msgstr "Báo giá"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__name
+msgid "Price Quotation Name"
+msgstr "Tên báo giá"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__price_actual
+msgid "Price actual"
+msgstr "Giá thực tế"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_tree
+msgid "Pricing for depot"
+msgstr "Định giá cho kho"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__problem_image
+msgid "Problem image"
+msgstr "Hình ảnh sự cố"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_product_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_product
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_type_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_view_tree
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_product_type_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_product_type
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_type_view_tree
+msgid "Product Type"
+msgstr "Loại sản phẩm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_type_view_form
+msgid "Product type"
+msgstr "Loại sản phẩm"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__promotion_code
+msgid "Promotion code"
+msgstr "Mã khuyến mãi"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__province
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__province_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__province_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__province_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__province_id
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "Province"
+msgstr "Tỉnh"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__qr_code
+msgid "QR Code"
+msgstr "Mã QR"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__rating_count
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__rating_count
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__rating_count
+#: model:ir.ui.menu,name:share_van_order.sharevan_rating_config
+msgid "Rating"
+msgstr "Xếp hạng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_rating_badges_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_rating_badges
+msgid "Rating badges"
+msgstr "Các huy hiệu xếp hạng"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_rating_driver_badges
+msgid "Rating driver badges"
+msgstr "Đánh giá huy hiệu trình điều khiển"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__rating_point
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__rating_point
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__rating_point
+msgid "Rating point"
+msgstr "Điểm đánh giá"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__reason
+msgid "Reason"
+msgstr "Lý do"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__receive_type
+msgid "Receive Type"
+msgstr "Loại nhận"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__receive_type__0
+msgid "Received"
+msgstr "Đã nhận"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__recurrent_code
+msgid "Recurrent code"
+msgstr "Mã lặp lại"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_recurrent
+msgid "Recurrent description"
+msgstr "Mô tả lặp lại"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_form
+msgid "Register information"
+msgstr "Đăng ký thông tin"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__release_type
+msgid "Release type"
+msgstr "Loại phát hành"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__2
+msgid "Retry"
+msgstr "Thử lại"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__3
+msgid "Return"
+msgstr "Trở về"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_reward_point
+msgid "Reward point"
+msgstr "Điểm thưởng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_export__routing_package_plan
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__routing_package_plan
+msgid "Routing Package plan"
+msgstr "Gói định tuyến kế hoạch"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.share_van_routing_plan_day_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_routing_plan_day
+msgid "Routing Plan Day"
+msgstr "Mã định tuyến"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__routing_plan_code
+msgid "Routing code"
+msgstr "Ngày kế hoạch định tuyến"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__routing_plan_day_ids
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_routing_plan_day_view_tree
+msgid "Routing plan day"
+msgstr "Ngày kế hoạch định tuyến được đánh giá!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "Routing plan day be evaluated !"
+msgstr "Kế hoạch định tuyến ngày không lối thoát!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "Routing plan day not exits !"
+msgstr "Kế hoạch định tuyến ngày không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_rating
+msgid "Routing rate driver"
+msgstr "Trình điều khiển tốc độ định tuyến"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__routing_scan
+msgid "Routing scan"
+msgstr "Quét định tuyến"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_country__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_distance_fee__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_weight_fee__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_zone_province__status__running
+msgid "Running"
+msgstr "Đang chạy"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__sharevan_manager
+msgid "SHAREVAN_MANAGER"
+msgstr "SHAREVAN_MANAGER"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__sharevan_stockman
+msgid "SHAREVAN_STOCKMAN"
+msgstr "SHAREVAN_Stockman"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__sbl_type__so
+msgid "SO"
+msgstr "SO"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_tree
+msgid "SOS"
+msgstr "SOS"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_form
+msgid "Save to file"
+msgstr "Lưu vào tệp"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__sbl_type
+msgid "Sbl type"
+msgstr "Loại Sbl"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+msgid "Scan distance"
+msgstr "Quét khoảng cách"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_search
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_rating_badges_search
+msgid "Search rating"
+msgstr "Xếp hạng tìm kiếm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_reward_point_search
+msgid "Search reward point"
+msgstr "Tìm kiếm điểm thưởng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_awards_level_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_title_award_search
+msgid "Search title award"
+msgstr "Giải thưởng tiêu đề tìm kiếm"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Select bill package"
+msgstr "Chọn gói hóa đơn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_form
+msgid "Send e-mail"
+msgstr "Gửi e-mail"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_search
+msgid "Sent date"
+msgstr "Ngày gửi"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Service Code"
+msgstr "Mã dịch vụ"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Service Name"
+msgstr "Tên dịch vụ"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_service_type_view_action
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day_detail__service_name
+#: model:ir.ui.menu,name:share_van_order.sharevan_service_type
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_tree
+msgid "Service Type"
+msgstr "Loại dịch vụ"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_service_distance_fee_action
+msgid "Service distance fee"
+msgstr "Phí khoảng cách dịch vụ"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_service_distance_fee
+msgid "Service fee"
+msgstr "Phí dịch vụ"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+msgid "Service type's name"
+msgstr "Tên của loại dịch vụ"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_service_weight_fee_action
+msgid "Service weight fee"
+msgstr "Phí trọng lượng dịch vụ"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_temp
+msgid "Share Van Chat"
+msgstr "Share Van Chat"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_recurrent_view_action
+msgid "Share Van Recurrent"
+msgstr "Share Van Recurrent"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_driver_received
+msgid "ShareVan driver received"
+msgstr "Đã nhận được trình điều khiển ShareVan"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_driver
+msgid "Sharevan Bidding Driver"
+msgstr "Trình điều khiển đấu thầu Sharevan"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_lading_detail
+msgid "Sharevan Bill of Lading detail"
+msgstr "Chi tiết vận đơn Sharevan"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_career_action
+msgid "Sharevan Company Career"
+msgstr "Công ty Sharevan Career"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_service_type
+msgid "Sharevan Service Type"
+msgstr "Loại dịch vụ Sharevan"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.action_sharevan_driver_received
+msgid "Sharevan drive revenue received"
+msgstr "Doanh thu từ ổ Sharevan nhận được"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.action_sharevan_driver_assign_routing
+msgid "Sharevan driver assign routing"
+msgstr "Sharevan driver gán định tuyến"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_driver_sos_action
+msgid "Sharevan driver sos"
+msgstr "Sharevan driver sos"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_8
+msgid "Sharing DC"
+msgstr "Chia sẻ DC"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__fee
+msgid "Shipment fee"
+msgstr "Phí gửi hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__1
+msgid "Shipping"
+msgstr "Vận chuyển"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_award_rel
+msgid "Show all awards of company"
+msgstr "Hiển thị tất cả các giải thưởng của công ty"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Show all records which has next action date is before today"
+msgstr "Hiển thị tất cả các bản ghi có ngày hành động tiếp theo là trước ngày hôm nay"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_bidding_notification_user_rel
+#: model:ir.model,name:share_van_order.model_sharevan_notification_user_rel
+msgid "Show the individual receiver and if they have read or not"
+msgstr "Hiển thị từng người nhận và xem họ đã đọc hay chưa"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.size_standard_action
+#: model:ir.ui.menu,name:share_van_order.size_standard
+msgid "Size standard"
+msgstr "Tiêu chuẩn kích thước"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.size_standard_form
+msgid "Size standard  Details"
+msgstr "Chi tiết kích thước tiêu chuẩn"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Some thing wrong when create cargo!"
+msgstr "Một số điều sai khi tạo hàng hóa!"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__1
+msgid "Sos"
+msgstr "Sos"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.staff_config
+msgid "Staff Config"
+msgstr "Cấu hình nhân viên"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.staff_type_action
+#: model:ir.model,name:share_van_order.model_res_staff_type
+#: model:ir.ui.menu,name:share_van_order.staff_type
+#: model_terms:ir.ui.view,arch_db:share_van_order.staff_type_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.staff_type_tree
+msgid "Staff Type"
+msgstr "Loại nhân viên"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "Star rating must be less than 5 and greater than 0 !"
+msgstr "Xếp hạng sao phải nhỏ hơn 5 và lớn hơn 0!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Start Check"
+msgstr "Bắt đầu kiểm tra"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__start_date
+msgid "Start Date"
+msgstr "Ngày bắt đầu"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.longhaul_bill_lading_detail_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_tree
+msgid "State"
+msgstr "Nhà nước"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_country__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__status_routing
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__status
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__street
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__street
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__street
+msgid "Street"
+msgstr "Địa chỉ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__street2
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__street2
+msgid "Street2"
+msgstr "Địa chỉ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__subscribe_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__subscribe_id
+#: model:ir.ui.menu,name:share_van_order.sharevan_subscribe
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Subscribe"
+msgstr "Theo dõi"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_subscribe
+msgid "Subscribe the bill of lading regularly"
+msgstr "Theo dõi vận đơn thường xuyên"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__surcharge
+msgid "Surcharge"
+msgstr "Phụ phí"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__4
+msgid "System not satisfy"
+msgstr "Hệ thống không thỏa mãn"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "SĐT:"
+msgstr "SĐT:"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_amount
+msgid "Temporary amount"
+msgstr "Số tiền tạm thời"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_partner__user_id
+#: model:ir.model.fields,help:share_van_order.field_res_users__user_id
+msgid "The internal user in charge of this contact."
+msgstr "Tài khoản người dùng nội bộ có liên kết với liên lạc này."
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "The phone number is wrong format.(eg. 0123456789)"
+msgstr "Số điện thoại bị sai định dạng. (ví dụ: 0123456789)"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "The phone number must be equals 11 numbers"
+msgstr "Số điện thoại phải bằng 11 số"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__2
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__3
+msgid "Thứ ba"
+msgstr "Thứ ba"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__6
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__7
+msgid "Thứ bảy"
+msgstr "Thứ bảy"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__1
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__2
+msgid "Thứ hai"
+msgstr "Thứ hai"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__4
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__5
+msgid "Thứ năm"
+msgstr "Thứ năm"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__5
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__6
+msgid "Thứ sáu"
+msgstr "Thứ sáu"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__3
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__4
+msgid "Thứ tư"
+msgstr "Thứ tư"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__title
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__title
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Title"
+msgstr "Xưng hô"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_title_award_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_title_award
+msgid "Title award"
+msgstr "Giải thưởng danh hiệu"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__toD
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__toW
+msgid "To"
+msgstr "Tới"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__to_date
+msgid "To Date"
+msgstr "Đến nay"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.longhaul_bill_lading_detail_tree
+msgid "To Depot"
+msgstr "Đến kho"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+msgid "To Distance"
+msgstr "Tới Khoảng cách"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "To Weight"
+msgstr "To Weight"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Today Activities"
+msgstr "Hoạt động hôm nay"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__tolls
+msgid "Tolls"
+msgstr "Phí cầu đường"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.tonnage_vehicle_action
+#: model:ir.ui.menu,name:share_van_order.tonnage_vehicle
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_tonnage_vehicle_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.tonnage_vehicle_form
+msgid "Tonnage Vehicle"
+msgstr "Xe tải trọng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Total"
+msgstr "Tổng số"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__total_point
+msgid "Total Point"
+msgstr "Tổng điểm"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_parcel
+msgid "Total package"
+msgstr "Tổng gói"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+msgid "Total time"
+msgstr "Tổng thời gian"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_volume
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__total_volume
+msgid "Total volume"
+msgstr "Tổng khối lượng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_weight
+msgid "Total weight"
+msgstr "Tổng trọng lượng"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_46
+msgid "Transport operator"
+msgstr "Nhà điều hành vận tải"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__4
+msgid "Transportation company"
+msgstr "Công ty vận tải"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__trouble_type
+msgid "Trouble type"
+msgstr "Loại sự cố"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__5
+msgid "Truck Group"
+msgstr "Nhóm xe tải"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_bill_routing__cancel_check
+msgid "True: DLP employee cancel, False: Customer cancel"
+msgstr "Đúng: Nhân viên DLP hủy bỏ, Sai: Khách hàng hủy"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_depot_goods__type
+msgid "Type"
+msgstr "Loại"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__type
+msgid "Type Package"
+msgstr "Loại gói"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__unit
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__unit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Unit"
+msgstr "Đơn vị"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_distance_unit
+msgid "Unit measuring distance"
+msgstr "Đơn vị đo khoảng cách"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_weight_unit
+msgid "Unit measuring weight"
+msgstr "Đơn vị đo khối lượng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Unit system config"
+msgstr "Cấu hình hệ thống đơn vị"
+
+#. module: share_van_order
+#: model:res.groups,name:share_van_order.share_van_order_group_user
+msgid "User"
+msgstr "Người dùng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.open_form_employee
+msgid "User Info"
+msgstr "Thông tin người dùng"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "User does not exist !"
+msgstr "Người dùng không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "User does not exist!"
+msgstr "Người dùng không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "User does not existed!"
+msgstr "Người dùng không tồn tại!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "User id not found!"
+msgstr "Không tìm thấy id người dùng!"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_customer
+msgid "User information"
+msgstr "Thông tin người dùng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__user_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__user_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__user_id
+msgid "User login from app"
+msgstr "Đăng nhập người dùng từ ứng dụng"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "User not does existed!"
+msgstr "Người dùng không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_users
+msgid "Users"
+msgstr "Người dùng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__vat
+msgid "VAT(%)"
+msgstr "VAT(%)"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__vat
+msgid "Vat"
+msgstr "Vat"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_fleet_vehicle
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_form_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Vehicle"
+msgstr "Phương tiện"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__vehicle_supply
+msgid "Vehicle Supply"
+msgstr "Cung cấp phương tiện"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.share_van_vehicle_action
+msgid "Vehicles"
+msgstr "Xe cộ"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_awards_level__vendor_id
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_45
+msgid "Vendor"
+msgstr "Nhà cung cấp"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_type__vendor_service_code
+msgid "Vendor service code"
+msgstr "Mã dịch vụ của nhà cung cấp"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.volume_unit_action
+#: model:ir.ui.menu,name:share_van_order.volume_unit
+msgid "Volume unit"
+msgstr "Đơn vị âm lượng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__3
+msgid "Waiting"
+msgstr "Đang chờ"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__5
+msgid "Waiting confirm"
+msgstr "Đang chờ xác nhận"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__ward
+msgid "Ward"
+msgstr "Phường"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_warehouse_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_warehouse
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Warehouse"
+msgstr "Kho hàng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Warehouse Name"
+msgstr "Tên nhà kho"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_tree
+msgid "Warehouse Service"
+msgstr "Dịch vụ kho hàng"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__warehouse_supply
+msgid "Warehouse Supply"
+msgstr "Cung cấp kho hàng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Warehouse service"
+msgstr "Dịch vụ kho hàng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_warehouse_service_view_action
+msgid "Warehouse services"
+msgstr "Dịch vụ kho bãi"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__warehouse_ids
+msgid "Warehouses"
+msgstr "Kho hàng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.warning_type_action
+#: model:ir.model,name:share_van_order.model_sharevan_warning_type
+#: model:ir.ui.menu,name:share_van_order.sharevan_warning_type
+msgid "Warning type"
+msgstr "Loại cảnh báo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Warning: Maintenance low level"
+msgstr "Cảnh báo: Bảo trì mức thấp"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__week_choose
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__week_choose
+msgid "Week choose"
+msgstr "Chọn tuần"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__net_weight
+msgid "Weight level change price limit"
+msgstr "Giới hạn giá thay đổi mức trọng lượng"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.weight_unit_action
+#: model:ir.ui.menu,name:share_van_order.weight_unit
+msgid "Weight unit"
+msgstr "Đơn vị trọng lượng"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__receive_type__1
+msgid "Withdrawal"
+msgstr "Rút tiền"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Write here any other information"
+msgstr "Viết vào đây bất kỳ thông tin nào khác"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "You are not allow rating for driver !"
+msgstr "Bạn không cho phép đánh giá trình điều khiển!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid ""
+"You can not received item because bidding order number is not approved!"
+msgstr ""
+"Bạn không thể nhận được hàng vì số thứ tự đấu thầu không được chấp thuận!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid ""
+"You cannot confirm return order number because the bidding order number is "
+"not approved!"
+msgstr ""
+"Bạn không thể xác nhận số đơn đặt hàng trả lại vì số đơn đặt giá thầu là"
+"không được chấp thuận!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "You must update confirm, not create!"
+msgstr "Bạn phải cập nhật xác nhận, không phải tạo!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__zip
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__zip
+msgid "Zip"
+msgstr "Mã bưu điện"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_zone
+msgid "Zone"
+msgstr "Khu"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_zone_price
+msgid "Zone Price"
+msgstr "Giá khu vực"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_zone_province
+msgid "Zone province"
+msgstr "Vùng tỉnh"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_form
+msgid "ZonePrice"
+msgstr "ZonePrice"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__company_award__status__1
+msgid "active"
+msgstr "hoạt động"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_warehouse__areaInfo
+msgid "areaInfo"
+msgstr "areaInfo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_assign_routing_form
+msgid "attach_File"
+msgstr "Tập tin đính kèm"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_bidding_channel
+msgid "bidding channel"
+msgstr "kênh đấu thầu"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "bidding_order_id can not null"
+msgstr "bid_order_id can not null"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "bidding_order_id can not null!"
+msgstr "thầu_order_id không thể null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "bidding_package_id can not null!"
+msgstr "bid_package_id can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "bidding_return_id parameter can not null!"
+msgstr "Tham số bid_return_id không thể null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "bidding_vehicle_id can not null"
+msgstr "bid_vehicle_id can not null"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "bidding_vehicle_ids is null!"
+msgstr "bid_vehicle_ids is null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "biddng_id parameter can not null!"
+msgstr "Tham số biddng_id can’t null!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_lading
+msgid "bill of lading"
+msgstr "vận đơn"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_order_package
+msgid "bill order package description"
+msgstr "mô tả gói đặt hàng hóa đơn"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package
+msgid "bill package"
+msgstr "gói hóa đơn"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package_routing_plan
+msgid "bill package routing by plan "
+msgstr "định tuyến gói hóa đơn theo kế hoạch"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package_routing_export
+msgid "bill package routing when export"
+msgstr "định tuyến gói hóa đơn khi xuất"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package_routing_import
+msgid "bill package routing when import"
+msgstr "định tuyến gói hóa đơn khi nhập khẩu"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_routing
+msgid "bill routing"
+msgstr "định tuyến hóa đơn"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_service
+msgid "bill service"
+msgstr "dịch vụ hóa đơn"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_cargo
+msgid "cargo"
+msgstr "hàng hóa"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_tree
+msgid "company_id Request"
+msgstr "Yêu cầu company_id"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_career
+msgid "customer career"
+msgstr "nghề nghiệp của khách hàng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+msgid "customer_type"
+msgstr "customer_type"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__company_award__status__0
+msgid "deleted"
+msgstr "đã xóa"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_search
+msgid "depot"
+msgstr "kho"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_distance_compute
+msgid "distance compute"
+msgstr "máy tính khoảng cách"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "e.g. NVBH"
+msgstr "ví dụ: NVBH"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+msgid "employee"
+msgstr "nhân viên"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_employee_warehouse
+msgid "employee warehouse calendar"
+msgstr "lịch kho nhân viên"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__extra_weight_price
+msgid "extra weight per weight cost"
+msgstr "chi phí thêm trọng lượng cho mỗi trọng lượng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.distance_unit_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.distance_unit_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_distance_fee_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_distance_fee_kanban
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_distance_fee_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_weight_fee_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_subscribe_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.weight_unit_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.weight_unit_tree
+msgid "fee"
+msgstr "phí"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_hub
+msgid "hub"
+msgstr "trung tâm"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "id paramater can not null!"
+msgstr "id paramater can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "license_plate does not existed!"
+msgstr "license_plate không tồn tại!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__name
+msgid "name"
+msgstr "tên"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__parity_price
+msgid "parity price with express package only"
+msgstr "Giá ngang bằng chỉ với gói cấp tốc"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_product_package_type
+msgid "product package type"
+msgstr "loại gói sản phẩm"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_product_type
+msgid "product type"
+msgstr "loại sản phẩm"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_partner_log
+msgid "res.partner.log"
+msgstr "res.partner.log"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_routing_plan_day_detail
+msgid "routing plan day detail"
+msgstr "chi tiết ngày kế hoạch định tuyến"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_routing_plan_day_service
+msgid "routing plan day service"
+msgstr "dịch vụ ngày kế hoạch định tuyến"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_awards_level
+msgid "sharevan awards level"
+msgstr "cấp giải thưởng sharevan"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_reward_point_action
+msgid "sharevan reward point"
+msgstr "điểm thưởng sharevan"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_size_standard
+msgid "size standard for cargo"
+msgstr "tiêu chuẩn kích thước cho hàng hóa"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_awards_level_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_rating_badges_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_reward_point_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_title_award_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_search
+msgid "status"
+msgstr "trạng thái"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_title_award
+msgid "title award driver"
+msgstr "trình điều khiển giải thưởng tiêu đề"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__inzone_num
+msgid "total bill of lading type inzone"
+msgstr "tổng số vận đơn loại inzone"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__outzone_num
+msgid "total bill of lading type outzone"
+msgstr "tổng vận đơn loại outzone"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+msgid "type"
+msgstr "loại"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "user_id is of type int !"
+msgstr "user_id thuộc loại int!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_warehouse
+msgid "warehouse"
+msgstr "nhà kho"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__extra_weight_cost
+msgid "weight cost unit"
+msgstr "đơn vị chi phí trọng lượng"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_awards_level_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_rating_badges_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_reward_point_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_title_award_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_tree
+msgid "zone"
+msgstr "vùng"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_zone_price
+msgid "zone price"
+msgstr "giá khu vực"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Địa chỉ:"
+msgstr "Địa chỉ:"

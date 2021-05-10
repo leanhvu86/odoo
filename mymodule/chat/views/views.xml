@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+
+
+        <record id="view_temp_chat" model="ir.ui.view">
+            <field name="name">Chat</field>
+            <field name="model">sharevan.temp</field>
+            <field name="arch" type="xml">
+                <chat  library="geometry" string="Chat" class="o_map_container"
+                     model="chat" create="false"
+                     colors="">
+                    <field name="name"/>
+                </chat>
+            </field>
+        </record>
+
+
+        <record id='sharevan_temp_view_action' model='ir.actions.act_window'>
+            <field name="name">Mingalaba Chat</field>
+            <field name="res_model">sharevan.temp</field>
+            <field name="view_mode">chat</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new hub
+                </p>
+                <p>
+                    Here you can add hub
+                </p>
+            </field>
+        </record>
+        <menuitem name="Mingalaba" id="chat_menu_root" sequence="1"/>
+          <menuitem name="Chat" id="chat_menu_01" parent="chat_menu_root"
+                  action="sharevan_temp_view_action" sequence="915265"/>
+    </data>
+</odoo>

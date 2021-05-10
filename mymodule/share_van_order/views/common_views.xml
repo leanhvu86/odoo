@@ -1,0 +1,163 @@
+<odoo>
+    <data>
+        <menuitem name="Vendor" id="sharevan_order_menu_45" parent="sharevan_order_menu_3"
+                  sequence="50"
+                  action="base_next.open_form_vendor"/>
+
+        <menuitem name="Transport operator" id="sharevan_order_menu_46" parent="sharevan_order_menu_root"
+                  sequence="51"
+                  action="share_van_order.share_van_vehicle_action"/>
+
+        <record id='sharevan_driver_assign_routing_form' model='ir.ui.view'>
+            <field name="name">sharevan.driver.assign.routing.form</field>
+            <field name="model">sharevan.driver.assign.routing</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <notebook>
+                            <page name="Infomation" string="Infomation">
+                                <!--                            <div class="oe_title">-->
+                                <!--                                <h1>-->
+                                <!--                                    <field name="assignation_log_code" readonly="1"/>-->
+                                <!--                                </h1>-->
+                                <!--                            </div>-->
+                                <group col="2">
+                                    <group>
+                                        <field name="from_area_id"/>
+                                        <field name="from_address"/>
+                                        <field name="from_date_assign"/>
+                                        <field name="driver_id"/>
+                                        <field name="available_capacity"/>
+                                    </group>
+                                    <group>
+                                        <field name="to_area_id"/>
+                                        <field name="to_address"/>
+                                        <field name="to_date_assign"/>
+                                        <field name="vehicle_id"/>
+                                        <field name="available_weight"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="attach_File" string="attach_File">
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='sharevan_driver_assign_routing_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.driver.assign.routing.tree</field>
+            <field name="model">sharevan.driver.assign.routing</field>
+            <field name="arch" type="xml">
+                <tree string="Depot">
+                    <field name="from_area_id"/>
+                    <!--                    <field name="from_address"/>-->
+                    <field name="to_area_id"/>
+                    <!--                    <field name="to_address"/>-->
+                    <field name="to_date_assign"/>
+                    <field name="vehicle_id"/>
+                    <field name="available_weight"/>
+                    <field name="from_date_assign"/>
+                    <field name="driver_id"/>
+                    <field name="available_capacity"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--        <record id="sharevan_driver_assign_routing_search_s" model="ir.ui.view">-->
+        <!--            <field name="name">sharevan.driver.assign.routing.search</field>-->
+        <!--            <field name="model">sharevan.driver.assign.routing.log</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="Driver Infomation">-->
+        <!--                    <field name="from_area_id"/>-->
+        <!--                    <field name="from_address"/>-->
+        <!--                    <field name="from_date_assign"/>-->
+        <!--                    <field name="driver_id"/>-->
+        <!--                    <field name="available_capacity"/>-->
+        <!--                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>-->
+        <!--                    &lt;!&ndash;                <group expand="0" string="Group By">&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                    <filter name="groupby_assign_log" context="{'group_by' : 'name'}" string="Assignation's name"/>&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                </group>&ndash;&gt;-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+
+        <record id='action_sharevan_driver_assign_routing' model='ir.actions.act_window'>
+            <field name="name">Sharevan driver assign routing</field>
+            <field name="res_model">sharevan.driver.assign.routing</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a sharevan driver assign routing
+                </p>
+                <p>
+                    Here you can add sharevan driver assign routing
+                </p>
+            </field>
+        </record>
+
+
+        <record id="sequence_sharevan_driver_assign_routing" model="ir.sequence">
+            <field name="name">Sharevan driver assign routing</field>
+            <field name="code">sharevan.driver.assign.routing</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">DAR</field>
+            <field name="padding">6</field>
+        </record>
+        <record id="sequence_self_" model="ir.sequence">
+            <field name="name">Driver bill</field>
+            <field name="code">self.sharevan.driver.received</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">DB</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="sharevan_driver_received_search" model="ir.ui.view">
+            <field name="name">sharevan.driver.received.search</field>
+            <field name="model">sharevan.driver.received</field>
+            <field name="arch" type="xml">
+                <search string="Driver Infomation">
+                    <field name="driver_level_id"/>
+                    <field name="percent_commission"/>
+                    <field name="coupon_id"/>
+                    <field name="discount_amount"  widget="monetary"/>
+                    <field name="amount"/>
+                    <field name="total_amount"/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_driver" context="{'group_by' : 'driver_id'}" string="Driver"/>
+                        <filter string="Created Date" name="createddate" context="{'group_by': 'create_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id='action_sharevan_driver_received' model='ir.actions.act_window'>
+            <field name="name">Sharevan drive revenue received</field>
+            <field name="res_model">sharevan.driver.received</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a sharevan driver received revenue
+                </p>
+                <p>
+                    Here you can add sharevan driver received revenue
+                </p>
+            </field>
+        </record>
+        <menuitem name="Market place" id="sharevan_order_menu_101" parent="sharevan_order_menu_root"
+                  sequence="100123"/>
+        <menuitem name="Driver assign routing" id="sharevan_order_menu_130" parent="sharevan_order_menu_101"
+                  sequence="155"
+                  action="action_sharevan_driver_assign_routing"/>
+        <menuitem name="Driver received" id="sharevan_order_menu_131" parent="sharevan_order_menu_101"
+                  sequence="100001"
+                  action="action_sharevan_driver_received"/>
+    </data>
+</odoo>

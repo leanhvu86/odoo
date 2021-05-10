@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id='fleet_param_group_form' model='ir.ui.view'>
+        <field name="name">fleet.param.group.form</field>
+        <field name="model">fleet.param.group</field>
+        <field name="arch" type="xml">
+            <form string="Param Group">
+                <sheet>
+                    <group>
+                        <field name="ord"></field>
+                        <field name="name"></field>
+                        <field name="group_code"></field>
+                        <field name="description"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id='fleet_param_group_tree' model='ir.ui.view'>
+        <field name="name">fleet.param.group.tree</field>
+        <field name="model">fleet.param.group</field>
+        <field name="arch" type="xml">
+            <tree string="Param Group">
+                <field name="group_code"></field>
+                <field name="name"></field>
+                <field name="description"></field>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id='flee_param_group_search' model='ir.ui.view'>
+        <field name="name">fleet.param.group.search</field>
+        <field name="model">fleet.param.group</field>
+        <field name="arch" type="xml">
+            <search string="Param Group" >
+                <field name="group_code"></field>
+                <field name="name"></field>
+            </search>
+        </field>
+    </record>
+    <record id="action_fleet_param_group" model="ir.actions.act_window">
+            <field name="name">Param Group</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.param.group</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new model
+              </p>
+            </field>
+    </record>
+<!--    <menuitem name="AppParam Manager" parent="menu_root" sequence="117" id="fleet_app_param_manager" groups="fleet_group_user" />-->
+<!--    <menuitem name="Param Group" parent="fleet_app_param_manager" sequence="1" id="fleet_param_group" action="action_fleet_param_group" groups="fleet_group_user" />-->
+
+    <record id='fleet_app_param_form' model='ir.ui.view'>
+        <field name="name">fleet.app.param.form</field>
+        <field name="model">fleet.app.param</field>
+        <field name="arch" type="xml">
+            <form string="App Param">
+                <sheet>
+                    <group>
+                        <field name="group_id"></field>
+                        <field name="ord"></field>
+                        <field name="name"></field>
+                        <field name="param_code"></field>
+                        <field name="description"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id='fleet_app_param_tree' model='ir.ui.view'>
+        <field name="name">fleet.app.param.tree</field>
+        <field name="model">fleet.app.param</field>
+        <field name="arch" type="xml">
+            <tree string="App Param">
+                <field name="name"></field>
+                <field name="param_code"></field>
+            </tree>
+        </field>
+    </record>
+    <record id='fleet_app_param_search' model='ir.ui.view'>
+        <field name="name">fleet.app.param.search</field>
+        <field name="model">fleet.app.param</field>
+        <field name="arch" type="xml">
+            <search string="App Param" >
+                <field name="name"></field>
+                <field name="param_code"></field>
+            </search>
+        </field>
+    </record>
+    <record id="action_fleet_app_param" model="ir.actions.act_window">
+            <field name="name">App Param</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.app.param</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new model
+              </p>
+            </field>
+    </record>
+<!--    <menuitem name="App Param" parent="fleet_app_param_manager" sequence="2" id="fleet_app_param" action="action_fleet_app_param" groups="fleet_group_user" />-->
+    <!-- app param values   -->
+    <record id='fleet_app_param_value_form' model='ir.ui.view'>
+        <field name="name">fleet.app.param.value.form</field>
+        <field name="model">fleet.app.param.value</field>
+        <field name="arch" type="xml">
+            <form string="App Param Values">
+                <sheet>
+                    <group>
+                        <field name="param_id"></field>
+                        <field name="ord"></field>
+                        <field name="param_code"></field>
+                        <field name="param_value"></field>
+                        <field name="description"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id='fleet_app_param_value_tree' model='ir.ui.view'>
+        <field name="name">fleet.app.param.value.tree</field>
+        <field name="model">fleet.app.param.value</field>
+        <field name="arch" type="xml">
+            <tree string="App Param Values">
+                <field name="param_code"></field>
+                <field name="param_value"></field>
+            </tree>
+        </field>
+    </record>
+    <record id='fleet_app_param_value_search' model='ir.ui.view'>
+        <field name="name">fleet.app.param.value.search</field>
+        <field name="model">fleet.app.param.value</field>
+        <field name="arch" type="xml">
+            <search string="App Param Value" >
+                <field name="param_code"></field>
+                <field name="param_value"></field>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_param_id" context="{'group_by': 'param_id'}" string="AppParam"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_fleet_app_param_value" model="ir.actions.act_window">
+            <field name="name">App Param Values</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.app.param.value</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{"search_default_groupby_param_id" : True}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new model
+              </p>
+            </field>
+    </record>
+<!--    <menuitem name="App Param Values" parent="fleet_configuration" sequence="117" id="fleet_app_param_values" action="action_fleet_app_param_value" groups="fleet_group_user" />-->
+
+
+</odoo>

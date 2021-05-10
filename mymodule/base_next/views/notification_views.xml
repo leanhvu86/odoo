@@ -1,0 +1,205 @@
+<odoo>
+    <data>
+        <record id="sharevan_notification_form" model="ir.ui.view">
+            <field name="name">sharevan.notification.form</field>
+            <field name="model">sharevan.notification</field>
+            <field name="arch" type="xml">
+                <form string="Notification" edit="false" delete="false">
+                    <sheet>
+                        <field name="image_256" widget="image" class="oe_avatar"/>
+                        <group col="4">
+                            <field name="title"/>
+                            <field name="type" widget="Selection" invisible="1"/>
+                            <field name="click_action_type" widget="Selection"/>
+                        </group>
+                        <group>
+                            <field name="content"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="description" style='min-height:150px; min-width:600px;'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sharevan_routing_request_form" model="ir.ui.view">
+            <field name="name">sharevan.routing.request.form</field>
+            <field name="model">sharevan.routing.request</field>
+            <field name="arch" type="xml">
+                <form string="Notification" edit="false" create="false">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="bill_routing_id" readonly="1"/>
+                                <field name="routing_plan_day_id" readonly="1"/>
+                                <field name="date_plan"/>
+                                <field name="routing_vehicle_id"/>
+<!--                                <field name="retry_other_day"/>-->
+                                <field name="hidden_end_button" invisible="1"/>
+                                <field name="hidden_start_button" invisible="1"/>
+                                <field name="hidden_retry_button" invisible="1"/>
+                                <field name="hidden_return_button" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="retry_date"/>
+                                <field name="type" invisible="1"/>
+                                <field name="return_date" attrs="{'invisible': [('type', '=', True)]}"/>
+                                <field name="on_request_by_user" readonly="1"/>
+                                <field name="claim_type"/>
+                            </group>
+                        </group>
+                        <field name="reason"/>
+                        <group col="4">
+                            <group>
+                                <button name="on_request_check_end"
+                                        class="btn btn-danger"
+                                        attrs="{'invisible': [('hidden_end_button', '=', True)]}"
+                                        string="Cancel check bill"
+                                        type="object"
+                                        confirm="Are you sure you want to cancel check this bill?"
+                                />
+
+
+                            </group>
+                            <group>
+                                <button name="cancel_routing_send"
+                                        class="btn btn-danger"
+                                        attrs="{'invisible': [('hidden_end_button', '=', True)]}"
+                                        string="Cancel today"
+                                        type="object"
+                                />
+                                <button name="on_request_check_start"
+                                        class="btn btn-primary"
+                                        attrs="{'invisible': [('hidden_start_button', '=', True)]}"
+                                        string="Start Check"
+                                        type="object"
+                                />
+
+                            </group>
+                            <group>
+                                <button name="on_retry_bill"
+                                        class="btn btn-info"
+                                        attrs="{'invisible': [('hidden_retry_button', '=', True)]}"
+                                        string="Retry bill"
+                                        type="object"
+                                        confirm="Are you sure you want to send retry bill?"
+                                />
+                            </group>
+                            <group>
+                                <button name="on_return_bill"
+                                        class="btn btn-warning"
+                                        attrs="{'invisible': [('hidden_return_button', '=', True)]}"
+                                        string="Return bill"
+                                        type="object"
+                                        confirm="Are you sure you want to send return bill?"
+                                />
+                                 <button name="check_out_request_for_normal"
+                                        class="btn btn-primary"
+                                        attrs="{'invisible': [('hidden_end_button', '=', True)]}"
+                                        string="Continue"
+                                        type="object"
+                                />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="note" style='min-height:150px; min-width:600px;'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_notification_tree" model="ir.ui.view">
+            <field name="name">sharevan.notification.tree</field>
+            <field name="model">sharevan.notification</field>
+            <field name="arch" type="xml">
+                <tree string="Notification" default_order='id desc'>
+                    <field name="title"/>
+                    <field name="content"/>
+                    <field name="type"/>
+                    <field name="sent_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sharevan_notification_search" model="ir.ui.view">
+            <field name="name">sharevan.notification.search</field>
+            <field name="model">sharevan.notification</field>
+            <field name="arch" type="xml">
+                <search string="Notification">
+                    <filter string="status" name="status" domain="[('status', '!=', 'deleted')]"/>
+                    <filter string="Sent date" name="sent_date" context="{'order_by':'id desc'}"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id='sharevan_notification_action' model='ir.actions.act_window'>
+            <field name="name">Notifications</field>
+            <field name="res_model">sharevan.notification</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_status" : 1}</field>
+            <field name="limit">20</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Notifications
+                </p>
+            </field>
+        </record>
+
+        <record id="sharevan_channel_form" model="ir.ui.view">
+            <field name="name">sharevan.channel.form</field>
+            <field name="model">sharevan.channel</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="status" widget="Selection"/>
+                            <field name="channel_code"/>
+                            <field name="channel_type"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_channel_tree" model="ir.ui.view">
+            <field name="name">sharevan.channel.tree</field>
+            <field name="model">sharevan.channel</field>
+            <field name="arch" type="xml">
+                <tree string="Notification" default_order='id desc'>
+                    <field name="name"/>
+                    <field name="status"/>
+                    <field name="channel_type"/>
+                    <field name="channel_code"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_channel_action' model='ir.actions.act_window'>
+            <field name="name">Notification channel</field>
+            <field name="res_model">sharevan.channel</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_status" : 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Notifications
+                </p>
+            </field>
+        </record>
+        <menuitem name="Notification" id="menu_users_sharevan_notification" parent="base.menu_users"
+                  action="sharevan_notification_action" sequence="10"/>
+        <menuitem name="Notification channel" id="menu_users_sharevan_channel" parent="base.menu_users"
+                  action="sharevan_channel_action" sequence="11"/>
+        <menuitem name="Country" id="menu_action_country" parent="base.menu_users"
+                  action="base.action_country" sequence="108651"/>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <data noupdate ="1">
+          <record id="sequence_self_sharevan_bill_lading" model="ir.sequence">
+            <field name="name">Driver rating badges</field>
+            <field name="code">self.sharevan.rating.badges</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">RS</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="sequence_self_title_award" model="ir.sequence">
+            <field name="name">Title award</field>
+            <field name="code">self.sharevan.title.award</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">TA</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

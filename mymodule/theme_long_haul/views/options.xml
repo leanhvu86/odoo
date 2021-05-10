@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_title" name="My title">
+        <h1>This is an HTML block</h1>
+        <h2 class="lead">And this is a subtitle</h2>
+    </template>
+</odoo>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_warehouse_map" model="ir.ui.view">
+        <field name="name">Warehouse</field>
+        <field name="model">sharevan.warehouse</field>
+        <field name="arch" type="xml">
+            <route class="o_res_partner_map" library="geometry" string="Route" lat="latitude" lng="longitude"
+                 model="warehouse"
+                 colors="">
+                <field name="name"/>
+                <field name="warehouse_code"/>
+                <field name="phone"/>
+                <field name="company_id" invisible="1"/>
+                <field name="address"/>
+                <field name="latitude" invisible="1"/>
+                <field name="longitude" invisible="1"/>
+                <field name="status"/>
+                <field name="zone_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown" t-if="!selection_mode" groups="base.group_user">
+                                <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown"
+                                   data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                    <span class="fa fa-ellipsis-v"/>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-if="widget.editable">
+                                        <a role="menuitem" type="edit" class="dropdown-item">
+                                            Edit
+                                        </a>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                            <div>
+                                <span>
+
+                                    <field name="zone_id"/>
+                                    <span class="float-right">
+                                        <field name="warehouse_code"/>
+                                    </span>
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    <field name="latitude"/>
+                                </span>
+                                <span class="float-right">
+                                    <field name="longitude"/>
+                                </span>
+                            </div>
+                            <div>
+                                <field name="address"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </route>
+        </field>
+    </record>
+
+
+    <record id="warehouse_action_map" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">route</field>
+        <field name="view_id" ref="view_warehouse_map"/>
+        <field name="act_window_id" ref="sharevan_order.sharevan_warehouse_view_action"/>
+    </record>
+<!-- For example about route in share van. You have to build route first for sure !!! -->
+</odoo>

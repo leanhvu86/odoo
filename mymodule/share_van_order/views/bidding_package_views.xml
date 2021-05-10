@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- create -->
+    <record id='bidding_package_view_form' model='ir.ui.view'>
+        <field name="name">sharevan.bidding.package.form</field>
+        <field name="model">sharevan.bidding.package</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Model">
+                <sheet>
+                    <div class="oe-title">
+                        <button name="is_publish_check"
+                                class="btn btn-primary"
+                                string="Public Bidding Package"
+                                type="object"
+                                attrs="{'invisible': ['|','|',('id', '=', False),('is_publish','=',True),('status','!=','0'),]}"
+                                confirm="Are you sure you want to public this bidding package?"
+                        />
+                        <field name="publish_time" invisible="1"></field>
+                        <field name="is_publish" invisible="1"/>
+                        <field name="time_published" class="oe_avatar" widget="count_minute"/>
+                        <field name="limit_publish_time" invisible="1"/>
+                    </div>
+                    <group col="2" string="Main information">
+                        <group>
+                            <!--                            <field name="bidding_order_id"/>-->
+                            <field name="bidding_package_number"/>
+                            <field name="from_depot_id"/>
+                            <field name="confirm_time"/>
+                            <field name="is_real" type="checkbox"/>
+                            <field name="duration_time"/>
+                        </group>
+                        <group>
+                            <field name="status"/>
+                            <field name="to_depot_id"/>
+                            <field name="countdown_time"/>
+                            <field name="price_origin" widget="monetary"/>
+                            <field name="from_latitude" readonly="1" force_save="1" invisible="1"/>
+                            <field name="from_longitude" readonly="1" force_save="1" invisible="1"/>
+                            <field name="to_latitude" readonly="1" force_save="1" invisible="1"/>
+                            <field name="to_longitude" readonly="1" force_save="1" invisible="1"/>
+                        </group>
+                    </group>
+                    <group col="2" string="Extra information">
+                        <group>
+                            <field name="price" widget="monetary"/>
+                            <field name="from_receive_time"/>
+                            <field name="to_receive_time"/>
+                        </group>
+                        <group>
+                            <field name="total_weight" attrs="{'readonly': [('is_real','=',True)]}"
+                                   widget="weight_unit"/>
+                            <field name="distance"/>
+                            <field name="from_return_time"/>
+                            <field name="to_return_time"/>
+                        </group>
+
+                    </group>
+                    <group string="List Cargo">
+                    </group>
+                    <field name="cargo_ids"
+                           widget="section_and_note_one2many"
+                           attrs="{'readonly': ['|','|',('from_depot_id', '=', False),('to_depot_id', '=', False),('is_real','=',False)],
+                           'required':[('is_real','!=', True)]}"
+                           domain="[('from_depot_id', '=',from_depot_id),('to_depot_id', '=', to_depot_id)]"
+                           context="{'default_sharevan_cargo':active_id,'default_only_with_sharevan_cargo': True}"
+                           mode="tree">
+                        <tree>
+                            <field name="from_depot_id"/>
+                            <field name="to_depot_id"/>
+                            <field name="weight" widget="weight_unit"/>
+                            <field name="price" widget="monetary"/>
+                            <field name="cargo_number" optional="hide"/>
+                            <field name="distance" optional="hide"/>
+                            <field name="size_id" optional="hide"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='bidding_package_view_tree' model='ir.ui.view'>
+        <field name="name">sharevan.bidding.package.tree</field>
+        <field name="model">sharevan.bidding.package</field>
+        <field name="arch" type="xml">
+            <tree string="Parking point">
+                <field name="id"/>
+                <field name="bidding_package_number"/>
+                <field name="status"/>
+                <field name="countdown_time"/>
+                <field name="from_depot_id"/>
+                <field name="to_depot_id"/>
+                <field name="from_return_time"/>
+                <field name="to_return_time"/>
+                <field name="price" widget="monetary"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="bidding_package_view_search" model="ir.ui.view">
+        <field name="name">sharevan.bidding.package.search</field>
+        <field name="model">sharevan.bidding.package</field>
+        <field name="arch" type="xml">
+            <search string="Bidding package">
+                <group expand="0" string="Group By">
+                    <filter string="Is real" name="group_by_is_real" domain="[]"
+                            context="{'group_by': 'is_real'}"/>
+                    <filter string="Status" name="group_by_status" domain="[]"
+                            context="{'group_by': 'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='bidding_package_action' model='ir.actions.act_window'>
+        <field name="name">Bidding Package</field>
+        <field name="res_model">sharevan.bidding.package</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_status': 1,'search_default_group_by_is_real' :
+            True,'search_default_group_by_status' : True}
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new contract
+            </p>
+            <p>
+                Manage all your contracts (leasing, insurances, etc.) with
+                their related services, costs. Odoo will automatically warn
+                you when some contracts have to be renewed.
+            </p>
+            <p>
+                Each contract (e.g.: leasing) may include several services
+                (reparation, insurances, periodic maintenance).
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Bidding Package" id="bidding_package" parent="sharevan_order_menu_9" sequence="1197498"/>
+    <menuitem name="Package" id="bidding_package_menu" parent="bidding_package"
+              action="bidding_package_action" sequence="1198498"/>
+
+</odoo>

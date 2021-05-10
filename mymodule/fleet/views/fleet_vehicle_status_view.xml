@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='fleet_vehicle_status_tree' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.status.tree</field>
+        <field name="model">fleet.vehicle.status</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="driver_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </tree>
+        </field>
+    </record>
+    <record id="fleet_vehicel_status_view_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.status.search</field>
+        <field name="model">fleet.vehicle.status</field>
+        <field name="arch" type="xml">
+            <search string="Driver Infomation">
+                <field name="name"/>
+                <field name="driver_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="date_driver_receives"/>
+                <field name="date_driver_returns"/>
+                <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_vehicle" context="{'group_by' : 'delivery_receipt_vehicles'}"
+                            string="Delivery receipt vehicles"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='fleet_vehicle_status_form' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.status.form</field>
+        <field name="model">fleet.vehicle.status</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <notebook>
+                        <page name="Infomation" string="Infomation">
+                            <div class="oe_title">
+                                <h1>
+                                    <field name="code_name" readonly="1"/>
+                                </h1>
+                            </div>
+                            <group col="2" string="Pick up and return the car">
+                                <group>
+                                    <field name="vehicle_id"/>
+                                </group>
+                                <group>
+                                    <field name="driver_id"/>
+
+                                </group>
+                                <group>
+                                    <field name="date_start"/>
+                                </group>
+                                <group>
+                                    <field name="date_end"/>
+                                </group>
+                                <group>
+                                    <field name="date_driver_receives"/>
+                                </group>
+                                <group>
+                                    <field name="date_driver_returns"/>
+                                </group>
+                                <group>
+                                    <field name="description"/>
+                                </group>
+                            </group>
+                            <field name="toogle" invisible="1"/>
+                                <button style="float:right" name="vehicle_handing"
+                                        class="btn btn-primary"
+                                        attrs="{'invisible': [('toogle', '=', False)]}"
+                                        string="Vehicle handing"
+                                        type="object"
+                                        context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                        confirm="Are you sure you want to agree to give car for driver?"
+                                />
+
+                                <button style="float:right" name="receive_the_car"
+                                        class="btn btn-primary"
+                                        attrs="{'invisible': [('toogle', '=', True)]}"
+                                        string=" Receive the car"
+                                        type="object"
+                                        context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                        confirm="Are you sure you want to agree to receive car for driver?"
+                                />
+                        </page>
+                        <page name="Detail Information" string="Detail Information">
+                            <field name = "attach_File" widget = "many2many_binary" string = "Image return vehicle" />
+                            <field name="equipment_log_line"
+                                   widget="section_and_note_one2many"
+                                   context="{'default_fleet_vehicle_assignation_log_id':active_id,'default_only_with_fleet_vehicle_assignation_log': True}"
+                                   mode="tree">
+                                <tree>
+<!--                                    <control>-->
+<!--                                        <create string="Add a equipment driver log"/>-->
+<!--                                    </control>-->
+                                    <field name="assignation_log_id"/>
+                                    <field name="equipment_id"/>
+                                    <field name="quantity_take"/>
+                                    <field name="quantity_return"/>
+                                </tree>
+                                <form string="Driver equipment log">
+                                    <sheet>
+                                        <group>
+                                            <group string="Log driver">
+                                                <field name="assignation_log_id" readonly="True" force_save="1"/>
+                                                <field name="equipment_id"/>
+                                            </group>
+                                            <group string="Quantity">
+                                                <field name="quantity_take"/>
+                                                <field name="quantity_return"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+
+    <record id='action_vehicel_status' model='ir.actions.act_window'>
+        <field name="name">Vehicle Accept</field>
+        <field name="res_model">fleet.vehicle.status</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_status': 1,'search_default_groupby_vehicle': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a vehicle status
+            </p>
+            <p>
+                Here you can add a vehicle status
+            </p>
+        </field>
+    </record>
+
+
+    <record id='action_vendor' model='ir.actions.act_window'>
+        <field name="name">Vendor</field>
+        <field name="res_model">sharevan.vendor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_status': 1, 'group_by': 'type'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a vendor
+            </p>
+            <p>
+                Here you can add a vendor
+            </p>
+        </field>
+    </record>
+
+    <record id="sequence_fleet_assignation_log" model="ir.sequence">
+        <field name="name">Vehicle assignation log</field>
+        <field name="code">fleet.vehicle.status</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">STT</field>
+        <field name="padding">6</field>
+    </record>
+
+    <menuitem name="Vendor" parent="fleet_configuration" id="fleet_vendor" action="action_vendor" groups="fleet_group_manager"
+              sequence="200"/>
+
+</odoo>

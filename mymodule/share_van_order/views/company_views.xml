@@ -1,0 +1,311 @@
+<odoo>
+    <data>
+        <record id="sharevan_company_search" model="ir.ui.view">
+            <field name="name">res.company.search</field>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <search string="Customer">
+                    <field name="create_date"/>
+                    <field name="company_type"/>
+                    <filter string="status" name="status" icon="terp-personal" domain="[('status','=','running')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="type" name="type" context="{'group_by': 'company_type'}"/>
+                        <filter string="customer_type" name="customer_type" context="{'group_by': 'customer_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_company_form_new" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <div></div>
+                    <field name="code" attrs="{'invisible': [('company_type','!=', '3')]}" readonly="True"/>
+                </field>
+                <field name="parent_id" position="after">
+                    <field name="company_type"/>
+                    <field name="customer_type" attrs="{'invisible': [('company_type','=', '2')]}"/>
+                </field>
+                <field name="email" position="after">
+                    <!--                     <field name="province"/>-->
+                    <field name="career_ids" class="oe_inline" widget="many2many_tags"/>
+                </field>
+                <field name="parent_id" position="after">
+                    <field name="point"/>
+                </field>
+                <field name="state_id" position="after">
+                    <field name="province_id" class="o_address_state" placeholder="Province"
+                           options='{"no_open": True}'/>
+                </field>
+                <field name="state_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="street2" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="parent_id" position="after">
+                    <field name="award_company_id" required="1"/>
+                </field>
+                <field name="website" position="after">
+                    <field name="priority"/>
+                    <field name="vehicle_supply" attrs="{'invisible': [('company_type','!=', '0')]}"/>
+                    <field name="driver_supply" attrs="{'invisible': [('company_type','!=', '0')]}"/>
+                    <field name="warehouse_supply"
+                           attrs="{'invisible': ['|',('company_type', '=', '0'),('company_type','=','2')]}"/>
+                    <field name="depot_supply" attrs="{'invisible': [('company_type','!=','2')]}"/>
+                    <field name="engagement_point"/>
+                </field>
+                <page name="General Information" position="after">
+                    <page name='Warehouse' string="Warehouse"
+                          attrs="{'invisible': [('company_type','!=','1')]}">
+                        <field name="warehouse_ids" mode="kanban"
+                               context="{'default_company_id': active_id, 'default_only_with_zone': True}">
+                            <kanban>
+                                <field name="name"/>
+                                <field name="id"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div t-att-class="color + ' oe_kanban_global_click'">
+                                            <div class="o_kanban_image">
+                                                <img alt=""
+                                                     t-att-src="kanban_image('sharevan.warehouse', 'image_128', record.id.raw_value)"/>
+                                            </div>
+                                            <div class="oe_kanban_details">
+                                                <field name="name"/>
+                                                <div t-if="record.phone.raw_value">
+                                                    SĐT:
+                                                    <field name="phone" widget="phone"/>
+                                                </div>
+                                                <div t-if="record.address.raw_value">
+                                                    Địa chỉ:
+                                                    <field name="address" widget="phone"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </t>
+                                </templates>
+                            </kanban>
+                            <form string="Warehouse">
+                                <sheet>
+                                    <field name="image_128" widget='image' class="oe_avatar"/>
+                                    <div class="oe-title">
+                                        <h1>
+                                            <field name="name_seq"/>
+                                        </h1>
+                                    </div>
+                                    <group string="Warehouse Name">
+                                        <field name="name"/>
+
+                                    </group>
+                                    <group string="Main information">
+                                        <group>
+                                            <field name="warehouse_code"/>
+                                            <field name="warehouse_code" invisible="1"/>
+                                            <field name="phone"/>
+                                            <field name="company_id" invisible="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="customer_id"/>
+                                            <field name="status"/>
+                                            <field name="street2" invisible="1"/>
+                                        </group>
+                                    </group>
+
+                                    <notebook>
+                                        <page string="Address">
+                                            <group>
+                                                <group>
+                                                    <field name="street" widget="gplaces_address_autocomplete"
+                                                           options="{'fillfields': {'street2': ['route', 'street_number']}}"/>
+                                                    <field name="latitude"/>
+                                                    <field name="longitude"/>
+                                                    <field name="zip"/>
+                                                    <field name="city_name"/>
+                                                    <field name="country_id"/>
+                                                    <field name="state_id"/>
+                                                    <field name="district"/>
+                                                    <field name="ward"/>
+                                                    <field name="address"/>
+                                                    <field name="area_id"/>
+                                                </group>
+                                                <group>
+                                                    <widget name="gmap_marker" lat="latitude" lng="longitude"
+                                                            description="name"/>
+                                                </group>
+                                            </group>
+                                        </page>
+                                        <page string="Attachment">
+                                            <group>
+                                                <field name="attach_File" widget="many2many_binary"
+                                                       string="Attach File"/>
+                                            </group>
+                                        </page>
+                                    </notebook>
+                                </sheet>
+                            </form>
+                        </field>
+                    </page>
+                </page>
+                <page name="General Information" position="after">
+                    <page name='More Information' string="More Information">
+                        <group col="2" string="Unit system config">
+                            <group>
+                                <field name="weight_unit_id" attrs="{'invisible': [('company_type','!=', '2')]}"/>
+                                <field name="volume_unit_id" attrs="{'invisible': [('company_type','!=', '2')]}"/>
+                            </group>
+                            <group>
+                                <field name="parcel_unit_id" attrs="{'invisible': [('company_type','!=', '2')]}"/>
+                                <field name="currency_id" attrs="{'invisible': [('company_type','!=', '2')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="attach_image" widget="many2many_binary"
+                                   string="Attach File"/>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+
+        <record id="view_company_tree" model="ir.ui.view">
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="phone" position="after">
+                    <field name="province_id"/>
+                </field>
+                <field name="street" position="after">
+                    <field name="company_ranking"/>
+                    <field name="company_type"/>
+                    <field name="sale"/>
+                    <field name="customer_type" optional="hide"/>
+                    <field name="vehicle_supply" optional="hide"/>
+                    <field name="driver_supply" optional="hide"/>
+                    <field name="warehouse_supply" optional="hide"/>
+                    <field name="depot_supply" optional="hide"/>
+                    <field name="status" optional="hide"/>
+                </field>
+            </field>
+        </record>
+
+        <record id='sharevan_company_view' model='ir.actions.act_window'>
+            <field name="name">Customer</field>
+            <field name="res_model">res.company</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_type' : True,'search_default_customer_type' :
+                True,'search_default_status' : 1}
+            </field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a company
+                </p>
+                <p>
+                    Here you can add company
+                </p>
+            </field>
+
+        </record>
+
+        <menuitem name="Customer" id="sharevan_company_menu" parent="sharevan_order_menu_3" sequence="1000"
+                  action="sharevan_company_view"/>
+
+        <record id='sharevan_employee_warehouse_view_form' model='ir.ui.view'>
+            <field name="name">sharevan.employee.warehouse.form</field>
+            <field name="model">sharevan.employee.warehouse</field>
+            <field name="arch" type="xml">
+                <form string="zone">
+                    <sheet>
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                        <group col="2">
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="employee_id"/>
+                                <field name="place_id" readonly="True"/>
+                                <field name="warehouse_id" attrs="{'invisible': [('place_type', '!=', '0')]}"/>
+                                <field name="depot_id" attrs="{'invisible': [('place_type', '!=', '1')]}"/>
+                            </group>
+                            <group>
+
+                                <field name="place_type"/>
+                                <field name="date_assign"/>
+                                <field name="user_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_employee_warehouse_view_search" model="ir.ui.view">
+            <field name="name">sharevan.employee.warehouse.search</field>
+            <field name="model">sharevan.employee.warehouse</field>
+            <field name="arch" type="xml">
+                <search string="Search title award">
+                    <field name="employee_id"/>
+                    <field name="place_type"/>
+                    <field name="date_assign"/>
+                    <field name="user_id"/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="employee" name="group_by_employee" context="{'group_by': 'employee_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sharevan_employee_warehouse_view_calendar">
+            <field name="name">sharevan.employee.warehouse.calendar</field>
+            <field name="model">sharevan.employee.warehouse</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendar employee" date_start="date_assign" color="employee_id"
+                          event_limit="5">
+                    <field name="employee_id"/>
+                    <field name="place_type"/>
+                    <field name="date_assign"/>
+                    <field name="user_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id='sharevan_employee_warehouse_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.employee.warehouse.tree</field>
+            <field name="model">sharevan.employee.warehouse</field>
+            <field name="arch" type="xml">
+                <tree default_order="date_assign desc">
+                    <field name="employee_id"/>
+                    <field name="place_type"/>
+                    <field name="date_assign"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='sharevan_employee_warehouse_view' model='ir.actions.act_window'>
+            <field name="name">Calendar employee</field>
+            <field name="res_model">sharevan.employee.warehouse</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="context">{'search_default_status': 'running','search_default_group_by_employee' : True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a clandar employee
+                </p>
+                <p>
+                    Here you can add company
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Calendar employee" id="sharevan_calandar_employee_menu" parent="sharevan_geography"
+                  sequence="1001"
+                  action="sharevan_employee_warehouse_view"/>
+    </data>
+</odoo>

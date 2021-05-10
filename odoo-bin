@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+# set server timezone in UTC before time module imported
+__import__('os').environ['TZ'] = 'UTC'
+import odoo
+
+import firebase_admin
+from firebase_admin import credentials
+
+#
+# class FirebaseApp:
+#     cred = credentials.Certificate("serviceKey.json")
+#     default_app = firebase_admin.initialize_app(cred)
+
+
+if __name__ == "__main__":
+    odoo.cli.main()
+    cred = credentials.Certificate("serviceKey.json")
+    default_app = firebase_admin.initialize_app(cred)

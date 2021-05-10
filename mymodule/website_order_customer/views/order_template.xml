@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="order_button" name="Button">
+            <div t-attf-class="input-group #{group_class}">
+                <button t-attf-class="order-button #{button_class} fa #{button_icon}"
+                        t-attf-type="#{button}">
+                    <t t-esc="button_label"/>
+                </button>
+            </div>
+        </template>
+
+        <template id="order_button_dash">
+            <div class="input-group">
+                <div class="button-dash-border d-flex flex-column">
+                    <img t-attf-src="#{image_url}" height="50px"/>
+                    <button t-att-id="button_id" class="order-button" type="button">
+                        <i t-att-class="'fa ' + button_icon"/>
+                        <t t-esc="button_label"/>
+                    </button>
+                </div>
+            </div>
+        </template>
+
+        <template id="order_input">
+            <div t-attf-class="input-group #{group_class}">
+                <label class="input-label" for="name-input">
+                    <t t-esc="input_label"/>
+                </label>
+                <div class="input-icons">
+                    <t t-if="input_icon">
+                        <i t-attf-class="fa icon + #{input_icon}"/>
+                        <input t-attf-id="#{input_id}" t-attf-class="order-input with-icon + #{input_class}"
+                               t-attf-type="#{input_type}" t-attf-name="#{input_id}"
+                               t-attf-placeholder="#{placeholder}"/>
+                    </t>
+                    <t t-else="">
+                        <input t-attf-id="#{input_id}" class="order-input no-icon"
+                               t-attf-type="#{input_type}" t-attf-name="#{input_id}"
+                               t-attf-placeholder="#{placeholder}"/>
+                    </t>
+                </div>
+            </div>
+        </template>
+
+        <template id="order_input2">
+            <div t-attf-class="input-group2 #{group_class}">
+                <label class="input-label" for="name-input">
+                    <t t-esc="input_label"/>
+                </label>
+                <div class="input-icons">
+                    <t t-if="input_icon">
+                        <i t-att-class="'fa icon ' + input_icon"/>
+                        <input t-att-id="input_id" class="order-input with-icon"
+                               t-att-type="input_type" t-att-name="input_id"
+                               t-att-placeholder="placeholder"/>
+                    </t>
+                    <t t-else="">
+                        <input t-att-id="input_id" class="order-input no-icon"
+                               t-att-type="input_type" t-att-name="input_id"
+                               t-att-placeholder="placeholder"/>
+                    </t>
+                </div>
+            </div>
+        </template>
+
+        <template id="order_textarea">
+            <div class="input-group">
+                <label class="input-label" for="text-area">
+                    <t t-esc="input_label"/>
+                </label>
+                <textarea t-att-id="input_id" class="order-input"
+                          t-att-name="input_id" t-att-placeholder="placeholder"
+                          row="2" cols="100"/>
+            </div>
+        </template>
+
+        <template id="order_table" name="Table">
+            <div class="table-wrapper d-flex justify-content-center align-items-center">
+                <div class="loader" style="display:none;"></div>
+                <table t-attf-id="#{table_id}" class="table order-table">
+                    <thead class="table-thead thead-light">
+                        <tr>
+                            <t t-foreach="headers" t-as="header">
+                                <th scope="col" t-att-name="header" t-esc="headers[header]">
+                                </th>
+                            </t>
+                            <th scope="col">Xử lý</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="pagination d-flex justify-content-end" style="display:none !important;">
+                <li>
+                    <a class="first">&#706;</a>
+                </li>
+                <li>
+                    <a id="page_1" class="selected">1</a>
+                </li>
+                <li>
+                    <a id="page_2">2</a>
+                </li>
+                <li>
+                    <a id="page_3">3</a>
+                </li>
+                <li>
+                    <a class="last">&#707;</a>
+                </li>
+            </ul>
+        </template>
+        <template id="order_table_row" name="Table rows">
+            <t t-if="list" t-foreach="list" t-as="rec">
+                <tr>
+                    <t t-foreach="headers" t-as="header">
+                        <td class="data-col" t-esc="rec[header]"></td>
+                    </t>
+                </tr>
+            </t>
+        </template>
+
+        <template id="order_action_buttons">
+            <div class="dropdown nav-item d-flex justify-content-center">
+                <button class="btn fa fa-ellipsis-h shadow-none" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Xem chi tiết</a>
+                    <a class="dropdown-item" href="#">Sửa</a>
+                    <a class="dropdown-item" href="#">Xóa</a>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

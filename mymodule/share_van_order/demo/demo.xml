@@ -1,0 +1,85 @@
+<odoo>
+    <data>
+
+        <!--          <record id="object0" model="sharevan.order">-->
+        <!--            <field name="name">Object 0</field>-->
+        <!--            <field name="value">0</field>-->
+        <!--          </record>-->
+
+        <!--          <record id="object1" model="sharevan.order">-->
+        <!--            <field name="name">Object 1</field>-->
+        <!--            <field name="value">10</field>-->
+        <!--          </record>-->
+
+        <!--          <record id="object2" model="sharevan.order">-->
+        <!--            <field name="name">Object 2</field>-->
+        <!--            <field name="value">20</field>-->
+        <!--          </record>-->
+
+        <!--          <record id="object3" model="sharevan.order">-->
+        <!--            <field name="name">Object 3</field>-->
+        <!--            <field name="value">30</field>-->
+        <!--          </record>-->
+
+        <!--          <record id="object4" model="sharevan.order">-->
+        <!--            <field name="name">Object 4</field>-->
+        <!--            <field name="value">40</field>-->
+        <!--          </record>-->
+        <record id="product_type_electronics" model="sharevan.product.type">
+            <field name="id">1</field>
+            <field name="name_seq">PT000001</field>
+            <field name="name">Hàng điện tử</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="product_type_frozen" model="sharevan.product.type">
+            <field name="id">2</field>
+            <field name="name_seq">PT000002</field>
+            <field name="name">Hàng đông lạnh</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="product_type_conventional " model="sharevan.product.type">
+            <field name="id">3</field>
+            <field name="name_seq">PT000003</field>
+            <field name="name">Hàng thông thường</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="product_type_liquid" model="sharevan.product.type">
+            <field name="id">4</field>
+            <field name="name_seq">PT000004</field>
+            <field name="name">Hàng chất lỏng</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="product_type_toxic" model="sharevan.product.type">
+            <field name="id">5</field>
+            <field name="name_seq">PT000005</field>
+            <field name="name">Hàng độc hại</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="product_type_fragile" model="sharevan.product.type">
+            <field name="id">6</field>
+            <field name="name_seq">PT000006</field>
+            <field name="name">Hàng dễ vỡ</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="product_type_high_value" model="sharevan.product.type">
+            <field name="id">7</field>
+            <field name="name_seq">PT000007</field>
+            <field name="name">Hàng hóa giá trị cao</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="product_type_Heahy" model="sharevan.product.type">
+            <field name="id">8</field>
+            <field name="name_seq">PT000008</field>
+            <field name="name">Hàng hóa nặng</field>
+            <field name="status">running</field>
+        </record>
+
+    </data>
+</odoo>

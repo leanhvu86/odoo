@@ -1,0 +1,118 @@
+<odoo>
+    <data>
+        <record id="sharevan_depot_goods_tree" model="ir.ui.view">
+            <field name="name">Depot goods</field>
+            <field name="model">sharevan.depot.goods</field>
+            <field name="arch" type="xml">
+                <tree string="History of goods moving in and out of depots"
+                      default_order='id desc' create="false" edit="false" delete="false">
+                    <field name="depot_id"/>
+                    <field name="routing_plan_name"/>
+                    <field name="create_date" string="Date"/>
+                    <field name="capacity"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sharevan_depot_pricing_search" model="ir.ui.view">
+            <field name="name">Depot goods</field>
+            <field name="model">sharevan.depot.goods</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="depot_id"/>
+                    <group expand="1" string="Group By">
+                        <filter name="groupby_depot" context="{'group_by': 'depot_id'}" string="depot"></filter>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_depot_goods_action' model='ir.actions.act_window'>
+            <field name="name">Depot goods</field>
+            <field name="res_model">sharevan.depot.goods</field>
+            <field name="context">{"search_default_groupby_depot" : True}</field>
+            <field name="limit">20</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    History of goods moving in and out of depots
+                </p>
+            </field>
+        </record>
+
+        <record id="sharevan_depot_pricing_form" model="ir.ui.view">
+            <field name="name">sharevan.depot.pricing.form</field>
+            <field name="model">sharevan.depot.pricing</field>
+            <field name="arch" type="xml">
+                <form string="New depot pricing">
+                    <sheet>
+                        <h2>
+                            <field name="code" readonly="1"/>
+                        </h2>
+                        <group col="2">
+                            <group>
+                                <field name="depot_id"/>
+                                <field name="type"/>
+                                <field name="from_date" attrs="{'readonly': [('id', '!=', False)]}"/>
+                                <field name="to_date" attrs="{'readonly': [('id', '!=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="capacity"/>
+                                <field name="duration"/>
+                                <field name="weight"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sharevan_depot_pricing_tree" model="ir.ui.view">
+            <field name="name">sharevan.depot.pricing.tree</field>
+            <field name="model">sharevan.depot.pricing</field>
+            <field name="arch" type="xml">
+                <tree string="Pricing for depot"
+                      default_order='id desc'>
+                    <field name="depot_id"/>
+                    <field name="code"/>
+                    <field name="type" widget="selection"/>
+                    <field name="weight"/>
+                    <field name="capacity"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sharevan_depot_pricing_search" model="ir.ui.view">
+            <field name="name">Depot pricing</field>
+            <field name="model">sharevan.depot.pricing</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="depot_id"/>
+                    <group expand="1" string="Group By">
+                        <filter name="groupby_depot" context="{'group_by': 'depot_id'}" string="depot"></filter>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_depot_pricing_action' model='ir.actions.act_window'>
+            <field name="name">Depot pricing</field>
+            <field name="res_model">sharevan.depot.pricing</field>
+            <field name="context">{"search_default_groupby_depot" : True}</field>
+            <field name="limit">20</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    History of goods moving in and out of depots
+                </p>
+            </field>
+        </record>
+        <menuitem name="Sharing DC" id="sharevan_order_menu_8" parent="sharevan_order_menu_root" sequence="101"/>
+        <menuitem name="Depot goods" id="menu_sharevan_depot_goods" parent="sharevan_order_menu_8"
+                  action="sharevan_depot_goods_action" sequence="123231"/>
+        <menuitem name="Depot pricing" id="menu_sharevan_depot_pricing" parent="sharevan_order_menu_8"
+                  action="sharevan_depot_pricing_action" sequence="1132112"/>
+    </data>
+</odoo>

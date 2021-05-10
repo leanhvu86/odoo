@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+        <menuitem name="Vehicle type" id="fleet_vehicle_type_menu" parent="fleet_configuration"
+                  action="base_next.fleet_vehicle_type_action" sequence="16564431" groups="fleet_group_manager"/>
+
+
+        <record id='tc_positions_view_form' model='ir.ui.view'>
+            <field name="name">tc.positions.view.form</field>
+            <field name="model">tc.positions</field>
+            <field name="arch" type="xml">
+                <form string="Location log">
+                    <group col="2">
+                        <group>
+                            <field name="vehicle_id"/>
+                            <field name="status"/>
+                            <field name="assign_date_time"/>
+                        </group>
+                        <group>
+                            <field name="latitude"/>
+                            <field name="longitude"/>
+                        </group>
+                    </group>
+                    <group>
+                        <widget name="gmap_marker" lat="latitude" lng="longitude" description="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="tc_positions_view_tree" model="ir.ui.view">
+            <field name="name">tc.positions.view.tree</field>
+            <field name="model">tc.positions</field>
+            <field name="arch" type="xml">
+                <tree string="Location log" default_order="devicetime asc">
+                    <field name="vehicle_id"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="status"/>
+                    <field name="assign_date_time"/>
+                    <field name="stop_time"/>
+                    <field name="devicetime"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_vehicle_log_map" model="ir.ui.view">
+            <field name="name">Vehicle Log</field>
+            <field name="model">tc.positions</field>
+            <field name="arch" type="xml">
+                <map class="o_res_partner_map" library="geometry" string="Map" lat="lat" lng="long"
+                     model="vehicle"
+                     colors="">
+                    <field name="vehicle_id"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="status"/>
+                    <field name="assign_date_time"/>
+                    <field name="devicetime"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown" t-if="!selection_mode" groups="base.group_user">
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown"
+                                       data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <strong>
+                                        <field name="vehicle_id"/>
+                                    </strong>
+                                </div>
+                                <div>
+                                    <span>
+                                        <field name="latitude"/>
+                                    </span>
+                                    <span class="float-right">
+                                        <field name="longitude"/>
+                                    </span>
+                                </div>
+                                <div>
+                                    <field name="status"/>
+                                    <span class="float-right">
+                                        <field name="assign_date_time"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </map>
+            </field>
+        </record>
+
+         <record id="view_vehicle_log_route" model="ir.ui.view">
+            <field name="name">Vehicle Log</field>
+            <field name="model">tc.positions</field>
+            <field name="arch" type="xml">
+                <route class="o_res_partner_map" library="geometry" string="Route" lat="lat" lng="long"
+                     model=""
+                     colors="">
+                    <field name="vehicle_id"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="status"/>
+                    <field name="assign_date_time"/>
+                    <field name="stop_time"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_content">
+                                    <strong>
+                                        <field name="vehicle_id"/>
+                                    </strong>
+                                </div>
+                                <div>
+                                    <span>
+                                        <field name="latitude"/>
+                                    </span>
+                                    <span class="float-right">
+                                        <field name="longitude"/>
+                                    </span>
+                                </div>
+                                <div>
+                                    <field name="status"/>
+                                    <t t-if="record.status != 1">
+                                          <field name="stop_time" color="blue"/> phút
+                                    </t>
+                                    <span class="float-right">
+                                        <field name="assign_date_time"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </route>
+            </field>
+        </record>
+        <record id='tc_positions_view_search' model='ir.ui.view'>
+            <field name="name">tc.positions.search</field>
+            <field name="model">tc.positions</field>
+            <field name="arch" type="xml">
+                <search string="Vehicles Location Logs">
+                    <field name="vehicle_id"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="stop_time"/>
+                    <group expand="1" string="Group By">
+                        <filter name="groupby_vehicle_id" context="{'group_by': 'vehicle_id'}" string="Vehicle"/>
+                        <filter name="groupby_stop_time" context="{'group_by': 'stop_time'}"
+                                string="Stop time"/>
+                        <filter name="today_log" string="Today log"
+                                domain="[('devicetime', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                        <filter name="order_by_device_time" context="{'order_by': 'devicetime asc'}"/>
+    <!--                    <filter name="groupby_vehicle_id" context="{'group_by': 'vehicle_id'}" string="Vehicle"/>-->
+    <!--                    <filter name="groupby_parent_id" context="{'group_by': 'parent_id'}" string="Parent"/>-->
+    <!--                    <separator/>-->
+    <!--                    <filter name="groupby_date" context="{'group_by': 'date:month'}" string="Date"-->
+    <!--                            help="Vehicle Costs by Date"/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='tc_positions_action' model='ir.actions.act_window'>
+            <field name="name">Location log</field>
+            <field name="res_model">tc.positions</field>
+            <field name="view_mode">tree,form,route</field>
+            <field name="context">{"search_default_group_by_vehicle" : True,"search_default_group_by_vehicle_id" : True}</field>
+            <field name="context">{"search_default_today_log":1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View vehicle location log
+                </p>
+            </field>
+        </record>
+
+<!--        <menuitem action="tc_positions_action" parent="fleet_vehicles"-->
+<!--                  id="tc_positions_menu"-->
+<!--                  groups="fleet_group_user"/>-->
+    </data>
+</odoo>

@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+
+        <record id="driver_license_view_search" model="ir.ui.view">
+            <field name="name">sharevan.driver.license.search</field>
+            <field name="model">sharevan.driver.license</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <filter string="status" name="status" domain="[('status', '!=', 'deleted')]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_country" string="Country" domain="[]"
+                                context="{'group_by':'country_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='driver_license_form' model='ir.ui.view'>
+            <field name="name">sharevan.driver.license.form</field>
+            <field name="model">sharevan.driver.license</field>
+            <field name="arch" type="xml">
+                <form string="Driver License">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="max_tonnage"/>
+                                <field name="type_unit"/>
+                            </group>
+                            <group>
+                                <field name="country_id" options="{'no_create': True}"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='sharevan_driver_license_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.driver.license.tree</field>
+            <field name="model">sharevan.driver.license</field>
+            <field name="arch" type="xml">
+                <tree string="Driver License">
+                    <field name="name"/>
+                    <field name="type_unit"/>
+                    <field name="max_tonnage"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_driver_license_view_kanban' model='ir.ui.view'>
+            <field name="name">sharevan.driver.license.kanban</field>
+            <field name="model">sharevan.driver.license</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div>
+                                    <strong>
+                                        <field name="name"/>
+                                        <span class="float-right">
+                                            <field name="max_tonnage"/>
+                                        </span>
+                                    </strong>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id='driver_license_action' model='ir.actions.act_window'>
+            <field name="name">Driver license</field>
+            <field name="res_model">sharevan.driver.license</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{'search_default_group_by_country' : True,'search_default_status' : 'running'}</field>
+        </record>
+
+        <menuitem name="Driver License" id="driver_license" parent="staff_config"
+                  action="driver_license_action" sequence="1234"/>
+
+    </data>
+</odoo>

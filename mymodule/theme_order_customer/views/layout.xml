@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_header_oc" inherit_id="website.layout" name="Custom Header">
+        <xpath expr="//header/nav" position="attributes">
+            <attribute name="style">background-color: white !important;box-shadow:0 3px 5px 0 rgba(50,50,50,0.3)
+            </attribute>
+        </xpath>
+
+        <xpath expr="//header//a[hasclass('navbar-brand')]" position="replace">
+            <a href="/" class="navbar-brand logo">
+                <img t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"
+                     style="width: 40%; height: 100%; object-fit: cover;"
+                     src="/theme_order_customer/static/src/img/Frame4.jpg"/>
+            </a>
+        </xpath>
+    </template>
+    <template id="homePage" inherit_id="website.homepage">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="slider-bar" class="">
+                <div class="image-container">
+                    <div class="slide-home">
+                        <img class="slide-img"
+                             src="/theme_order_customer/static/src/img/cam-nang-bac-tai-5-sao-banner.jpg"/>
+                    </div>
+                    <div class="slide-home" style="display:none">
+                        <img class="slide-img" src="/theme_order_customer/static/src/img/loginow2h.jpg"/>
+                    </div>
+                    <div class="slide-home" style="display:none">
+                        <img class="slide-img" src="/theme_order_customer/static/src/img/loginow-banner-web-1.jpg"/>
+                    </div>
+                    <div class="slide-home" style="display:none">
+                        <img class="slide-img" src="/theme_order_customer/static/src/img/banner-geo-1.jpg"/>
+                    </div>
+                    <div class="slide-home" style="display:none">
+                        <img class="slide-img" src="/theme_order_customer/static/src/img/banner-geo-2.jpg"/>
+                    </div>
+                    <!-- Next and Previous icon to change images -->
+                    <!--<a class="previous" onclick="layout.moveSlides(-1)">
+                        <i class="fa fa-chevron-circle-left"></i>
+                    </a>
+                    <a class="next" onclick="layout.moveSlides(1)">
+                        <i class="fa fa-chevron-circle-right"></i>
+                    </a>-->
+                </div>
+                <br/>
+
+                <div style="text-align:center">
+                    <span class="footerdot"
+                          value="1">
+                    </span>
+                    <span class="footerdot"
+                          value="2">
+                    </span>
+                    <span class="footerdot"
+                          value="3">
+                    </span>
+                    <span class="footerdot"
+                          value="4">
+                    </span>
+                    <span class="footerdot"
+                          value="5">
+                    </span>
+                </div>
+            </div>
+            <div class="container l-homepage">
+                <div class="mt-3" style="font-size:30px">Thuê xe chở hàng với DLP</div>
+                <div style="font-size:20px">Tính năng nổi bật</div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <img class="img-radius mb-3"
+                             src="/theme_order_customer/static/src/img/chi-phi-dich-vu-cong-khai.jpg"/>
+                        <br/>
+                        <span class="text-size">Tra giá cước xe tải
+                            <br/>
+                            một cách nhanh nhất
+                        </span>
+                    </div>
+                    <div class="col">
+                        <img class="img-radius mb-3"
+                             src="/theme_order_customer/static/src/img/lien-tuc-kiem-tra-an-toan.jpg"/>
+                        <br/>
+                        <span class="text-size">Liên tục kiểm tra an toàn
+                            <br/>
+                            cho chuyến hàng của bạn
+                        </span>
+                    </div>
+                    <div class="col">
+                        <img class="img-radius mb-3"
+                             src="/theme_order_customer/static/src/img/tim-chu-hang-voi-gia-nhu-y.jpg"/>
+                        <br/>
+                        <span class="text-size">Chi phí dịch vụ
+                            <br/>
+                            công khai và minh bạch
+                        </span>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg">
+                        <img style="width:100%" src="/theme_order_customer/static/src/img/chuhang-copy-1.png"/>
+                    </div>
+                    <div class="col mt-5" style="text-align:left">
+                        <div class="text-bold text-size size-2">
+                            <strong>Ứng dụng thuê xe tải</strong>
+                            <br/>
+                            <strong>DLP chủ hàng</strong>
+                            <br/>
+                        </div>
+                        <br/>
+                        <span class="mt-3  text-size" style="line-height:2rem">
+                            Giải pháp công nghệ giúp kết nối trực tiếp các doanh nghiệp với mạng lưới đối tác vận tải
+                            trên toàn quốc.
+                            <br/>
+                            DLP luôn sẵn sàng đáp ứng mọi nhu cầu vận chuyển hàng, hỗ trợ tìm kiếm và quản lý xe tải
+                            chở hàng với độ tin cậy và chất lượng cao nhất.
+                        </span>
+                        <br/>
+                        <a href="#" class="text-size" style="line-height:3rem">Tìm hiểu thêm</a>
+                        <br/>
+                        <span class="text-size">Tải ứng dụng DLP chủ hàng</span>
+                        <br/>
+                        <div class="mt-3">
+                            <div class="row">
+                                <div class="col-4" style="max-width:50%">
+                                    <img style="width:100%" src="/theme_order_customer/static/src/img/QR_DLP.png"/>
+                                </div>
+                                <!--                                <div class="col-0">Hoặc</div>-->
+                                <div class="col-4" style="max-width:50%">
+                                    <a href="#" class="mb-3">
+                                        <img style="width:100%" src="/theme_order_customer/static/src/img/GG-play.png"/>
+                                    </a>
+                                    <br/>
+                                    <a href="#">
+                                        <img class="mt-3" style="width:100%"
+                                             src="/theme_order_customer/static/src/img/viber_image_2019-05-30_13-46-36.png"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:#EDFBF7">
+                <div class="container l-about_us">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <strong>Về DLP</strong>
+                            <br/>
+                            <p class="mt-3">DLP cung cấp dịch vụ vận tải 4.0 dựa trên nền tảng kết nối trực tiếp , chủ
+                                hàng và
+                                mạng lưới xe tải trên,
+                                toàn quốc , sứ mệnh của DLP là số hóa nghành công
+                                nghiệp vận tải đường bộ , cung cấp hệ thống kết hợp
+                                tự động chất lượng và dịch vụ logistic uy tín đến mọi
+                                doanh nghiệp Việt nam.
+                            </p>
+                            <a href="#" class="text-size" style="line-height:3rem">Tìm hiểu thêm</a>
+                        </div>
+                        <div class="col p-2">
+                            <div class="row background-box m-2">
+                                <div class="col p-3">
+                                    <span class="text-size size-4">25.000</span>
+                                    <br/>
+                                    Chủ hàng
+                                </div>
+                            </div>
+                            <div class="row background-box m-2">
+                                <div class="col p-3">
+                                    <span class="text-size size-4">1.4 Triệu</span>
+                                    <br/>
+                                    (USD) Tổng giá trị dịch
+                                    vụ vận chuyển
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col p-2">
+                            <div class="row background-box m-2">
+                                <div class="col p-3">
+                                    <span class="text-size size-4">5.000</span>
+                                    <br/>
+                                    Chủ xe
+                                </div>
+                            </div>
+                            <div class="row background-box m-2">
+                                <div class="col p-3">
+                                    <span class="text-size size-4">2.3 Triệu</span>
+                                    <br/>
+                                    (USD) Tổng số tiền
+                                    được đầu tư
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-center">Quá trình hình thành và phát triển</h2>
+                        <div class="timeline_progress mb-4">
+                            <img id="truck-progress" alt="truck-dlp" class="lazyloaded"
+                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/truck.svg"
+                                 loading="lazy"/>
+                            <img id="truck-progress" alt="truck-dlp" class="lazyloaded_480"
+                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/truck.svg"
+                                 loading="lazy"/>
+                        </div>
+                        <div class="cd-h-timeline_dates">
+                            <div class="cd-h-timeline_line">
+                                <ol>
+                                    <li>
+                                        <div class="cd-h-timeline_date">
+                                            <img class="icon-progress" alt="truck-dlp1"
+                                                 vistited="0"
+                                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/timeline_1.svg"
+                                                 loading="lazy"/>
+                                            <span>
+                                                Khởi nghiệp
+                                            </span>
+                                            Tháng 11 - 2020
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cd-h-timeline_date">
+                                            <img class="icon-progress" alt="truck-dlp1" vistited="1"
+                                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/timeline_2.svg"
+                                                 loading="lazy"/>
+                                            <span>
+                                                Bứt phá
+                                            </span>
+                                            Tháng 2 - 2020
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cd-h-timeline_date">
+                                            <img class="icon-progress" alt="truck-dlp1" vistited="2"
+                                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/timeline_3.svg"
+                                                 loading="lazy"/>
+                                            <span>
+                                                Tăng tốc
+                                            </span>
+                                            Tháng 6 - 2021
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cd-h-timeline_date">
+                                            <img class="icon-progress" alt="truck-dlp1" vistited="3"
+                                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/timeline_4.svg"
+                                                 loading="lazy"/>
+                                            <span>
+                                                Định vị
+                                            </span>
+                                            Tháng 9 - 2021
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cd-h-timeline_date">
+                                            <img class="icon-progress" alt="truck-dlp1" vistited="4"
+                                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/timeline_5.svg"
+                                                 loading="lazy"/>
+                                            <span>
+                                                Nâng tầm
+                                            </span>
+                                            Tháng 12 - 2021
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cd-h-timeline_date">
+                                            <img class="icon-progress" alt="truck-dlp1" vistited="5"
+                                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/timeline_6.svg"
+                                                 loading="lazy"/>
+                                            <span>
+                                                Chinh phục
+                                            </span>
+                                            Tháng 5 - 2022
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cd-h-timeline_date">
+                                            <img class="icon-progress" alt="truck-dlp1" vistited="6"
+                                                 src="https://www.logivan.com/wp-content/themes/logivan/assets/images/timeline_7.svg"
+                                                 loading="lazy"/>
+                                            <span>
+                                                Lan tỏa
+                                            </span>
+                                            Tháng 8 - 2022
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="top-timeline-container">
+                            <div class="slick-slider">
+                                <div style="width:10%">
+                                    <button type="button" class="slick-prev">
+                                        <i class="fa fa-angle-left"></i>
+                                    </button>
+                                </div>
+                                <div class="slick-track">
+                                    <div class="slick-slide">
+                                        <div style="width: 100%;display: inline-block;">
+                                            <div class="timeline-item" id="timeline-item-0">
+                                                <h4>Khởi nghiệp
+                                                    <br/>
+                                                    (Tháng 11 - 2020)
+                                                </h4>
+                                                <p>
+                                                    Khởi đầu sứ mệnh số hóa ngành công nghiệp vận tải đường bộ Việt Nam.
+                                                    LOGIVAN tập trung giải quyết bài toán kết nối thị trường vận tải,
+                                                    giúp chủ xe và chủ hàng tìm được đến nhau thông qua một nền tảng
+                                                    công nghệ cao.
+                                                </p>
+                                            </div>
+                                            <div class="timeline-item" style="display:none" id="timeline-item-1">
+                                                <h4>Bứt phá
+                                                    <br/>
+                                                    (Tháng 2 - 2020)
+                                                </h4>
+                                                <p>
+                                                    Chiến thắng cuộc thi khởi nghiệp Uber Exchange. LOGIVAN là start –
+                                                    up duy nhất giành tấm vé để tới Thung lũng Silicon,
+                                                    Mỹ và nhận được sự cố vấn trực tiếp từ Tổng Giám đốc công nghệ toàn
+                                                    cầu UBER Thuận Phạm.
+                                                </p>
+                                            </div>
+                                            <div class="timeline-item" style="display:none" id="timeline-item-2">
+                                                <h4>Tăng tốc
+                                                    <br/>
+                                                    (Tháng 6 - 2021)
+                                                </h4>
+                                                <p>
+                                                    Gọi thành công 600.000 USD từ quỹ đầu tư Insignia Ventures Partners.
+                                                    LOGIVAN bắt đầu mở rộng hoạt động tại Thành phố Hồ Chí Minh và các
+                                                    trung tâm kinh tế lớn
+                                                    khác tại Việt Nam, phục vụ các công ty có nhu cầu vận tải cao.
+                                                </p>
+
+                                            </div>
+                                            <div class="timeline-item" style="display:none" id="timeline-item-3">
+                                                <h4>Định vị
+                                                    <br/>
+                                                    (Tháng 9 - 2021)
+                                                </h4>
+                                                <p>
+                                                    Giành giải Công ty khởi nghiệp tốt nhất trong PITCH 2018 tại RISE
+                                                    2018. Vượt qua hơn 800 đội thi trên toàn thế giới,
+                                                    LOGIVAN mang về chiến thắng đầu tiên cho các công ty khởi nghiệp
+                                                    Việt Nam tại Hội nghị công nghệ thượng đỉnh Châu Á.
+                                                </p>
+
+                                            </div>
+                                            <div class="timeline-item" style="display:none" id="timeline-item-4">
+                                                <h4>Nâng tầm
+                                                    <br/>
+                                                    (Tháng 12 - 2021)
+                                                </h4>
+                                                <p>
+                                                    Được đầu tư thêm 1.75 triệu USD vòng Series A do Ethos Partners,
+                                                    Insignia Venture Partners và VinaCapital Ventures đứng đầu.
+                                                    LOGIVAN tiếp tục nâng cấp sản phẩm công nghệ để phục vụ nhu cầu vận
+                                                    chuyển hàng hóa của doanh nghiệp và tạo điều kiện minh bạch trong
+                                                    việc theo dõi và quản lý xe tải.
+                                                </p>
+
+                                            </div>
+                                            <div class="timeline-item" style="display:none" id="timeline-item-5">
+                                                <h4>Chinh phục
+                                                    <br/>
+                                                    (Tháng 5 - 2022)
+                                                </h4>
+                                                <p>
+                                                    Giải nhất [email protected] Global 2018 do Hoàng tử Anh Andrew –
+                                                    Công tước xứ York tổ chức.
+                                                    Ngoài việc đem lại giải pháp đột phá trong lĩnh vực logistics,
+                                                    LOGIVAN được Hội đồng giải thưởng đánh giá có tác động tích cực đến
+                                                    xã hội, nền kinh tế và môi trường sống tại Việt Nam.
+                                                </p>
+
+                                            </div>
+                                            <div class="timeline-item" style="display:none" id="timeline-item-6">
+                                                <h4>Lan tỏa
+                                                    <br/>
+                                                    (Tháng 8 - 2022)
+                                                </h4>
+                                                <p>
+                                                    Gọi thành công 5.5 triệu USD từ Alpha JWC và các nhà đầu tư danh
+                                                    tiếng Châu Á khác. Với số tiền đầu tư lần này, LOGIVAN hướng đến
+                                                    phân tích và tích hợp dữ liệu nhằm tăng hiệu quả chuỗi cung ứng,
+                                                    mở rộng mạng lưới 40,000 đối tác vận tải với hàng trăm đơn hàng mỗi
+                                                    ngày.
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="button" class="slick-next">
+                                        <i class="fa fa-angle-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+                <h3 class="text-center">
+                    Tin tức
+                </h3>
+                <div id="news_section" class="row d-flex justify-content-center">
+                    <div class="col-4 news-col" t-attf-onClick="location.href='#{obj['article']}'" t-foreach="news"
+                         t-as="obj">
+                        <div>
+                            <img class="news_img" t-att-src="obj['url']"/>
+                            <h4 class="card-title">
+                                <t class="text-size" t-esc="obj['title']"/>
+                            </h4>
+                            <div class="card-content">
+                                <t class="text-size" t-esc="obj['content']"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="link p-2" style="float:right" href="/news">Xem thêm ❯</a>
+            </div>
+        </xpath>
+    </template>
+
+    <!--    <template id="homepage_news" inherit_id="website.snippets" name="Place into bar">-->
+    <!--        <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">-->
+    <!--            <t t-snippet="theme_tutorial.snippet_testimonial"-->
+    <!--               t-thumbnail="/theme_tutorial/static/src/img/ui/snippet_thumb.jpg"/>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <template id="footer_custom" inherit_id="website.layout" name="Footer">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="dlp-footer oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+                <div class="footer-content">
+                    <div class="container">
+                        <div class="row image-row" style="align-self: start;">
+                            <img src="/theme_order_customer/static/src/img/Frame4.jpg"/>
+                        </div>
+                        <div class="row footer-rows">
+                            <div class="col-md-4 footer-column">
+                                <span class="row title">
+                                    Công Ty TNHH AGGREGATORI CAPACI
+                                </span>
+                                <span class="row">
+                                    ĐKKD Số :124574521
+                                    <br/>
+                                    Do sở kế hoạch và đầu tư thành phố Hà Nội cấp ngày 27 tháng 09 năm 2019
+                                </span>
+                                <span class="row">
+                                    Địa chỉ giao dịch : -29BT1 Mễ Trì Hạ Nam Từ Liêm Thành phố Hà Nội.
+                                </span>
+                            </div>
+                            <div class="col-md-2 footer-column">
+                                <span class="row title">
+                                    Thông Tin
+                                </span>
+                                <span class="row" href="/about-us">
+                                    Về chúng tôi
+                                </span>
+                                <span class="row" href="/rules">
+                                    Quy chế
+                                </span>
+                                <span class="row" href="privacy">
+                                    Chính sách bảo mật
+                                </span>
+                                <span class="row" href="/ask">
+                                    Hỏi đáp
+                                </span>
+                                <span class="row" href="/driver-guide">
+                                    Cẩm nang bác tài 5 sao
+                                </span>
+                            </div>
+                            <div class="col-md-2 footer-column info-column">
+                                <span class="row title">
+                                    Liên Hệ
+                                </span>
+                                <div class="row" style="display: block">
+                                    <span class="fa fa-phone">
+                                    </span>
+                                    Hotline Chủ hàng - Chủ xe: 0374347190
+                                </div>
+                                <div class="row" style="display: block">
+                                    <span class="fa fa-envelope">
+                                    </span>
+                                    hotro@dlp.com
+                                </div>
+                            </div>
+                            <div class="col-md-4 footer-column" style="max-width:50%">
+                                <span class="row title">
+                                    Tải ứng dụng
+                                </span>
+                                <div class="mt-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <img style="width:100%"
+                                                 src="/theme_order_customer/static/src/img/QR_DLP.png"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="#" class="mb-3">
+                                                <img style="width:100%"
+                                                     src="/theme_order_customer/static/src/img/GG-play.png"/>
+                                            </a>
+                                            <br/>
+                                            <a href="#">
+                                                <img class="mt-3" style="width:100%"
+                                                     src="/theme_order_customer/static/src/img/viber_image_2019-05-30_13-46-36.png"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <span class="row">
+                                        Da dang ky
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="footer_copyright" inherit_id="website.layout" name="Footer copy right">
+        <xpath expr="//div[@class='o_footer_copyright']" position="replace">
+            <div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="assets_frontend_oc" inherit_id="website.assets_frontend" name="Order Customer script">
+        <xpath expr="." position="inside">
+<!--            <link rel="stylesheet" type="text/scss" href="/theme_order_customer/static/src/scss/order_customer.scss"/>-->
+            <script type="text/javascript" src="/theme_order_customer/static/src/js/theme.js"/>
+            <script type="text/javascript" src="/theme_order_customer/static/src/js/login.js"/>
+        </xpath>
+    </template>
+</odoo>

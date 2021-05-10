@@ -1,0 +1,14 @@
+[Unit]
+Description=Odoo Open Source ERP and CRM
+After=network.target
+
+[Service]
+Type=simple
+User=nextsolution
+Group=nextsolution
+ExecStart=/hdd/odoo/odoo-bin -config /etc/odoo/odoo.conf
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+

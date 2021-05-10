@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- create -->
+    <record id='bidding_order_receive_view_form' model='ir.ui.view'>
+        <field name="name">sharevan.bidding.order.receive.form</field>
+        <field name="model">sharevan.bidding.order.receive</field>
+        <field name="arch" type="xml">
+            <form string="Model">
+                <sheet>
+                    <div class="oe-title">
+                    </div>
+                    <group col="2" string="Bidding Receive Details">
+                        <group>
+                            <field name="code"/>
+                            <field name="bidding_order_id"/>
+                            <field name="bidding_order_vehicle_id"/>
+                            <field name="from_expected_time"/>
+                            <field name="to_expected_time"/>
+                            <field name="depot_id"/>
+                        </group>
+                        <group>
+                            <field name="actual_time"/>
+                            <field name="stock_man_id"/>
+                            <field name="status"/>
+                            <field name="description"/>
+                            <field name="bidding_vehicle_id"/>
+                        </group>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='bidding_order_receive_view_tree' model='ir.ui.view'>
+        <field name="name">sharevan.bidding.order.receive.tree</field>
+        <field name="model">sharevan.bidding.order.receive</field>
+        <field name="arch" type="xml">
+            <tree string="Bidding Order Receive">
+                <field name="code"/>
+                <field name="bidding_order_id"/>
+                <field name="bidding_order_vehicle_id"/>
+                <field name="from_expected_time"/>
+                <field name="to_expected_time"/>
+                <field name="depot_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id='bidding_order_receive_action' model='ir.actions.act_window'>
+        <field name="name">Bidding Order Receive</field>
+        <field name="res_model">sharevan.bidding.order.receive</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_status': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new contract
+            </p>
+            <p>
+                Manage all your contracts (leasing, insurances, etc.) with
+                their related services, costs. Odoo will automatically warn
+                you when some contracts have to be renewed.
+            </p>
+            <p>
+                Each contract (e.g.: leasing) may include several services
+                (reparation, insurances, periodic maintenance).
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Bidding Order Receive" id="bidding_order_receive" parent="bidding_package"
+              action="bidding_order_receive_action" sequence="1195498"/>
+
+</odoo>

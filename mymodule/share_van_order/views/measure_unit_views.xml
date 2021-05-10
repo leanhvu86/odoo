@@ -1,0 +1,246 @@
+<odoo>
+    <data>
+        <record id='distance_unit_form' model='ir.ui.view'>
+            <field name="name">distance.unit.form</field>
+            <field name="model">distance.unit</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                            </group>
+                            <group>
+<!--                                <field name="status"/>-->
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='distance_unit_tree' model='ir.ui.view'>
+            <field name="name">distance.unit.tree</field>
+            <field name="model">distance.unit</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+
+                </form>
+            </field>
+        </record>
+
+        <record id='distance_unit_action' model='ir.actions.act_window'>
+            <field name="name">Distance unit</field>
+            <field name="res_model">distance.unit</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem name="Distance unit" id="distance_unit" parent="sharevan_billing"
+                  action="distance_unit_action" sequence="1006"/>
+
+        <record id="warning_type_search" model="ir.ui.view">
+            <field name="name">sharevan warning type</field>
+            <field name="model">sharevan.warning.type</field>
+            <field name="arch" type="xml">
+                <search string="All DLP Area">
+                    <filter string="status" name="status" domain="[('status', '!=', 'deleted')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id='warning_type_action' model='ir.actions.act_window'>
+            <field name="name">Warning type</field>
+            <field name="res_model">sharevan.warning.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_status" : 1}</field>
+        </record>
+
+
+        <menuitem name="Warning type" id="sharevan_warning_type" parent="staff_config"
+                  action="warning_type_action" sequence="10306"/>
+
+        <record id='weight_unit_form' model='ir.ui.view'>
+            <field name="name">weight.unit.form</field>
+            <field name="model">weight.unit</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+                    <sheet>
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="code" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="status" invisible="1"/>
+                            </group>
+                        </group>
+                        <group col="1">
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="weight_unit_search" model="ir.ui.view">
+            <field name="name">weight unit search</field>
+            <field name="model">weight.unit</field>
+            <field name="arch" type="xml">
+                <search string="Weight unit">
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id='weight_unit_tree' model='ir.ui.view'>
+            <field name="name">weight.unit.tree</field>
+            <field name="model">weight.unit</field>
+            <field name="arch" type="xml">
+                <form string="fee">
+
+                </form>
+            </field>
+        </record>
+        <record id='weight_unit_action' model='ir.actions.act_window'>
+            <field name="name">Weight unit</field>
+            <field name="res_model">weight.unit</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>sharevan.tonnage.vehicle
+
+        <menuitem name="Weight unit" id="weight_unit" parent="sharevan_billing"
+                  action="weight_unit_action" sequence="1007"/>
+
+        <record id='volume_unit_form' model='ir.ui.view'>
+            <field name="name">volume.unit.form</field>
+            <field name="model">volume.unit</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="volume_code" readonly="1"/>
+                        </h1>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="volume_code" invisible="1"/>
+                                <field name="length_unit_code"/>
+                            </group>
+                            <group>
+                                <field name="length_unit_name"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="volume_unit_search" model="ir.ui.view">
+            <field name="name">volume.unit.search</field>
+            <field name="model">volume.unit</field>
+            <field name="arch" type="xml">
+                <search string="Volume unit">
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="volume_unit_tree" model="ir.ui.view">
+            <field name="name">volume.unit.tree</field>
+            <field name="model">volume.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Volume unit">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='volume_unit_action' model='ir.actions.act_window'>
+            <field name="name">Volume unit</field>
+            <field name="res_model">volume.unit</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Volume unit
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Volume unit" id="volume_unit" parent="sharevan_billing"
+                  action="volume_unit_action" sequence="1008"/>
+
+        <record id='parcel_unit_form' model='ir.ui.view'>
+            <field name="name">parcel.unit.form</field>
+            <field name="model">parcel.unit</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="code" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="status" invisible="1"/>
+                            </group>
+                        </group>
+                        <group col="1">
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="parcel_unit_search" model="ir.ui.view">
+            <field name="name">parcel.unit.search</field>
+            <field name="model">parcel.unit</field>
+            <field name="arch" type="xml">
+                <search string="Insurance Infomation">
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                </search>
+            </field>
+        </record>
+        <record id='parcel_unit_tree' model='ir.ui.view'>
+            <field name="name">parcel.unit.tree</field>
+            <field name="model">parcel.unit</field>
+            <field name="arch" type="xml">
+                <form>
+
+                </form>
+            </field>
+        </record>
+
+        <record id='parcel_unit_action' model='ir.actions.act_window'>
+            <field name="name">Parcel unit</field>
+            <field name="res_model">parcel.unit</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Parcel unit
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Parcel unit" id="parcel_unit" parent="sharevan_billing"
+                  action="parcel_unit_action" sequence="1009"/>
+
+    </data>
+</odoo>

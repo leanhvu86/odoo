@@ -1,0 +1,13 @@
+<odoo>
+    <data noupdate ="1">
+          <record id="sequence_self_parking_point" model="ir.sequence">
+            <field name="name">Parking Point Sequence</field>
+            <field name="code">self.parking.point</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">PK</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

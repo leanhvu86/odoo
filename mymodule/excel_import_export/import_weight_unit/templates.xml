@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="import_weight_unit_xlsx_template" model="xlsx.template">
+        <field name="res_model">weight.unit</field>
+        <field name="fname">import_sale_order.xlsx</field>
+        <field name="name">Import Weight Unit Template</field>
+        <field name="description">Import Weight Unit Template for testing</field>
+        <field name="redirect_action" ref="share_van_order.weight_unit_action" />
+        <field name="input_instruction">
+            {
+                '__IMPORT__': {
+                    'sale_order': {
+                        '_HEAD_': {
+                            'B2': 'name',
+                        },
+                        'order_line': {
+                            'A6': 'name',
+                        }
+                    }
+                },
+            }
+        </field>
+    </record>
+    <function model="xlsx.template" name="load_xlsx_template">
+        <value eval="[ref('import_weight_unit_xlsx_template')]" />
+    </function>
+</odoo>

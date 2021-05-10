@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!--        <menuitem name="Driver" id="sharevan_fleet_driver_menu" parent="sharevan_order_menu_9" sequence="1017"-->
+    <!--                  action="sharevan_fleet_driver_view"/>-->
+
+</odoo>

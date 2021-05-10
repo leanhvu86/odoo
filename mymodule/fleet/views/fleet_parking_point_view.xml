@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- create -->
+    <record id='fleet_parking_point_view_form' model='ir.ui.view'>
+        <field name="name">parking.point.form</field>
+        <field name="model">parking.point</field>
+        <field name="arch" type="xml">
+            <form string="Model">
+                <sheet>
+                    <field name="image_128" widget='image' class="oe_avatar"/>
+                    <div class="oe-title">
+                        <h1>
+                            <field name="name_seq_parking_point"/>
+                        </h1>
+                    </div>
+                    <group col="2" string="Parking Point Details">
+                        <group>
+                            <field name="name"/>
+                            <field name="phone_number"/>
+                            <field name="day_due_time" string="Open time (Hours)" sum="Total time" widget="float_time"/>
+                        </group>
+                        <group>
+                            <field name="zip"/>
+                            <field name="day_ready_time" string="Close (Hours)" sum="Total time" widget="float_time"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Address">
+                            <group>
+                                <group>
+                                    <field name="street" widget="gplaces_address_autocomplete"
+                                           options="{'fillfields': {'street2': ['route', 'street_number']}}"/>
+                                    <field name="country_id"/>
+                                    <field name="state_id"/>
+                                    <field name="city_name"/>
+                                    <field name="district" options='{"no_open": True, "no_create": True}'/>
+                                    <field name="ward" options='{"no_open": True, "no_create": True}'/>
+                                </group>
+                                <group>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Address Detail">
+                            <group>
+                                <group>
+                                    <field name="latitude"/>
+                                    <field name="longitude"/>
+                                    <field name="address"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Attachment">
+                            <group>
+                                <field name="attach_File" widget="many2many_binary"
+                                       string="Attach File"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    <widget name="gmap_marker" lat="latitude" lng="longitude" description="name"/>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='fleet_parking_point_view_tree' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.parking.point.tree</field>
+        <field name="model">parking.point</field>
+        <field name="arch" type="xml">
+            <tree string="Parking point">
+                <field name="name"/>
+                <field name="address"/>
+                <field name="phone_number"/>
+                <field name="day_due_time" widget="timepicker"/>
+                <field name="day_ready_time" widget="timepicker"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_parking_point_view_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.parking.point.search</field>
+        <field name="model">parking.point</field>
+        <field name="arch" type="xml">
+            <search string="All parking point">
+                <field string="Parking point" name="name"
+                       filter_domain="['|', ('name', 'ilike', self), ('address', 'ilike', self)]"/>
+                <field string="Fleet" name="fleet_id" filter_domain="[('fleet_id', 'ilike', self)]"/>
+                <field string="Address" name="address"/>
+                <field string="Phone number" name="phone_number"/>
+                <filter string="Address" name="address" domain="[('address','=','Hawoai'),('address','=','Hawoai')]"/>
+                <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="groupby_name" context="{'group_by': 'name'}"/>
+                    <filter string="Address" name="groupby_address" context="{'group_by': 'address'}"/>
+                    <filter string="Status" name="groupby_status" context="{'group_by': 'status'}"/>
+                    <filter string="Day ready time" name="day_ready_time" context="{'group_by': 'day_ready_time'}"/>
+                    <filter string="Day due time" name="groupby_status" context="{'group_by': 'day_due_time'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='parking_point_view_kanban' model='ir.ui.view'>
+        <field name="name">parking.point.kanban</field>
+        <field name="model">parking.point</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="address">
+                <field name="id"/>
+                <field name="address"/>
+                <field name="phone_number"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('parking.point', 'image_128', record.id.raw_value)"
+                                     alt="Vehicle" style="max-height: 90px; max-width: 60px;"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                    :
+                                    <field name="address"/>
+                                </strong>
+
+
+                            </div>
+                            <div class="o_kanban_button" t-if="!selection_mode">
+
+                            </div>
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_parking_point_map" model="ir.ui.view">
+        <field name="name">Parking Point Map</field>
+        <field name="model">parking.point</field>
+        <field name="arch" type="xml">
+            <map class="o_res_partner_map" library="geometry" string="Map" lat="latitude" lng="longitude"
+                 colors="">
+                <field name="id"/>
+                <field name="address"/>
+                <field name="phone_number"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('parking.point', 'image_128', record.id.raw_value)"
+                                     alt="Vehicle" style="max-height: 90px; max-width: 60px;"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                    :
+                                    <field name="address"/>
+                                </strong>
+
+
+                            </div>
+                            <div class="o_kanban_button" t-if="!selection_mode">
+
+                            </div>
+
+                        </div>
+                    </t>
+                </templates>
+            </map>
+        </field>
+    </record>
+
+
+    <record id='fleet_vehicle_parking_point_action' model='ir.actions.act_window'>
+        <field name="name">Vehicles Parking Point</field>
+        <field name="res_model">parking.point</field>
+        <field name="view_mode">tree,kanban,form,map</field>
+        <field name="context">{'search_default_status': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new contract
+            </p>
+            <p>
+                Manage all your contracts (leasing, insurances, etc.) with
+                their related services, costs. Odoo will automatically warn
+                you when some contracts have to be renewed.
+            </p>
+            <p>
+                Each contract (e.g.: leasing) may include several services
+                (reparation, insurances, periodic maintenance).
+            </p>
+        </field>
+    </record>
+    <menuitem name="Parking point" parent="shipping_team" action="fleet_vehicle_parking_point_action"
+              id="fleet_parking_point" sequence="199" groups="fleet_group_user"/>
+
+</odoo>

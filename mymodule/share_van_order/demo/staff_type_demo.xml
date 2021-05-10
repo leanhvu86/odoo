@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+<!--        <record id="staffType0" model="sharevan.order">-->
+<!--            <field name="code">CUSTOMER_MANAGER</field>-->
+<!--            <field name="name">Nhân viên quản lý</field>-->
+<!--            <field name="description"> </field>-->
+<!--            <field name="status">running</field>-->
+<!--          </record>-->
+<!--        <record id="staffType1" model="sharevan.order">-->
+<!--            <field name="code">CUSTOMER_STOCKMAN</field>-->
+<!--            <field name="name">Nhân viên kho</field>-->
+<!--            <field name="description"> </field>-->
+<!--            <field name="status">running</field>-->
+<!--          </record>-->
+<!--        <record id="staffType2" model="sharevan.order">-->
+<!--            <field name="code">FLEET_MANAGER</field>-->
+<!--            <field name="name">Quản lý nhà xe</field>-->
+<!--            <field name="description"> </field>-->
+<!--            <field name="status">running</field>-->
+<!--          </record>-->
+<!--        <record id="staffType3" model="sharevan.order">-->
+<!--            <field name="code">FLEET_DRIVER</field>-->
+<!--            <field name="name">Nhân viên lái xe</field>-->
+<!--            <field name="description"> </field>-->
+<!--            <field name="status">running</field>-->
+<!--          </record>-->
+<!--        <record id="staffType4" model="sharevan.order">-->
+<!--            <field name="code">SHAREVAN_MANAGER</field>-->
+<!--            <field name="name">Quản lý sharevan</field>-->
+<!--            <field name="description"> </field>-->
+<!--            <field name="status">running</field>-->
+<!--          </record>-->
+<!--        <record id="staffType5" model="sharevan.order">-->
+<!--            <field name="code">SHAREVAN_STOCKMAN</field>-->
+<!--            <field name="name">Thủ kho sharevan</field>-->
+<!--            <field name="description"> </field>-->
+<!--            <field name="status">running</field>-->
+<!--          </record>-->
+    </data>
+</odoo>

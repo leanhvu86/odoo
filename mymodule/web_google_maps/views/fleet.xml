@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!--    <record id="action_partner_form_view3" model="ir.actions.act_window.view">-->
+    <!--        <field eval="3" name="sequence"/>-->
+    <!--        <field name="view_mode">map</field>-->
+    <!--        <field name="view_id" ref="view_res_partner_map"/>-->
+    <!--        <field name="act_window_id" ref="base.action_partner_form"/>-->
+    <!--    </record>-->
+</odoo>

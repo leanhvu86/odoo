@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        <template id="custom_header" inherit_id="website.layout" name="Custom Header">
+            <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+                <attribute name="id">my_header</attribute>
+            </xpath>
+
+            <xpath expr="//div[@id='wrapwrap']/header/nav" position="after">
+                <div class="container">
+                    <div class="alert alert-info mt16" role="alert">
+                        <strong>Welcome</strong>
+                        in our website!
+                    </div>
+                </div>
+            </xpath>
+
+            &lt;!&ndash; <xpath expr="//header/nav" position="attributes">
+                 <attribute name="style">background-color: white !important;box-shadow:0 3px 5px 0 rgba(50,50,50,0.3)
+                 </attribute>
+             </xpath>
+
+             <xpath expr="//header//a[hasclass('navbar-brand')]" position="replace">
+                 <a href="/" class="navbar-brand logo">
+                     <img t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"
+                          style="width: 75%; height: 100%; object-fit: cover;"
+                          src="/order_customer/static/src/img/car.png"/>
+                 </a>
+             </xpath>&ndash;&gt;
+        </template>
+    -->
+
+    <!-- <template id="assets_frontend" inherit_id="website.assets_frontend" name="Long haul script">
+         <xpath expr="//link[last()]" position="after">
+             <link rel="stylesheet" type="text/scss" href="/order_customer/static/src/scss/custom.scss"/>
+         </xpath>
+     </template>-->
+
+</odoo>

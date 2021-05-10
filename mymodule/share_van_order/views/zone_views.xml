@@ -1,0 +1,701 @@
+<odoo>
+    <data>
+
+        <record id='sharevan_zone_view_form' model='ir.ui.view'>
+            <field name="name">sharevan.zone.form</field>
+            <field name="model">sharevan.zone</field>
+            <field name="arch" type="xml">
+                <form string="zone">
+                    <sheet>
+                        <h1>
+                            <field name="name_seq" readonly="1"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="country_id"/>
+                            </group>
+                            <group>
+                                <field name="code"/>
+                                <field name="depot_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Area">
+                                <field name="area_line"/>
+                            </page>
+                        </notebook>
+                        <!--                            <field name="area_line" context="{'search_default_no_share':1}">-->
+                        <!--                                <form string="Area">-->
+                        <!--                                    <sheet>-->
+                        <!--                                        <group>-->
+                        <!--                                            <group>-->
+                        <!--                                                <field name="name"/>-->
+                        <!--                                                <field name="country_id"/>-->
+                        <!--                                            </group>-->
+                        <!--                                            <group>-->
+                        <!--                                                <field name="code"/>-->
+                        <!--                                            </group>-->
+                        <!--                                        </group>-->
+                        <!--                                        <group>-->
+
+                        <!--                                            <group>-->
+                        <!--                                                <field name="location_type"/>-->
+                        <!--                                            </group>-->
+                        <!--                                        </group>-->
+                        <!--                                    </sheet>-->
+                        <!--                                </form>-->
+                        <!--                            </field>-->
+                        <!--                        <label for="province_line">Province Group</label>-->
+                        <!--                        <field name="province_line" widget="section_and_note_one2many"-->
+                        <!--                               context="{'default_zone_id': active_id, 'default_only_with_zone': True,-->
+                        <!--                               'default_country_id': country_id}" mode="tree">-->
+                        <!--                            <tree>-->
+                        <!--                                <control>-->
+                        <!--                                    <create string="Add province"/>-->
+                        <!--                                </control>-->
+                        <!--                                <field name="country_id"/>-->
+                        <!--                                <field name="zone_id"/>-->
+                        <!--                                <field name="states"  context="{'default_country_id': country_id}"/>-->
+                        <!--                            </tree>-->
+                        <!--                            <form string="Province group">-->
+                        <!--                                <sheet>-->
+                        <!--                                    <group>-->
+                        <!--                                        <field name="country_id"/>-->
+                        <!--                                        <field name="zone_id"/>-->
+                        <!--                                        <field name="states" widget="many2many_tags" context="{'default_country_id': country_id}"/>-->
+                        <!--                                    </group>-->
+                        <!--                                </sheet>-->
+                        <!--                            </form>-->
+                        <!--                        </field>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='sharevan_zone_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.zone.tree</field>
+            <field name="model">sharevan.zone</field>
+            <field name="arch" type="xml">
+                <tree string="zone">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <!--                    <field name="states_line"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_zone_view_kanban' model='ir.ui.view'>
+            <field name="name">sharevan.zone.kanban</field>
+            <field name="model">sharevan.zone</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div>
+                                    <strong>
+                                        <field name="name"/>
+                                        <span class="float-right">
+                                            <field name="code"/>
+                                        </span>
+                                    </strong>
+                                </div>
+
+                                <!--                                <div>-->
+                                <!--                                        <field name="city_line"/>-->
+                                <!--                                </div>-->
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="sharevan_zone_view_search" model="ir.ui.view">
+            <field name="name">sharevan.zone.search</field>
+            <field name="model">sharevan.zone</field>
+            <field name="arch" type="xml">
+                <search string="All Zone">
+                    <filter string="status" name="status" domain="[('status', '!=', 'deleted')]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id='sharevan_zone_view_action' model='ir.actions.act_window'>
+            <field name="name">DLP Zone</field>
+            <field name="res_model">sharevan.zone</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{"search_default_status" : 'running'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new zone
+                </p>
+                <p>
+                    Here you can add zone
+                </p>
+            </field>
+        </record>
+
+        <record id='sharevan_area_view_form' model='ir.ui.view'>
+            <field name="name">sharevan.area.form</field>
+            <field name="model">sharevan.area</field>
+            <field name="arch" type="xml">
+                <form string="Area">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name_seq" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="country_id"/>
+                                <field name="location_type"/>
+                                <field name="google_name"/>
+                            </group>
+                            <group>
+                                <field name="code"/>
+                                <field name="zone_area_id"/>
+                                <field name="parent_id"/>
+                                <field name="hub_id"/>
+                            </group>
+                        </group>
+
+
+                        <group>
+                            <field name="province_name" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="district_name" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_area_view_search" model="ir.ui.view">
+            <field name="name">sharevan.area.search</field>
+            <field name="model">sharevan.area</field>
+            <field name="arch" type="xml">
+                <search string="All DLP Area">
+                    <filter string="status" name="status" domain="[('status', '!=', 'deleted')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Country" name="group_by_country" domain="[]"
+                                context="{'group_by': 'country_id'}"/>
+                        <filter string="Province" name="group_by_province" domain="[]"
+                                context="{'group_by': 'province_name'}"/>
+                        <filter string="Districts" name="group_by_districts" domain="[]"
+                                context="{'group_by': 'district_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_area_view_action' model='ir.actions.act_window'>
+            <field name="name">DLP Area</field>
+            <field name="res_model">sharevan.area</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{"search_default_status" : 1,'search_default_group_by_country' :
+                True,'search_default_group_by_province' : True,'search_default_group_by_districts' : True}
+            </field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new area
+                </p>
+                <p>
+                    Here you can add area
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="DLP Geography" id="sharevan_geography" parent="sharevan_order_menu_2"
+                  sequence="997"/>
+        <menuitem name="DLP Zone" id="sharevan_zone" parent="sharevan_geography"
+                  action="sharevan_zone_view_action" sequence="995"/>
+        <menuitem name="DLP Area" id="sharevan_area" parent="sharevan_geography"
+                  action="sharevan_area_view_action" sequence="996"/>
+
+        <record id='sharevan_zone_price_tree' model='ir.ui.view'>
+            <field name="name">sharevan.zone.price.tree</field>
+            <field name="model">sharevan.zone.price</field>
+            <field name="arch" type="xml">
+                <tree string="DLP Zone Price">
+                    <field name="zone_id"/>
+                    <field name="weight_unit"/>
+                    <field name="distance_unit"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="price_normal_min" widget="monetary"/>
+                    <field name="price_normal_max" widget="monetary"/>
+                    <field name="price_express_min" widget="monetary"/>
+                    <field name="price_express_max" widget="monetary"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='sharevan_zone_price_form' model='ir.ui.view'>
+            <field name="name">sharevan.zone.price.form</field>
+            <field name="model">sharevan.zone.price</field>
+            <field name="arch" type="xml">
+                <form string="ZonePrice">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="zone_id"/>
+                                <field name="weight_unit" domain="[('status', '=', 'running')]"/>
+                                <field name="distance_unit" domain="[('status', '=', 'running')]"/>
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+                            </group>
+                            <group>
+                                <field name="price_normal_min" widget="monetary"/>
+                                <field name="price_normal_max" widget="monetary"/>
+                                <field name="price_express_min" widget="monetary"/>
+                                <field name="price_express_max" widget="monetary"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_zone_price_search" model="ir.ui.view">
+            <field name="name">DLP Zone Price</field>
+            <field name="model">sharevan.zone.price</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <filter string="status" name="status" domain="[('status', '!=', 'deleted')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_zone_price_action' model='ir.actions.act_window'>
+            <field name="name">DLP Zone Price</field>
+            <field name="res_model">sharevan.zone.price</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 'running'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Zone price
+                </p>
+                <p>
+                    Here you can add Zone price
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Zone Price" id="sharevan_zone_price" parent="sharevan_geography"
+                  action="sharevan_zone_price_action" sequence="1052"/>
+
+        <record id='sharevan_recurrent_view_form' model='ir.ui.view'>
+            <field name="name">sharevan.recurrent.form</field>
+            <field name="model">sharevan.recurrent</field>
+            <field name="arch" type="xml">
+                <form string="Area">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="recurrent_code" invisible="1"/>
+                                <field name="subscribe_id"/>
+                                <field name="cycle_type"/>
+                                <field name="week_choose" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                            </group>
+                            <group>
+                                <field name="frequency" readonly="True" force_save="1"/>
+                                <field name="day_of_month" readonly="True" force_save="1"
+                                       attrs="{'invisible': [('cycle_type', '!=', '3')]}"/>
+                                <field name="chooseDay" attrs="{'invisible': [('cycle_type', '!=', '3')]}"/>
+                                <field name="day_of_week" readonly="True" force_save="1"
+                                       attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="description" style='min-height:150px; min-width:600px;'/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id='sharevan_recurrent_view_action' model='ir.actions.act_window'>
+            <field name="name">Share Van Recurrent</field>
+            <field name="res_model">sharevan.recurrent</field>
+            <field name="view_mode">form</field>
+            <!--            <field name="context">{"search_default_status" : 'running'}</field>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new zone
+                </p>
+                <p>
+                    Here you can add zone
+                </p>
+            </field>
+        </record>
+        <record id='sharevan_routing_plan_day_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.routing.plan.day.tree</field>
+            <field name="model">sharevan.routing.plan.day</field>
+            <field name="arch" type="xml">
+                <tree string="Routing plan day">
+                    <field name="routing_plan_day_code" readonly="1"/>
+                    <field name="driver_id"/>
+                    <field name="vehicle_id" />
+                    <field name="date_plan"/>
+                    <field name="status"/>
+                    <field name="address" optional="hide"/>
+                    <field name="phone" optional="hide"/>
+                    <field name="warehouse_name"/>
+                    <field name="capacity_actual" optional="hide"/>
+                    <field name="zone_area_id" optional="hide"/>
+                    <field name="expected_from_time" optional="hide"/>
+                    <field name="expected_to_time" optional="hide"/>
+                    <field name="type" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='share_van_routing_plan_day_view_form' model='ir.ui.view'>
+            <field name="name">sharevan.routing.plan.day.form</field>
+            <field name="model">sharevan.routing.plan.day</field>
+            <field name="arch" type="xml">
+                <form string="Routing plan day" create="false">
+                    <sheet>
+<!--                        <field name="qr_code" widget="image" class="oe_avatar" readonly="1"/>-->
+                        <group>
+                            <group>
+                                <field name="routing_plan_day_code" readonly="1"/>
+                                <field name="driver_id"/>
+                                <field name="qr_so" readonly="1" force_save="1"  attrs="{'invisible': [('qr_so', '!=', True)]}"/>
+                            </group>
+                            <group>
+                                <field name="date_plan"/>
+                                <field name="vehicle_id"/>
+                                <field name="bill_lading_detail_code"/>
+                                <field name="qr_gen_check" invisible="1"/>
+                                <field name="ship_type" invisible="1"/>
+                                <field name="toogle" invisible="1"/>
+                                <button name="gen_qr_code_web"
+                                        class="btn btn-primary"
+                                        attrs="{'invisible': ['|',('qr_gen_check', '=', True),('status', '!=', '0')]}"
+                                        string="Gen QR code"
+                                        type="object"
+                                        confirm="Are you sure you want to do this?"
+                                />
+<!--                                <button style="color:white"  name="open_control_routing"-->
+<!--                                        class="btn btn-warning"-->
+<!--                                        string="Start Check"-->
+<!--                                        type="object"-->
+<!--                                        confirm="Are you sure you want to start checking this bill?"-->
+<!--                                />-->
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Infomation">
+                                <group>
+                                    <group>
+                                        <field name="routing_vehicle_id"/>
+                                        <field name="latitude"/>
+                                        <field name="longitude"/>
+                                        <field name="address"/>
+                                        <field name="zone_area_id"/>
+                                        <!--                                <field name="wjson_address"/>-->
+                                        <field name="stock_man_id"/>
+                                        <field name="depot_id"/>
+                                        <field name="type"/>
+                                        <field name="company_id"/>
+                                        <field name="partner_id"/>
+                                        <field name="so_type"/>
+<!--                                        <field name="bill_lading_detail_id"/>-->
+                                    </group>
+                                    <group>
+                                        <field name="status"/>
+                                        <field name="order_number"/>
+                                        <field name="expected_from_time"/>
+                                        <field name="expected_to_time"/>
+                                        <field name="driver_arrived_time"/>
+                                        <field name="accept_time"/>
+                                        <field name="warehouse_id"/>
+                                        <field name="phone"/>
+                                        <field name="warehouse_name"/>
+                                        <field name="insurance_id"/>
+                                        <field name="service_ids" class="oe_inline" widget="many2many_tags"/>
+                                        <field name="assess_amount" widget="monetary"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="bill_package_routing_import_line"
+                                           attrs="{'invisible': [('type', '=', '1')]}"
+                                           widget="section_and_note_one2many"
+                                           context="{'default_sharevan_routing_plan_day_id':active_id,'default_only_with_sharevan_routing_plan_day': True}"
+                                           mode="tree">
+                                        <tree>
+                                            <control>
+                                                <create string="Add a import package routing"/>
+                                            </control>
+                                            <field name="product_type_id"/>
+                                            <field name="total_weight"  widget="weight_unit"/>
+                                            <field name="quantity_import" />
+                                            <field name="length" widget="length_unit"/>
+                                            <field name="width" widget="length_unit"/>
+                                            <field name="height" widget="length_unit"/>
+                                            <field name="capacity" widget="volume_unit"/>
+                                            <field name="insurance_name"/>
+                                            <field name="routing_package_plan"/>
+                                        </tree>
+                                        <form string="Bill package routing import">
+                                            <sheet>
+                                                <group>
+                                                    <group string="Bill Package routing import">
+                                                        <field name="routing_plan_day_id" readonly="1"/>
+                                                        <field name="product_type_id"/>
+                                                        <!--                                                                <field name="product_package_type_id"/>-->
+                                                        <field name="total_weight"  widget="weight_unit"/>
+                                                        <field name="quantity_import"/>
+                                                        <field name="item_name"/>
+                                                        <field name="bill_package_id"/>
+                                                        <!--                                                                <field name="type"/>-->
+                                                    </group>
+                                                    <group string="Measure">
+                                                        <field name="length" widget="length_unit"/>
+                                                        <field name="width" widget="length_unit"/>
+                                                        <field name="height" widget="length_unit"/>
+                                                        <field name="capacity" widget="volume_unit"/>
+                                                        <field name="service_name"/>
+                                                        <field name="qr_char"/>
+                                                        <field name="insurance_name"/>
+                                                    </group>
+                                                </group>
+                                                <group>
+                                                    <field name="routing_package_plan"/>
+                                                    <field name="note"
+                                                           placeholder="Write here any other information"/>
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                                <group>
+                                    <field name="bill_package_routing_export_line"
+                                           attrs="{'invisible': [('type', '=', '0')]}"
+                                           widget="section_and_note_one2many"
+                                           context="{'default_sharevan_routing_plan_day_id':active_id,'default_only_with_sharevan_routing_plan_day': True}"
+                                           mode="tree">
+                                        <tree>
+                                            <control>
+                                                <create string="Add a export package routing"/>
+                                            </control>
+                                            <field name="product_type_id"/>
+                                            <field name="total_weight"  widget="weight_unit"/>
+                                            <field name="quantity_export"/>
+                                            <field name="length" widget="length_unit"/>
+                                            <field name="width" widget="length_unit"/>
+                                            <field name="height" widget="length_unit"/>
+                                            <field name="capacity" widget="volume_unit"/>
+                                            <field name="insurance_name"/>
+                                        </tree>
+                                        <form string="Bill package routing export">
+                                            <sheet>
+                                                <group>
+                                                    <group string="Bill Package routing export">
+                                                        <field name="routing_plan_day_id" readonly="1"/>
+                                                        <field name="product_type_id"/>
+                                                        <field name="total_weight"  widget="weight_unit"/>
+                                                        <field name="quantity_export"/>
+                                                        <field name="item_name"/>
+                                                        <field name="bill_package_id"/>
+                                                    </group>
+                                                    <group string="Measure">
+                                                        <field name="length" widget="length_unit"/>
+                                                        <field name="width" widget="length_unit"/>
+                                                        <field name="height" widget="length_unit"/>
+                                                        <field name="capacity" widget="volume_unit"/>
+                                                        <field name="service_name"/>
+                                                        <field name="qr_char"/>
+                                                        <field name="insurance_name"/>
+                                                    </group>
+                                                </group>
+                                                <group>
+
+                                                    <field name="routing_package_plan"/>
+                                                    <field name="note"
+                                                           placeholder="Write here any other information"/>
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Attachment">
+                                <group>
+                                    <field name="rating_customer_id"/>
+                                    <field name="sos_ids" mode="kanban"
+                                           context="{'default_fleet_vehicle_id': active_id, 'default_only_with_fleet_vehicle': True}">
+                                        <kanban>
+                                            <field name="warning_type_id"/>
+                                            <field name="driver_id"/>
+                                            <field name="routing_plan_day_id"/>
+                                            <field name="name"/>
+                                            <field name="note"/>
+                                            <templates>
+                                                <t t-name="kanban-box">
+                                                    <div t-att-class="color + ' oe_kanban_global_click'">
+                                                        <!--                                                <div class="o_kanban_image">-->
+                                                        <!--                                                    <img alt=""-->
+                                                        <!--                                                         t-att-src="kanban_image('share.van.warehouse', 'image_128', record.id.raw_value)"/>-->
+                                                        <!--                                                </div>-->
+                                                        <div class="oe_kanban_details">
+                                                            <div t-att-style="'color:red'">
+                                                                <field name="warning_type_id"/>
+                                                            </div>
+                                                            <div>
+                                                                <field name="driver_id"/>
+                                                                <div class="float-right" t-att-style="'color:orange'">
+                                                                    <a>
+                                                                        <field name="vehicle_id"/>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div t-att-style="'color:red'">
+                                                                <field name="create_date"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                        </kanban>
+                                        <form string="Driver sos">
+                                            <group>
+                                                <group>
+                                                    <field name="warning_type_id"/>
+                                                    <field name="driver_id"/>
+                                                    <field name="name"/>
+                                                    <field name="status"/>
+                                                </group>
+                                                <group>
+                                                    <field name="continue_check"/>
+                                                    <field name="delay_time"/>
+                                                    <field name="note"/>
+                                                </group>
+                                            </group>
+                                            <group>
+                                                <field name="attach_image" widget="many2many_binary"
+                                                       string="Attach File"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+<!--                                <group>-->
+<!--                                    <field name="reward_rating_line" mode="kanban"-->
+<!--                                           context="{'default_routing_plan_day_id': active_id, 'default_only_with_routing_plan_day': True}">-->
+<!--                                        <kanban>-->
+<!--                                            <field name="routing_plan_day_id"/>-->
+<!--                                            <field name="driver_id"/>-->
+<!--                                            <templates>-->
+<!--                                                <t t-name="kanban-box">-->
+<!--                                                    <div t-att-class="color + ' oe_kanban_global_click'">-->
+<!--                                                        &lt;!&ndash;                                                <div class="o_kanban_image">&ndash;&gt;-->
+<!--                                                        &lt;!&ndash;                                                    <img alt=""&ndash;&gt;-->
+<!--                                                        &lt;!&ndash;                                                         t-att-src="kanban_image('share.van.warehouse', 'image_128', record.id.raw_value)"/>&ndash;&gt;-->
+<!--                                                        &lt;!&ndash;                                                </div>&ndash;&gt;-->
+<!--                                                        <div class="oe_kanban_details">-->
+<!--                                                            <div t-att-style="'color:red'">-->
+<!--                                                                <field name="rating_badges_id"/>-->
+<!--                                                            </div>-->
+<!--                                                            <div>-->
+<!--                                                                <field name="employee_id"/>-->
+<!--                                                                <div class="float-right" t-att-style="'color:orange'">-->
+<!--                                                                    <a>-->
+<!--                                                                        <field name="driver_id"/>-->
+<!--                                                                    </a>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </t>-->
+<!--                                            </templates>-->
+<!--                                        </kanban>-->
+<!--                                        <form string="Routing driver reward">-->
+<!--                                            <group>-->
+<!--                                                <group>-->
+<!--                                                    <field name="rating_badges_id"/>-->
+<!--                                                    <field name="routing_plan_day_id"/>-->
+<!--                                                </group>-->
+<!--                                                <group>-->
+<!--                                                    <field name="driver_id"/>-->
+<!--                                                    <field name="employee_id"/>-->
+<!--                                                </group>-->
+<!--                                            </group>-->
+<!--                                        </form>-->
+<!--                                    </field>-->
+<!--                                </group>-->
+                                <group>
+                                    <field name="attach_image" widget="many2many_binary"
+                                           string="Attach File"/>
+                                    <field name="description"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id='sharevan_routing_plan_day_view_kanban' model='ir.ui.view'>
+            <field name="name">sharevan.routing.plan.day.kanban</field>
+            <field name="model">sharevan.routing.plan.day</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" default_group_by="status" create="false">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div>
+                                    <field name="routing_plan_day_code"/>
+                                    <div class="float-right" t-att-style="'color:red'">
+                                        <field name="date_plan"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <field name="company_id"/>
+                                    <div class="float-right" t-att-style="'color:green'">
+                                        <field name="type"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>
+                                        <field name="warehouse_name"/>
+                                    </span>
+                                    <span class="float-right">
+                                        <field name="phone"/>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id='share_van_routing_plan_day_view_action' model='ir.actions.act_window'>
+            <field name="name">Routing Plan Day</field>
+            <field name="res_model">sharevan.routing.plan.day</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <!--            <field name="context">{"search_default_status" : 1}</field>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new area
+                </p>
+                <p>
+                    Here you can add area
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

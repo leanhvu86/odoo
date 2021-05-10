@@ -1,0 +1,112 @@
+<odoo>
+    <data>
+        <record id="sharevan_notification_form" model="ir.ui.view">
+            <field name="name">bidding.notification.form</field>
+            <field name="model">bidding.notification</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <sheet>
+                        <field name="image_256" widget="image" class="oe_avatar"/>
+                        <group col="4">
+                            <field name="title"/>
+                            <field name="type" widget="Selection" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="content"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bidding_notification_tree" model="ir.ui.view">
+            <field name="name">bidding.notification.tree</field>
+            <field name="model">bidding.notification</field>
+            <field name="arch" type="xml">
+                <tree string="Notification">
+                    <field name="title"/>
+                    <field name="content"/>
+                    <field name="type"/>
+                    <field name="sent_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sharevan_notification_search" model="ir.ui.view">
+            <field name="name">bidding.notification.search</field>
+            <field name="model">bidding.notification</field>
+            <field name="arch" type="xml">
+                <search string="Notification">
+                    <field name="title"/>
+                    <field name="content"/>
+                    <field name="type"/>
+                    <field name="sent_date"/>
+                    <separator/>
+                    <filter string="Sent date" name="sent_date" context="{'order_by':'id desc'}"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id='bidding_notification_action' model='ir.actions.act_window'>
+            <field name="name">Notifications</field>
+            <field name="res_model">bidding.notification</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Notifications
+                </p>
+            </field>
+        </record>
+
+        <record id="sharevan_channel_form" model="ir.ui.view">
+            <field name="name">bidding.channel.form</field>
+            <field name="model">bidding.channel</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="status" widget="Selection"/>
+                            <field name="channel_code"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bidding_channel_tree" model="ir.ui.view">
+            <field name="name">bidding.channel.tree</field>
+            <field name="model">bidding.channel</field>
+            <field name="arch" type="xml">
+                <tree string="Notification" default_order='id desc'>
+                    <field name="name"/>
+                    <field name="status"/>
+                    <field name="channel_code"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='bidding_channel_action' model='ir.actions.act_window'>
+            <field name="name">Notification channel</field>
+            <field name="res_model">bidding.channel</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Notifications
+                </p>
+            </field>
+        </record>
+<!--        <menuitem name="Notification" id="menu_users_bidding_notification" parent="sharevan_order_menu_9"-->
+<!--                  action="bidding_notification_action" sequence="135351"/>-->
+<!--        <menuitem name="Notification channel" id="menu_users_bidding_channel" parent="sharevan_order_menu_9"-->
+<!--                  action="bidding_channel_action" sequence="132342"/>-->
+    </data>
+</odoo>

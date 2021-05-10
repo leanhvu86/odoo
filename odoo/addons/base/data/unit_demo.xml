@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="main_weight_unit" model="weight.unit">
+            <field name="code">Tonne</field>
+            <field name="name">Tấn</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="main_volume_unit" model="volume.unit">
+            <field name="name">Cubic meter</field>
+            <field name="volume_code">m3</field>
+            <field name="length_unit_name">Meter</field>
+            <field name="length_unit_code">m</field>
+            <field name="status">running</field>
+        </record>
+
+        <record id="main_parcel_unit" model="parcel.unit">
+            <field name="code">package</field>
+            <field name="name">package</field>
+            <field name="status">running</field>
+        </record>
+    </data>
+</odoo>

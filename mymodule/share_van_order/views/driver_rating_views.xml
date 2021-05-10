@@ -1,0 +1,295 @@
+<odoo>
+    <data>
+
+        <record id='sharevan_rating_badges_form' model='ir.ui.view'>
+            <field name="name">sharevan.rating.badges.form</field>
+            <field name="model">sharevan.rating.badges</field>
+            <field name="arch" type="xml">
+                <form string="zone">
+                    <sheet>
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                        <field name="image_256" widget='image' class="oe_avatar"/>
+                        <group col="2">
+                            <group>
+                                <field name="name" required="True"/>
+                                <field name="type"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                                <field name="rating_level"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_rating_badges_search" model="ir.ui.view">
+            <field name="name">sharevan.rating.badges.search</field>
+            <field name="model">sharevan.rating.badges</field>
+            <field name="arch" type="xml">
+                <search string="Search rating">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="status"/>
+                    <field name="description"/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id='sharevan_rating_badges_tree' model='ir.ui.view'>
+            <field name="name">sharevan.rating.badges.tree</field>
+            <field name="model">sharevan.rating.badges</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="status"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_rating_badges_action' model='ir.actions.act_window'>
+            <field name="name">Rating badges</field>
+            <field name="res_model">sharevan.rating.badges</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 'running'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new depot
+                </p>
+                <p>
+                    Here you can add depot
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Rating" id="sharevan_rating_config" parent="sharevan_order_menu_2"
+                  sequence="1020"/>
+        <menuitem name="Rating badges" id="sharevan_rating_badges" parent="sharevan_rating_config"
+                  action="sharevan_rating_badges_action" sequence="10222"/>
+
+
+        <record id='sharevan_title_award_form' model='ir.ui.view'>
+            <field name="name">sharevan.title.award.form</field>
+            <field name="model">sharevan.title.award</field>
+            <field name="arch" type="xml">
+                <form string="zone">
+                    <sheet>
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                        <field name="image_128" widget='image' class="oe_avatar"/>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="from_point"/>
+                            </group>
+                            <group>
+                                <field name="percent_commission_value"/>
+                                <field name="to_point"/>
+                                <field name="title_award_type"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="awards_level_line" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_title_award_search" model="ir.ui.view">
+            <field name="name">sharevan.title.award.search</field>
+            <field name="model">sharevan.title.award</field>
+            <field name="arch" type="xml">
+                <search string="Search title award">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="from_point"/>
+                    <field name="to_point"/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+
+                </search>
+            </field>
+        </record>
+
+
+        <record id='sharevan_title_award_tree' model='ir.ui.view'>
+            <field name="name">sharevan.title.award.tree</field>
+            <field name="model">sharevan.title.award</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="from_point"/>
+                    <field name="to_point"/>
+                    <field name="title_award_type"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='sharevan_title_award_action' model='ir.actions.act_window'>
+            <field name="name">Title award</field>
+            <field name="res_model">sharevan.title.award</field>
+            <field name="view_mode">tree,form</field>
+            <!--            <field name="context">{'search_default_status': 'running'}</field>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new
+                </p>
+                <p>
+                    Here you can add
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Title award" id="sharevan_title_award" parent="sharevan_rating_config"
+                  action="sharevan_title_award_action" sequence="1021"/>
+
+        <record id='sharevan_awards_level_form' model='ir.ui.view'>
+            <field name="name">sharevan.awards.level.form</field>
+            <field name="model">sharevan.awards.level</field>
+            <field name="arch" type="xml">
+                <form string="zone">
+                    <sheet>
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                        <field name="image_128" widget='image' class="oe_avatar"/>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="status"/>
+                            </group>
+                            <group>
+                                <field name="amount"  widget="monetary"/>
+                                <field name="vendor_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_awards_level_search" model="ir.ui.view">
+            <field name="name">sharevan.awards.level.search</field>
+            <field name="model">sharevan.awards.level</field>
+            <field name="arch" type="xml">
+                <search string="Search title award">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+
+                </search>
+            </field>
+        </record>
+
+
+        <record id='sharevan_awards_level_tree' model='ir.ui.view'>
+            <field name="name">sharevan.awards.level.tree</field>
+            <field name="model">sharevan.awards.level</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='sharevan_sharevan_awardslevel_action' model='ir.actions.act_window'>
+            <field name="name">Awards level</field>
+            <field name="res_model">sharevan.awards.level</field>
+            <field name="view_mode">tree,form</field>
+            <!--            <field name="context">{'search_default_status': 'running'}</field>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new
+                </p>
+                <p>
+                    Here you can add
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Awards level" id="sharevan_sharevan_awards_level" parent="sharevan_rating_config"
+                  action="sharevan_sharevan_awardslevel_action" sequence="1022"/>
+
+        <record id='sharevan_reward_point_form' model='ir.ui.view'>
+            <field name="name">sharevan.reward.point.form</field>
+            <field name="model">sharevan.reward.point</field>
+            <field name="arch" type="xml">
+                <form string="zone">
+                    <sheet>
+                        <h1>
+                            <field name="code_seq" readonly="1"/>
+                        </h1>
+                        <field name="image_256" widget='image' class="oe_avatar"/>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="type_reward_point"/>
+                            </group>
+                             <group>
+                                <field name="point"/>
+                                 <field name="code"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_reward_point_search" model="ir.ui.view">
+            <field name="name">sharevan.reward.point.search</field>
+            <field name="model">sharevan.reward.point</field>
+            <field name="arch" type="xml">
+                <search string="Search reward point">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+
+                </search>
+            </field>
+        </record>
+
+
+        <record id='sharevan_reward_point_tree' model='ir.ui.view'>
+            <field name="name">sharevan.reward.point.tree</field>
+            <field name="model">sharevan.reward.point</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code_seq"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='sharevan_reward_point_action' model='ir.actions.act_window'>
+            <field name="name">sharevan reward point</field>
+            <field name="res_model">sharevan.reward.point</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 'running'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new
+                </p>
+                <p>
+                    Here you can add
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Reward point" id="sharevan_reward_point" parent="sharevan_rating_config"
+                  action="sharevan_reward_point_action" sequence="1024"/>
+    </data>
+</odoo>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- create -->
+    <record id='fleet_parking_point_view_form' model='ir.ui.view'>
+        <field name="name">sharevan.bill.cycle</field>
+        <field name="model">sharevan.bill.cycle</field>
+        <field name="arch" type="xml">
+            <form string="Model">
+                <sheet>
+                    <div class="oe-title">
+                        <h1>
+                            <field name="name_seq" invisible="1"/>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group col="3" string="Bill Cycle">
+                        <group>
+                            <field name="start_date" widget="daterange"
+                                   options="{'related_end_date': 'end_date'}"
+                                   attrs="{'invisible': [('cycle_type', '=', '4')]}"/>
+                        </group>
+                        <group>
+                            <field name="end_date" widget="daterange"
+                                   options="{'related_start_date': 'start_date'}"
+                                   attrs="{'invisible': [('cycle_type', '=', '4')]}"/>
+                        </group>
+                        <group>
+
+                            <field name="DELIVERY_DATE" widget="multiple_datepicker"
+                                   attrs="{'invisible':['|',('cycle_type','=','2'),('cycle_type','=','4')]}"/>
+                        </group>
+                    </group>
+                    <group col="2">
+                        <group>
+                            <field name="cycle_type"/>
+                        </group>
+                        <group>
+                            <field name="status"/>
+                        </group>
+                    </group>
+                    <group col="5">
+                        <group>
+                            <field name="week1" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+
+                        </group>
+                        <group>
+                            <field name="week2" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                        </group>
+                        <group>
+                            <field name="week3" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+
+                        </group>
+                        <group>
+                            <field name="week4" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+                    <group col="5">
+
+                        <group>
+                            <field name="monday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                            <field name="friday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+
+                        </group>
+
+                        <group>
+                            <field name="tuesday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                            <field name="saturday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                        </group>
+                        <group>
+                            <field name="wednesday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                            <field name="sunday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+
+
+                        </group>
+                        <group>
+                            <field name="thursday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                            <p></p>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='bill_cycle_view_tree' model='ir.ui.view'>
+        <field name="name">sharevan.bill.cycle</field>
+        <field name="model">sharevan.bill.cycle</field>
+        <field name="arch" type="xml">
+            <tree string="Parking point">
+                <field name="name"/>
+                <field name="cycle_type"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="DELIVERY_DATE"/>
+
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    <record id="fleet_vehicle_parking_point_view_search" model="ir.ui.view">-->
+    <!--        <field name="name">fleet.vehicle.parking.point.search</field>-->
+    <!--        <field name="model">parking.point</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <search string="All parking point">-->
+    <!--                <field string="Parking point" name="name"-->
+    <!--                       filter_domain="['|', ('name', 'ilike', self), ('address', 'ilike', self)]"/>-->
+    <!--                <field string="Fleet" name="fleet_id" filter_domain="[('fleet_id', 'ilike', self)]"/>-->
+    <!--                <field string="Address" name="address"/>-->
+    <!--                <field string="Phone number" name="phone_number"/>-->
+    <!--                <filter string="Address" name="address" domain="[('address','=','Hawoai'),('address','=','Hawoai')]"/>-->
+    <!--                <filter string="status" name="status" domain="[('status', '=', 'active')]"/>-->
+    <!--                <separator/>-->
+    <!--                <group expand="1" string="Group By">-->
+    <!--                    <filter string="Name" name="groupby_name" context="{'group_by': 'name'}"/>-->
+    <!--                    <filter string="Address" name="groupby_address" context="{'group_by': 'address'}"/>-->
+    <!--                    <filter string="Status" name="groupby_status" context="{'group_by': 'status'}"/>-->
+    <!--                    <filter string="Day ready time" name="day_ready_time" context="{'group_by': 'day_ready_time'}"/>-->
+    <!--                    <filter string="Day due time" name="groupby_status" context="{'group_by': 'day_due_time'}"/>-->
+    <!--                </group>-->
+    <!--            </search>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+
+    <!--    <record id='parking_point_view_kanban' model='ir.ui.view'>-->
+    <!--        <field name="name">parking.point.kanban</field>-->
+    <!--        <field name="model">parking.point</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <kanban default_group_by="address">-->
+    <!--                <field name="id"/>-->
+    <!--                <field name="address"/>-->
+    <!--                <field name="phone_number"/>-->
+    <!--                <field name="status"/>-->
+    <!--                <templates>-->
+    <!--                    <t t-name="kanban-box">-->
+    <!--                        <div class="oe_kanban_global_click">-->
+    <!--                            <div class="o_kanban_image">-->
+    <!--                                <img t-att-src="kanban_image('parking.point', 'image_128', record.id.raw_value)"-->
+    <!--                                     alt="Vehicle" style="max-height: 90px; max-width: 60px;"/>-->
+    <!--                            </div>-->
+    <!--                            <div class="oe_kanban_details">-->
+    <!--                                <strong class="o_kanban_record_title">-->
+    <!--                                    <field name="name"/>-->
+    <!--                                    :-->
+    <!--                                    <field name="address"/>-->
+    <!--                                </strong>-->
+
+
+    <!--                            </div>-->
+    <!--                            <div class="o_kanban_button" t-if="!selection_mode">-->
+
+    <!--                            </div>-->
+
+    <!--                        </div>-->
+    <!--                    </t>-->
+    <!--                </templates>-->
+    <!--            </kanban>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <!--    <record id="view_parking_point_map" model="ir.ui.view">-->
+    <!--        <field name="name">Parking Point Map</field>-->
+    <!--        <field name="model">parking.point</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <map class="o_res_partner_map" library="geometry" string="Map" lat="latitude" lng="longitude"-->
+    <!--                 colors="">-->
+    <!--                <field name="id"/>-->
+    <!--                <field name="address"/>-->
+    <!--                <field name="phone_number"/>-->
+    <!--                <field name="status"/>-->
+    <!--                <field name="latitude"/>-->
+    <!--                <field name="longitude"/>-->
+    <!--                <templates>-->
+    <!--                    <t t-name="kanban-box">-->
+    <!--                        <div class="oe_kanban_global_click">-->
+    <!--                            <div class="o_kanban_image">-->
+    <!--                                <img t-att-src="kanban_image('parking.point', 'image_128', record.id.raw_value)"-->
+    <!--                                     alt="Vehicle" style="max-height: 90px; max-width: 60px;"/>-->
+    <!--                            </div>-->
+    <!--                            <div class="oe_kanban_details">-->
+    <!--                                <strong class="o_kanban_record_title">-->
+    <!--                                    <field name="name"/>-->
+    <!--                                    :-->
+    <!--                                    <field name="address"/>-->
+    <!--                                </strong>-->
+
+
+    <!--                            </div>-->
+    <!--                            <div class="o_kanban_button" t-if="!selection_mode">-->
+
+    <!--                            </div>-->
+
+    <!--                        </div>-->
+    <!--                    </t>-->
+    <!--                </templates>-->
+    <!--            </map>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+
+    <record id='sharevan_bill_cycle_action' model='ir.actions.act_window'>
+        <field name="name">Bill Cycle</field>
+        <field name="res_model">sharevan.bill.cycle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_status': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new contract
+            </p>
+            <p>
+                Manage all your contracts (leasing, insurances, etc.) with
+                their related services, costs. Odoo will automatically warn
+                you when some contracts have to be renewed.
+            </p>
+            <p>
+                Each contract (e.g.: leasing) may include several services
+                (reparation, insurances, periodic maintenance).
+            </p>
+        </field>
+    </record>
+
+<!--    <menuitem name="Bill Cycle" id="sharevan_bill_cycle" parent="sharevan_order_menu_root"-->
+<!--              action="sharevan_bill_cycle_action"-->
+<!--              sequence="1989"/>-->
+</odoo>

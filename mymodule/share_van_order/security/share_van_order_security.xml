@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="module_share_van_order_category" model="ir.module.category">
+        <field name="name">Order</field>
+        <field name="sequence">1001</field>
+    </record>
+    <record id="share_van_order_group_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_share_van_order_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_system'))]"/>
+    </record>
+    <record id="share_van_order_group_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="implied_ids" eval="[(4, ref('share_van_order_group_user'))]"/>
+        <field name="category_id" ref="module_share_van_order_category"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+    <data noupdate="1">
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('share_van_order.share_van_order_group_manager'))]"/>
+        </record>
+<!--        <record id="fleet_rule_sharevan_order_visibility_user" model="ir.rule">-->
+<!--            <field name="name">User can only see his/her order cycle</field>-->
+<!--            <field name="model_id" ref="model_sharevan_order"/>-->
+<!--            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>-->
+<!--            <field name="perm_read" eval="True"/>-->
+<!--            <field name="perm_write" eval="False"/>-->
+<!--            <field name="perm_create" eval="False"/>-->
+<!--            <field name="perm_unlink" eval="False"/>-->
+<!--            <field name="domain_force">[('cost_id.vehicle_id.company_id','=',user.company_id.id)]</field>-->
+<!--        </record>-->
+        <record id="fleet_rule_employee_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her employee</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+        <record id="fleet_rule_sharevan_warehouse_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her vehicle's warehouse</field>
+            <field name="model_id" ref="model_sharevan_warehouse"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+<!--        <record id="fleet_rule_sharevan_depot_visibility_user" model="ir.rule">-->
+<!--            <field name="name">User can only see his/her depot</field>-->
+<!--            <field name="model_id" ref="model_sharevan_depot"/>-->
+<!--            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>-->
+<!--            <field name="perm_read" eval="True"/>-->
+<!--            <field name="perm_write" eval="True"/>-->
+<!--            <field name="perm_create" eval="False"/>-->
+<!--            <field name="perm_unlink" eval="False"/>-->
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+<!--        </record>-->
+        <record id="fleet_rule_res_company_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her company</field>
+            <field name="model_id" ref="model_res_company"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('cost_id.vehicle_id.company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_sharevan_price_quotation_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her price quotation</field>
+            <field name="model_id" ref="model_sharevan_price_quotation"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_vehicle_sharevan_insurance_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her insurance</field>
+            <field name="model_id" ref="model_sharevan_insurance"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_sharevan_service_type_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her service type</field>
+            <field name="model_id" ref="model_sharevan_service_type"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('vehicle_id.company_id','=',user.company_id.id)]</field>-->
+        </record>
+
+        <record id="fleet_rule_sharevan_product_type_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her product type</field>
+            <field name="model_id" ref="model_sharevan_product_type"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_sharevan_zone_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her sharevan zone</field>
+            <field name="model_id" ref="model_sharevan_zone"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_sharevan_area_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her sharevan area</field>
+            <field name="model_id" ref="model_sharevan_area"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_sharevan_service_weight_fee_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her service weight fee</field>
+            <field name="model_id" ref="model_sharevan_service_weight_fee"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_sharevan_service_distance_fee_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her service distance fee</field>
+            <field name="model_id" ref="model_sharevan_service_distance_fee"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_sharevan_subscribe_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her sharevan subscribe</field>
+            <field name="model_id" ref="model_sharevan_subscribe"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+        <record id="fleet_rule_res_staff_type_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her staff type</field>
+            <field name="model_id" ref="model_res_staff_type"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+
+<!--        <record id="fleet_rule_sharevan_vendor_visibility_user" model="ir.rule">-->
+<!--            <field name="name">User can only see his/her vendor</field>-->
+<!--            <field name="model_id" ref="model_sharevan_vendor"/>-->
+<!--            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>-->
+<!--            <field name="perm_read" eval="True"/>-->
+<!--            <field name="perm_write" eval="False"/>-->
+<!--            <field name="perm_create" eval="False"/>-->
+<!--            <field name="perm_unlink" eval="False"/>-->
+<!--&lt;!&ndash;            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>&ndash;&gt;-->
+<!--        </record>-->
+        <record id="fleet_rule_sharevan_bill_lading_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her bill of lading</field>
+            <field name="model_id" ref="model_sharevan_bill_lading"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+<!--            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>-->
+        </record>
+
+
+<!--        <record id="fleet_rule_sharevan_order_visibility_manager" model="ir.rule">-->
+<!--            <field name="name">Administrator has all rights on sharevan order</field>-->
+<!--            <field name="model_id" ref="model_sharevan_order"/>-->
+<!--            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>-->
+<!--        </record>-->
+        <record id="fleet_rule_employee_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on employee</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_sharevan_warehouse_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on warehouse</field>
+            <field name="model_id" ref="model_sharevan_warehouse"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+<!--        <record id="fleet_rule_sharevan_depot_visibility_manager" model="ir.rule">-->
+<!--            <field name="name">Administrator has all rights on depot</field>-->
+<!--            <field name="model_id" ref="model_sharevan_depot"/>-->
+<!--            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>-->
+<!--        </record>-->
+        <record id="fleet_rule_company_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on company</field>
+            <field name="model_id" ref="model_res_company"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_sharevan_insurance_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on insurance</field>
+            <field name="model_id" ref="model_sharevan_insurance"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_service_type_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on service type</field>
+            <field name="model_id" ref="model_sharevan_service_type"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_sharevan_product_type_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on product type</field>
+            <field name="model_id" ref="model_sharevan_product_type"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+
+        <record id="fleet_rule_sharevan_zone_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on sharevan zone</field>
+            <field name="model_id" ref="model_sharevan_zone"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+
+        <record id="fleet_rule_sharevan_area_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on sharevan area</field>
+            <field name="model_id" ref="model_sharevan_area"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_sharevan_service_weight_fee_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on service weight fee</field>
+            <field name="model_id" ref="model_sharevan_service_weight_fee"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_sharevan_service_distance_fee_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on service distance fee</field>
+            <field name="model_id" ref="model_sharevan_service_distance_fee"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_distance_unit_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on distance unit</field>
+            <field name="model_id" ref="model_distance_unit"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_weight_unit_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on weight unit</field>
+            <field name="model_id" ref="model_weight_unit"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_sharevan_subscribe_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on subscribe</field>
+            <field name="model_id" ref="model_sharevan_subscribe"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+        <record id="fleet_rule_staff_type_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on staff type</field>
+            <field name="model_id" ref="model_res_staff_type"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+<!--        <record id="fleet_rule_sharevan_vendor_visibility_manager" model="ir.rule">-->
+<!--            <field name="name">Administrator has all rights on vendor</field>-->
+<!--            <field name="model_id" ref="model_sharevan_vendor"/>-->
+<!--            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>-->
+<!--        </record>-->
+        <record id="fleet_rule_sharevan_routing_plan_day_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on routing plan day</field>
+            <field name="model_id" ref="model_sharevan_routing_plan_day"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+
+        <record id="fleet_rule_sharevan_bill_lading_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on bill of lading</field>
+            <field name="model_id" ref="model_sharevan_bill_lading"/>
+            <field name="groups" eval="[(4, ref('share_van_order_group_manager'))]"/>
+        </record>
+
+
+<!--        <record id="ir_rule_fleet_vehicle" model="ir.rule">-->
+<!--            <field name="name">Fleet vehicle: Multi Company</field>-->
+<!--            <field name="model_id" ref="model_fleet_vehicle"/>-->
+<!--            <field name="global" eval="True"/>-->
+<!--            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>-->
+<!--        </record>-->
+    </data>
+</odoo>

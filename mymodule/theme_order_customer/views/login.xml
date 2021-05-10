@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="toc_show_sign_in" inherit_id="web.frontend_layout" name="Show Sign In">
+        <xpath expr="//ul[@id='top_menu']" position="inside">
+            <!--        <xpath expr="//ul[@id='top_menu']" position="inside">-->
+            <!--            <li class="nav-item divider" groups="base.group_public"/>-->
+            <li groups="base.group_public" class="nav-item">
+                <a type="button" data-toggle="modal" data-target="#loginModal"
+                   class="nav-link btn-event btn-modal"
+                   name="btnLogin">Login
+                </a>
+                <!--                <a t-attf-href="/web/login" class="nav-link">-->
+                <!--                    <b>Longdzz</b>-->
+                <!--                </a>-->
+            </li>
+
+            <!-- -->
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" style="max-width:450px">
+                    <div class="modal-content">
+                        <div class="modal-header"
+                             style="justify-content:flex-start;border-bottom:none;padding: 1rem 1rem 0 1rem">
+                            <h4 class="modal-title text-success" id="exampleModalLabel">DLP</h4>
+                            <img style="width: 6rem; height: 100%; object-fit: cover;"
+                                 src="/theme_order_customer/static/src/img/Frame4.jpg"/>
+                            <!--                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                            <!--                                <span>X</span>-->
+                            <!--                            </button>-->
+                            <br/>
+                        </div>
+                        <div style="text-align:left;padding:0 1rem">Xin chào ! chủ hàng</div>
+
+                        <div class="modal-body">
+                            <!--                                <t t-call="web.login"/>-->
+                            <nav>
+                                <div class="nav nav-pills nav-fill" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link " id="nav-home-tab" data-toggle="tab"
+                                       href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                        Số điện thoại
+                                    </a>
+                                    <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab"
+                                       href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                        Địa chỉ email
+                                    </a>
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <!-- login by phone-->
+                                <div class="tab-pane fade " id="nav-home" role="tabpanel"
+                                     aria-labelledby="nav-home-tab">
+                                    <!-- form login custom -->
+                                    <!--                                    <form class="oe_login_form" style="max-width:auto" role="form" method="post">-->
+                                    <!--                                        <div id="wk_login_error">-->
+                                    <!--                                            &lt;!&ndash;                                            <div class="alert alert-danger text-center" id="Wk_err">Wrong login/password&ndash;&gt;-->
+                                    <!--                                            &lt;!&ndash;                                                <button type="button" class="close" data-dismiss="alert"&ndash;&gt;-->
+                                    <!--                                            &lt;!&ndash;                                                        aria-label="Close">&ndash;&gt;-->
+                                    <!--                                            &lt;!&ndash;                                                    <span class="res fa fa-times " aria-hidden="true"></span>&ndash;&gt;-->
+                                    <!--                                            &lt;!&ndash;                                                </button>&ndash;&gt;-->
+                                    <!--                                            &lt;!&ndash;                                            </div>&ndash;&gt;-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="form-group" style="display:none">-->
+                                    <!--                                            <select class="form-control ajax_db" name="db">-->
+                                    <!--                                                <option selected="selected">-->
+                                    <!--                                                    DB_LONG-->
+                                    <!--                                                </option>-->
+                                    <!--                                            </select>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="input-group mb-3 has-feedback">-->
+                                    <!--                                            <div class="input-group-prepend">-->
+                                    <!--                                                <span class="input-group-text">-->
+                                    <!--                                                    <i class="fa fa-user"></i>-->
+                                    <!--                                                </span>-->
+                                    <!--                                            </div>-->
+                                    <!--                                            <input type="text" class="form-control" placeholder="Username or Email"-->
+                                    <!--                                                   name="username" id="ajax_login_1" aria-label="Username" value=""-->
+                                    <!--                                                   autofocus="autofocus"/>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="input-group mb-3 has-feedback">-->
+                                    <!--                                            <span class="input-group-prepend">-->
+                                    <!--                                                <span class="input-group-text">-->
+                                    <!--                                                    <i class="fa fa-key"></i>-->
+                                    <!--                                                </span>-->
+                                    <!--                                            </span>-->
+                                    <!--                                            <input class="form-control" id="ajax_password" name="password"-->
+                                    <!--                                                   placeholder="Password" aria-label="Password" type="password"/>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <input name="redirect" type="hidden" value="/"/>-->
+                                    <!--                                        <div class="text-center" id="bottom_buttons_login">-->
+                                    <!--                                            <div class="login-btn-div">-->
+                                    <!--                                                <a class="btn btn-xs btn-success" href="#" id="wk_login_button">Login-->
+                                    <!--                                                </a>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </form>-->
+                                </div>
+                                <!-- login by account-->
+                                <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
+                                     aria-labelledby="nav-profile-tab">
+                                    <!-- form login hoan chinh -->
+                                    <form class="oe_login_form" style="max-width:auto" role="form" method="post">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <div id="login_error"></div>
+                                        <div class="form-group" style="display:none">
+                                            <select class="form-control ajax_db" name="db">
+                                                <option selected="selected">
+                                                    QuangDB
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group field-login">
+                                            <!--                                            <label for="login">Email</label>-->
+                                            <input type="text"
+                                                   t-attf-class="form-control #{'form-control-sm' if form_small else ''}"
+                                                   placeholder="Email"
+                                                   name="login" id="ajax_login" aria-label="Username" value=""
+                                                   autofocus="autofocus" autocapitalize="off"/>
+                                        </div>
+
+                                        <div class="form-group field-password">
+                                            <!--                                            <label for="password">Password</label>-->
+                                            <input t-attf-class="form-control #{'form-control-sm' if form_small else ''}"
+                                                   id="ajax_password" name="password" required="required"
+                                                   autocomplete="current-password"
+                                                   placeholder="Password" aria-label="Password" type="password"
+                                                   t-att-autofocus="'autofocus' if login else None" maxlength="4096"/>
+                                        </div>
+
+                                        <div t-attf-class="clearfix oe_login_buttons text-center mb-1 {{'pt-2' if form_small else 'pt-3'}}">
+                                            <a id="login_button" style="color:white" href="#"
+                                               class="btn btn-primary btn-block">
+                                                Đăng nhập
+                                            </a>
+                                            <t t-if="debug">
+                                                <button type="submit" name="redirect" value="/web/become"
+                                                        class="btn btn-link btn-sm btn-block">Log in as superuser
+                                                </button>
+                                            </t>
+                                            <div class="o_login_auth"/>
+                                        </div>
+                                        <a href="#" class="mt-2 text-left">Bạn quên mật khẩu?</a>
+                                        <br/>
+                                        <div style="text-align:center">
+                                            <br/>
+                                            <div>Bằng việc tiếp tục, tôi đồng ý</div>
+                                            <a href="#">Chính sách bảo mật</a>&amp;<a href="#">điều khoản sử dụng</a>
+                                        </div>
+                                        <input type="hidden" name="redirect" t-att-value="redirect"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+<!--    <template id="assets_frontend" inherit_id="website.assets_frontend" name="toc script">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/theme_order_customer/static/src/js/login.js"/>
+        </xpath>
+    </template>-->
+</odoo>

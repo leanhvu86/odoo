@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="module_base_next_category" model="ir.module.category">
+        <field name="name">Base Next</field>
+        <field name="sequence">1000000</field>
+    </record>
+    <record id="base_next_group_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_base_next_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+    <record id="base_next_group_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="implied_ids" eval="[(4, ref('base_next_group_user'))]"/>
+        <field name="category_id" ref="module_base_next_category"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+    <record id="fleet_request_time_off_access" model="ir.rule">
+        <field name="name">View request of their company</field>
+        <field name="model_id" ref="model_fleet_request_time_off" />
+        <field name="global" eval="True"/>
+        <field name="domain_force"> ['|',('company_id','=',user.company_id.id),('company_id','=',False)]</field>
+    </record>
+
+    <data noupdate="1">
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('base_next.base_next_group_manager'))]"/>
+        </record>
+        <record id="base_next_rule_vendor_visibility_user" model="ir.rule">
+            <field name="name">User can only see his/her vendor</field>
+            <field name="model_id" ref="model_sharevan_vendor"/>
+            <field name="groups" eval="[(4, ref('base_next_group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+        <record id="base_next_rule_vendor_visibility_manager" model="ir.rule">
+            <field name="name">Administrator has all rights on vehicle</field>
+            <field name="model_id" ref="model_sharevan_vendor"/>
+            <field name="groups" eval="[(4, ref('base_next_group_manager'))]"/>
+        </record>
+        <record id="ir_rule_base_next_vendor" model="ir.rule">
+            <field name="name">Vendor: Multi Company</field>
+            <field name="model_id" ref="model_sharevan_vendor"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="bididng_vehicle_rule" model="ir.rule">
+            <field name="name">Analytic line multi company rule</field>
+            <field name="model_id" ref="model_sharevan_bidding_order_vehicle"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>

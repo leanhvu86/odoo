@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="introduction" model="ir.ui.view">
+            <field name="name">Introduction</field>
+            <field name="type">qweb</field>
+            <field name="key">theme_order_customer.introduction</field>
+            <field name="arch" type="xml">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="oe_structure">
+                            xin chào hihi
+                        </div>
+                    </div>
+                </t>
+            </field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="introduction_page" model="website.page">
+            <field name="is_published">True</field>
+            <field name="url">/introduction</field>
+            <field name="view_id" ref="introduction"/>
+            <field name="track">True</field>
+        </record>
+
+        <record id="menu_introduction" model="website.menu">
+            <field name="name">Introduction</field>
+            <field name="url">/introduction</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">99</field>
+            <field name="website_id" ref="website."/>
+        </record>
+    </data>
+</odoo>

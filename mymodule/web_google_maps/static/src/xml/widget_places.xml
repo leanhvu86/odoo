@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <div t-name="MapView.MapView" class="o_map_container">
+        <div id="left_sidebar_first" class="o_map_left_sidebar open">
+            <div style="background:#5fa2dd">
+                <div class="p-2" style="position:relative">
+                    <span style="color:white; font-size:17px">Vehicles</span>
+                    <span id="offline">0</span>
+                    <i class="fa fa-circle" style="color: red"></i>
+                    <span class="size_status_vehicle">offline</span>
+                    <span id="online">0</span>
+                    <i class="fa fa-circle" style="color: #07f807"></i>
+                    <span class="size_status_vehicle">online</span>
+                    <span id="unknown">0</span>
+                    <i class="fa fa-circle" style="color: yellow"></i>
+                    <span class="size_status_vehicle">unknown</span>
+                    <button type="button" class="btn btn-primary close-left" data-toggle="modal"
+                            data-target=".bd-example-modal-sm"
+                            style="position:absolute;float:right;top:0;margin:0.2em;right:0">
+                        <i class="fa fa-arrow-circle-left"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="o_map_devices"></div>
+            <div class="detailsDevice" style="display: none;"></div>
+        </div>
+        <div class="drag_seperator closed">
+<!--            <i class="pl-2 fa fa-exchange" style="font-size:25px;color:#ccff00"></i>-->
+            <span class="pl-1 pt-5"
+                  style="writing-mode:vertical-rl;text-orientation: mixed;font-size:17px;color:white;"><i class="fa fa-car"></i>
+                <span class="mt-3">Vehicles</span></span>
+        </div>
+        <div id="map_view_second" class="o_map_view"></div>
+        <div id="right_sidebar_report" class="o_report_right_sidebar open" style="display:none;">
+            <div style="background:#5fa2dd">
+                <div class="p-2" style="position:relative">
+                      <button type="button" class="btn btn-primary close-right" data-toggle="modal"
+                              data-target=".bd-example-modal-sm"
+                              style="position:absolute;right:0;top:0;margin:0.2em">
+                          <i class="fa fa-times"></i>
+                        </button>
+                    <span style="color:white; font-size:17px">Routing Plan Day</span>
+                </div>
+            </div>
+            <div id="report_container" style="width: 100%;"></div>
+        </div>
+        <div class="o_map_right_sidebar closed" style="display: none;"></div>
+    </div>
+
+    <div t-name="ReportView.ReportView">
+        <div id="reportView" style="width:100%; height:100%;position:absolute;top:0px;right:0px;bottom:0px;left:0px;">
+        </div>
+    </div>
+
+    <div t-name="ChatView.ChatView" class="o_map_container">
+        <div class="o_chat_view" style="width:100%;"></div>
+    </div>
+
+    <t t-name=" MapView.MapViewGroupInfo">
+        <ul t-if="widget.groups">
+            <t t-foreach="widget.groups" t-as="group">
+                <li>
+                    <img t-att-src="group.marker"/>
+                    <span class="title">
+                        <t t-esc="group.title"/>
+                    </span>
+                    <span class="total">
+                        <t t-esc="group.count"/>
+                    </span>
+                </li>
+            </t>
+        </ul>
+    </t>
+
+    <t t-name="MapView.MapViewItem">
+        <ul t-if="widget.groups">
+            <t t-foreach="widget.groups" t-as="group">
+                <li>
+                    <img t-att-src="group.marker"/>
+                    <span class="title">
+                        <t t-esc="group.title"/>
+                    </span>
+                    <span class="total">
+                        <t t-esc="group.count"/>
+                    </span>
+                </li>
+            </t>
+        </ul>
+    </t>
+
+    <t t-name="MapView.buttons">
+        <div class="o_list_buttons">
+            <t t-if="widget.is_action_enabled !== undefined ? widget.is_action_enabled('create') : false">
+        <button type="button" class="btn btn-primary o-map-button-new" accesskey="c">
+                    <t t-esc="create_text || _t('Create')"/>
+                </button>
+            </t>
+            <button type="button" class="btn btn-secondary o-map-button-center-map">
+                <t t-esc="_t('Center Map')"/>
+            </button>
+            <!--            <button type="button" class="btn btn-secondary o-map-button-report">-->
+            <!--                <t t-esc="_t('Report')"/>-->
+            <!--            </button>-->
+            <!--            <button type="button" class="btn btn-secondary o-map-button-alert-map">-->
+            <!--                <t t-esc="_t('Aloo')"/>-->
+            <!--            </button>-->
+
+            <!--            <div class="search-form">-->
+            <!--                 Từ Ngày:-->
+            <!--                <input type="datetime-local" class="o_map_from_date" style="width:200px;"/>-->
+            <!--                Đến Ngày:-->
+            <!--                <input type="datetime-local" class="o_map_from_date" style="width:200px;"/>-->
+            <!--                <button class="btn btn-primary o-map-button-load-data" type="button" accesskey="f" style="margin-left:5px;">Tìm kiếm</button>-->
+            <!--            </div>-->
+        </div>
+        </t>
+
+    <t t-name="MapView.Vehicle_info">
+        <div class="o_map_vehicle_info">
+          <div class="card">
+        <ul class="list-group list-group-flush mt-0 ">
+            <li>
+                <div class="container pt-2">
+                    <div class="row">
+                        <div class="col">
+                         <h3>Attribute</h3>
+                        </div>
+                        <div class="col pl-0">
+                          <h3>Value</h3>
+                        </div>
+                      </div>
+                </div>
+            </li>
+            <t t-foreach="widget.position" t-as="pos">
+                <li class="list-group-item pl-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <span class="pl-0">Capacity Available</span>
+                            </div>
+                            <div class="col">
+                                <span class="pl-0" id="capacity_available">0</span>
+                            </div>
+                          </div>
+                    </div>
+                </li>
+                <li class="list-group-item pl-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <span class="pl-0">Address</span>
+                            </div>
+                            <div class="col">
+                              <span class="pl-0" id="address" t-esc="pos.address"/>
+                            </div>
+                          </div>
+                    </div>
+                </li>
+                <!--<li class="list-group-item pl-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <span>Course</span>
+                            </div>
+                            <div class="col">
+                              <span id="course" t-esc="pos.course"/>
+                            </div>
+                          </div>
+                    </div>
+                </li>-->
+                <li class="list-group-item pl-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <span class="pl-0">Update Time</span>
+                            </div>
+                            <div class="col">
+                              <span class="pl-0" id="deviceTime" t-esc="pos.devicetime"/>
+                            </div>
+                          </div>
+                    </div>
+                </li>
+                <!--  <li class="list-group-item pl-0">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col">
+                                  <span>Latitude</span>
+                              </div>
+                              <div class="col">
+                                <span id="latitude" t-esc="pos.latitude"/>
+                              </div>
+                            </div>
+                      </div>
+                  </li>
+                  <li class="list-group-item pl-0">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col">
+                                  <span>Longitude</span>
+                              </div>
+                              <div class="col">
+                                <span id="longitude" t-esc="pos.longitude"/>
+                              </div>
+                            </div>
+                      </div>
+                  </li>-->
+                <li class="list-group-item pl-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <span class="pl-0">Speed</span>
+                            </div>
+                            <div class="col">
+                                <span class="pl-0" id="speed" t-esc="pos.speed"/>
+                                km/h
+                            </div>
+                          </div>
+                    </div>
+                </li>
+            </t>
+        </ul>
+    </div></div>
+    </t>
+
+    <t t-name="MapView.sidebar.left">
+        <div class="o_map_filter_left">
+            <div t-attf-class="o_map_items_left #{needCollapse ? 'collapse show' : 0}" aria-expanded="true"
+                 t-attf-id="o_cw_filter_collapse_#{widget.title}">
+                 <div class="card">
+                    <ul class="navbar-nav list-group list-group-flush mt-0 pl-0">
+                        <t t-foreach="widget.filters" t-as="filter">
+                            <li t-att-name="filter.id" class="list-group-item" t-att-position="filter.position"
+                                t-att-title="filter.name" style="background:rgb(255 84 104 / 30%);color:black">
+                                <span style="color:red;float:left;display:none">Error</span>
+                                <div class="pt-2 tab-vehicle" style="float:left" t-att-position="filter.position"
+                                     t-att-id="filter.id">
+                                    <t t-if="filter.iot == false ">
+                                        <i class="fa fa-mobile" style="font-size:20px;color:black!important"></i>
+                                    </t>
+                                    <t t-if="filter.iot == true ">
+                                           <i class='fa fa-car'></i>
+                                    </t>
+                                    <t t-esc="filter.name"/>
+                                </div>
+                                <buzzer name="0" t-att-vehicle="filter.id" class="fa fa-bell mt-1"
+                                        style="color:yellow;font-size:20px;float:right;margin-left:1em"></buzzer>
+                                <img t-att-title="filter.id" src="/web_google_maps/static/src/img/chat.png"
+                                     style="width:7%; height:7%;vertical-align:unset !important;float:right"
+                                     class="pt-2 ml-2"
+                                     alt="Message"/>
+                                <div class="btn-group dropleft" style="float:right">
+                                  <button type="button"
+                                          class="btn btn-default btn-sm"
+                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <span class="fa fa-ellipsis-v"/>
+                                  </button>
+                                    <div class="dropdown-menu">
+                                        <input class="dropdown-item btn-event" t-att-id="filter.id"
+                                               name="customCommand" placeholder="Custom Command"/>
+                                        <button type="button" data-toggle="modal" data-target="#mapModal"
+                                                class="dropdown-item btn-event btn-modal" t-att-id="filter.id"
+                                                t-att-data-id="filter.id"
+                                                name="drawGeofence">Geo-Fence</button>
+                                        <!--                                    <button class="dropdown-item" href="#">Another action</button>-->
+                                        <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
+                                        <!--                                    <div class="dropdown-divider"></div>-->
+                                        <!--                                    <a class="dropdown-item" href="#">Separated link</a>-->
+                                  </div>
+                                </div>
+                            </li>
+                        </t>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+          <div class="modal-dialog" style="max-width:800px" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Configuaration Geo-Fence</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">xxxxxx</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                <div class="o_map_geofence_view p-2" style="height:40rem"></div>
+              </div>
+                <div class="modal-footer">
+                    <div id="info_distance" style="flex:auto">0 </div>
+                    <span style="flex:auto;display:none">meters</span>
+                    <div id="lat_geofence" aria-hidden="true">0</div>
+                    <div id="lng_geofence" aria-hidden="true">0</div>
+
+                    <label>ID Geo-Fence</label>
+                    <select class="form-control" id="selected_box_id" style="width:10%">
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <input type="checkbox" id="isEnterGeoFence"/>
+                    Enter Geo-Fence
+                    <input type="checkbox" id="isExitGeoFence"/>
+                    Exit
+                    <Geo-Fence></Geo-Fence>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btnSaveGeoFence" disabled="true">Save GeoFence</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </t>
+
+    <t t-name="MapView.sidebar.right">
+        <div class="o_map_filter_left">
+            <div t-attf-class="o_map_items_left #{needCollapse ? 'collapse show' : 0}" aria-expanded="true"
+                 t-attf-id="o_cw_filter_collapse_#{widget.title}">
+                 <div class="card">
+                    <!--<ul class="navbar-nav list-group list-group-flush mt-0 pl-0">
+                        <t t-set="i" t-value="1"/>
+                        <t t-foreach="widget.wareHouses" t-as="warehouse">
+                            <t t-esc="warehouse"/>
+                            <t t-foreach="widget.filters" t-as="filter">
+                                <li class="list-group-item pl-0 pr-0">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col hover_show_position" t-att-lat="filter.latitude"
+                                             t-att-lng="filter.longitude">
+                                            <t t-esc="i"></t>
+                                            <i class="fa fa-street-view"></i>
+                                        </div>
+                                        <div class="col-1">
+                                            <t t-if="filter.status == 0 ">
+                                                <i class="fa fa-archive" style="color:#FFC107"></i>
+                                            </t>
+                                            <t t-if="filter.status == 1 ">
+                                                <i class="fa fa-truck" style="color:red"></i>
+                                            </t>
+                                            <t t-if="filter.status == 2 ">
+                                                <i class="fa fa-check" style="color:green"></i>
+                                            </t>
+                                        </div>
+                                        <t t-set="i" t-value="i+1"/>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <t t-esc="filter.bill_routing_name"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    <div class="row">
+                                        <div class="col">
+                                           Address: <t t-esc="filter.address"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span>-</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                         <div class="col">
+                                             WareHouse: <t t-esc="filter.warehouse_name"/>
+                                         </div>
+                                    </div>
+                                </div>
+                            </li>
+                            </t>
+                        </t>
+                    </ul>-->
+                     <t t-set="i" t-value="1"/>
+                     <div id="accordion">
+                         <t t-foreach="widget.wareHouses" t-as="warehouse">
+                             <div class="card">
+                                <div class="card-header p-0" t-id="headingOne">
+                                  <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse"
+                                            t-att-data-target="'#collapse'+warehouse_index"
+                                            aria-expanded="true"
+                                            style="text-align:left;float:left"
+                                            aria-controls="collapseOne">
+                                       <t t-esc="warehouse.value.address"/>
+                                        -
+                                        <t t-esc="warehouse.value.warehouse_name"/>
+                                    </button>
+                                      <t t-if="warehouse.value.phone">
+                                          <img src="/web_google_maps/static/src/img/chat.png"
+                                               style="width:3rem;"
+                                               class="pl-2 hover_show_chat"
+                                               t-att-cus="warehouse.value.phone"
+                                               alt="Message"/>
+                                      </t>
+                                  </h5>
+                                </div>
+                                 <div t-att-id="'collapse'+warehouse_index" class="collapse"
+                                      aria-labelledby="headingOne" data-parent="#accordion">
+                                  <div class="card-body p-0">
+                                      <t t-foreach="warehouse.warehouse"
+                                         t-as="filter">
+                                               <div class="container">
+                                                <div class="row">
+                                                    <div class="col hover_show_position" t-att-lat="filter.latitude"
+                                                         t-att-lng="filter.longitude">
+                                                        <t t-esc="filter.order_number"></t>
+<!--                                                        <i class="fa fa-street-view"></i>-->
+                                                        <t t-if="filter.type == '0'"><i class="fa fa-arrow-up"></i></t>
+                                                        <t t-elif="filter.type == '1'"><i class="fa fa-arrow-down"></i></t>
+
+                                                    </div>
+                                                    <div class="col-1">
+                                                        <t t-if="filter.status == 0 ">
+                                                            <i class="fa fa-archive" style="color:#FFC107"></i>
+                                                        </t>
+                                                        <t t-if="filter.status == 1 ">
+                                                            <i class="fa fa-truck" style="color:red"></i>
+                                                        </t>
+                                                        <t t-if="filter.status == 2 ">
+                                                            <i class="fa fa-check" style="color:green"></i>
+                                                        </t>
+                                                        <t t-if="filter.status == 3 ">
+                                                            <i class="fa fa-ban" style="color:red"></i>
+                                                        </t>
+                                                    </div>
+                                                    <!--                                                    <t t-set="i" t-value="i+1"/>-->
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col" style="overflow-wrap:normal">
+                                                                <t t-esc="filter.bill_routing_name"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                            </div>
+                                       </t>
+                                  </div>
+                                </div>
+                          </div>
+                         </t>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="MapView.sidebar.filter">
+        <t t-set="needCollapse" t-value="widget.filters.length > 2 and widget.title"></t>
+        <div class="o_map_filter">
+        <!--            <h5 t-if="needCollapse" type="button" data-toggle="collapse" t-attf-data-target="#o_cw_filter_collapse_#{widget.title}" class="d-flex justify-content-between align-items-center">-->
+            <!--                <t t-esc="widget.title"/><i class="o_cw_filter_collapse_icon fa fa-chevron-down"/>-->
+            <!--            </h5>-->
+
+            <!--            <h5 t-elif="widget.title" t-esc="widget.title"/>-->
+
+            <div t-attf-class="o_map_filter_items #{needCollapse ? 'collapse show' : 0}" aria-expanded="true"
+                 t-attf-id="o_cw_filter_collapse_#{widget.title}">
+            <t t-foreach="widget.filters" t-as="filter" t-if="filter.display == null || filter.display">
+                <t t-set="idForLabel" t-value="_.uniqueId('o_map_filter_item_')"/>
+                <t t-set="color" t-value="widget.getColour(filter.color_index)"/>
+                <t t-set="isColorNumber" t-value="typeof color === 'number'"/>
+
+                <div t-attf-class="o_map_filter_item w-100 position-relative mb-2 #{isColorNumber ? _.str.sprintf('o_cw_filter_color_%s', color) : ''}"
+                     t-att-data-value="filter.value" t-att-data-id="filter.id">
+                    <input type="checkbox" t-att-id="idForLabel" name="selection" class="position-absolute"
+                           t-att-checked="filter.active ? true : undefined"/>
+                    <label t-att-for="idForLabel" class="d-flex align-items-center m-0">
+                        <span t-attf-class="o_cw_filter_input_bg align-items-center d-flex flex-shrink-0 justify-content-center position-relative mr-1 #{widget.avatar_field ? 'o_beside_avatar' : ''}"
+                              t-att-style="color and !isColorNumber ? _.str.sprintf('border-color:%s;background-color:%s', color, color) : ''">
+                            <i class="fa fa-check position-relative"/>
+                        </span>
+                        <i t-if="filter.value == 'all'"
+                           class="o_cw_filter_avatar fa fa-users fa-fw  flex-shrink-0 mr-1" role="img"
+                           aria-label="Avatar" title="Avatar"/>
+                        <img t-elif="widget.avatar_field and filter.value" t-attf-src="#{filter.value}"
+                             alt="Avatar"/>
+                        <span class="o_cw_filter_title text-truncate flex-grow title" t-esc="filter.label"
+                              t-att-title="filter.label"/>
+                        <span name="count" class="total" t-esc="filter.count" t-att-title="filter.count"/>
+                    </label>
+
+                    <button t-if="filter.id" class="o_remove btn bg-white text-700 py-0 px-2"
+                            title="Remove this favorite from the list" role="img"
+                            aria-label="Remove this favorite from the list">
+                        <i class="fa fa-times"/>
+                    </button>
+                </div>
+            </t>
+        </div>
+    </div>
+    </t>
+</templates>

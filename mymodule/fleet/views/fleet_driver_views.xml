@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="fleet_vehicle_drive_tree" model="ir.ui.view">
+            <field name="name">fleet.driver.tree</field>
+            <field name="model">fleet.driver</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="employee_type"/>
+                    <field name="birth_date"/>
+                    <field name="leave_date"/>
+                    <field name="street"/>
+                    <field name="phone"/>
+                    <field name="fleet_management_id"/>
+                    <field name="email"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_driver_form" model="ir.ui.view">
+            <field name="name">fleet.driver.form</field>
+            <field name="model">fleet.driver</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Fleet employee">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="image_1920" widget="image" class="oe_avatar"/>
+                        <field name="point" attrs="{'invisible': [('employee_type', '!=', 'driver')]}"
+                               widget="rating_start"/>
+                        <div class="oe-title">
+                            <h2>
+                                <field name="name_seq"/>
+                            </h2>
+                        </div>
+                        <div class="oe_title">
+                            <field name="commercial_partner_id" invisible="1"/>
+                            <field name="active" invisible="1"/>
+                            <field name="id" invisible="1"/>
+                            <group string="Driver"/>
+                            <h1>
+                                <field name="login" placeholder="Username" readonly="1" force_save="1"/>
+                            </h1>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name"/>
+
+                            </h1>
+                            <!--                            <div class="o_row">-->
+                            <!--                                <field name="parent_id"-->
+                            <!--                                      invisible="1">-->
+                            <!--                                    <tree editable="bottom">-->
+                            <!--                                        <field name="driver_id" />-->
+                            <!--                                        <field name="partner_id"/>-->
+                            <!--                                        <field name="company_id"/>-->
+                            <!--                                        <field name="from_date"/>-->
+                            <!--                                        <field name="to_date"/>-->
+                            <!--                                    </tree>-->
+                            <!--                                </field>-->
+                            <!--                            </div>-->
+                        </div>
+                        <notebook>
+                            <page string="General Information">
+                                <group>
+                                    <group>
+                                        <field name="full_name"/>
+                                        <field name="phone"/>
+                                        <!--                                        <field name="mobile" widget="phone"/>-->
+                                        <field name="email"/>
+                                        <field name="birth_date"/>
+                                        <field name="gender"/>
+                                        <field name="hire_date"/>
+                                        <field name="leave_date"
+                                               attrs="{'invisible': [('status', '!=', 'deactivate')]}"/>
+                                        <field name="card_type"/>
+                                        <field name="ssn"/>
+                                        <field name="date_issue_card"/>
+                                        <field name="expires_date_card"/>
+                                        <field name="vehicle_id" invisible="1"/>
+                                        <!--                                        <field name="type" groups="base.group_no_one"-->
+                                        <!--                                               attrs="{'readonly': [('user_ids', '!=', [])]}"/>-->
+                                    </group>
+                                    <group>
+                                        <field name="function" string="Role" placeholder="e.g. Sales Director"
+                                               invisible="1"/>
+                                        <field name="employee_type"/>
+                                        <field name="role_id"/>
+                                        <field name="level_management_user" invisible="1"/>
+                                        <field name="fleet_management_id" string="Team" readonly="1"/>
+                                        <field name="user_ids" invisible="1"/>
+                                        <field name="user_id" invisible="1"/>
+                                        <field name="status" readonly="1"/>
+                                        <field name="title" options="{&quot;no_open&quot;: True}"
+                                               placeholder="e.g. Mister" invisible="1"/>
+                                        <field name="category_id" widget="many2many_tags"
+                                               options="{'color_field': 'color', 'no_create_edit': True}"
+                                               placeholder="Tags..." invisible="1"/>
+                                        <field name="nationality" widget="res_partner_many2one"
+                                               placeholder="Nationality"
+                                               options='{"no_open": True, "no_create": True}'/>
+                                        <label for="" name="address_name">
+                                            <b>Address</b>
+                                        </label>
+                                        <div class="o_address_format">
+                                            <field name="street" placeholder="Street..." class="o_address_street"
+                                                   widget="gplaces_address_autocomplete"
+                                                   options="{'fillfields': {'street2': ['route', 'street_number']}}"/>
+                                            <field name="street2" placeholder="Street 2..." class="o_address_street"
+                                                   invisible="1"/>
+                                            <field name="city_name" placeholder="City" class="o_address_city"/>
+                                            <field name="state_id" class="o_address_state" placeholder="State"
+                                                   options='{"no_open": True}'/>
+                                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                            <field name="country_id" placeholder="Country" class="o_address_country"
+                                                   options='{"no_open": True, "no_create": True}'/>
+                                        </div>
+                                        <!--                                        <field name="country_id" placeholder="Country" class="o_address_country"-->
+                                        <!--                                               options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"-->
+                                        <!--                                        />-->
+
+                                        <button style="float:rights" name="accept_driver"
+                                                class="btn btn-primary"
+                                                attrs="{'invisible': ['|', ('toogle_confirm', '!=', True),('id', '=', False)]}"
+                                                string="Accept driver"
+                                                type="object"
+                                                context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                                confirm="Are you sure you want to accept driver?"
+                                        />
+
+                                        <button style="float:left" name="reject_driver"
+                                                class="btn btn-danger"
+                                                attrs="{'invisible': ['|',  ('toogle_confirm', '!=', True),('id', '=', False)]}"
+                                                string="Reject driver"
+                                                type="object"
+                                                context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                                confirm="Are you sure you want to reject driver for ?"
+                                        />
+                                        <field name="toogle" invisible="1"/>
+                                        <field name="toogle_confirm" invisible="1"/>
+                                        <field name="approved_check"
+                                               attrs="{'invisible': [ '|', ('driver_type', '!=', 'code_share'), ('approved_check', '=', 'waiting')]}"/>
+                                        <button style="float:rights" name="active_driver"
+                                                class="btn btn-primary"
+                                                attrs="{'invisible': ['|', ('toogle', '=', False),('id', '=', False)]}"
+                                                string="Active employee"
+                                                type="object"
+                                                context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                                confirm="Are you sure you want to active employee?"
+                                        />
+
+                                        <button style="float:left" name="deactivate_driver"
+                                                class="btn btn-danger"
+                                                attrs="{'invisible': ['|',('toogle', '=', True),('id', '=', False)]}"
+                                                string="Deactivate employee"
+                                                type="object"
+                                                context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                                confirm="Are you sure you want to deactivate employee?"
+                                        />
+                                    </group>
+                                </group>
+                                <group col="2" string="">
+                                    <group>
+                                        <field name="driver_type"
+                                               attrs="{'invisible': [('employee_type', '=', 'manager')],'required': [('employee_type','=', 'driver')]}"/>
+                                        <field name="class_driver"
+                                               attrs="{'invisible': [('employee_type', '=', 'manager')],'required': [('employee_type','=', 'driver')]}"/>
+                                        <field name="driver_license_date"
+                                               attrs="{'invisible': [('employee_type', '=', 'manager')],'required': [('employee_type','=', 'driver')]}"/>
+                                        <field name="expires_date" string="Expires date"
+                                               attrs="{'invisible': [('employee_type', '=', 'manager')],'required': [('employee_type','=', 'driver')]}"/>
+                                        <field name="address" invisible="1"/>
+                                        <field name="no"
+                                               attrs="{'invisible': [('employee_type', '=', 'manager')],'required': [('employee_type','=', 'driver')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="image_license_frontsite" widget="image" class="oe_avatar"
+                                               attrs="{'invisible': [('employee_type', '=', 'manager')],'required': [('employee_type','=', 'driver')]}"/>
+                                        <field name="image_license_backsite" widget="image" class="oe_avatar"
+                                               attrs="{'invisible': [('employee_type', '=', 'manager')],'required': [('employee_type','=', 'driver')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="More Information">
+                                <group>
+                                    <field name="vat" placeholder="e.g. BE0477472701"
+                                    />
+                                    <field name="attach_File" widget="many2many_binary" string="Attach File"/>
+
+                                </group>
+                                <field name="line_rating_badges_driver"
+                                       attrs="{'invisible': [('employee_type', '=', 'manager')]}">
+                                    <tree editable="false" create="false" delete="false">
+                                        <field name="name"/>
+                                        <field name="rating_count"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="driver_view_kanban" model="ir.ui.view">
+            <field name="name">fleet.driver.kanban</field>
+            <field name="model">fleet.driver</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="name">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="fleet_management_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('fleet.driver', 'image_1920', record.id.raw_value)"
+                                         alt="Vehicle" style="max-height: 90px; max-width: 60px;"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                        :
+                                        <field name="street"/>
+                                    </strong>
+                                </div>
+                                <div class="o_kanban_button" t-if="!selection_mode"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="fleet_driver_view_search" model="ir.ui.view">
+            <field name="name">fleet.driver.search</field>
+            <field name="model">fleet.driver</field>
+            <field name="arch" type="xml">
+                <search string="Driver Infomation">
+                    <field name="name"/>
+                    <field name="name_seq"/>
+                    <field name="address"/>
+                    <field name="full_name"/>
+                    <field name="fleet_management_id"/>
+                    <separator/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_vehicle" context="{'group_by' : 'name'}" string="Driver's name"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="fleet_driver_action" model="ir.actions.act_window">
+            <field name="name">Employee</field>
+            <field name="res_model">fleet.driver</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create a new contract</p>
+                <p>Manage all your contracts (leasing, insurances, etc.) with
+                    their related services, costs. Odoo will automatically warn
+                    you when some contracts have to be renewed.
+                </p>
+                <p>Each contract (e.g.: leasing) may include several services
+                    (reparation, insurances, periodic maintenance).
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="Employee management" id="fleet_driver_view" parent="fleet_management" sequence="200"/>
+        <menuitem name="Employee" id="fleet_employee_view" parent="fleet_driver_view" sequence="800"
+                  action="fleet_driver_action"/>
+        <!--        <menuitem name="Employee" id="fleet_driver_view_action" parent="fleet_employee_view" sequence="802"-->
+        <!--                  action="fleet_driver_action"/>-->
+        <menuitem id="fleet_vehicle_driver_receipt_vehicles" name="Delivery and receipt of vehicles"
+                  parent="fleet_driver_view"
+                  action="action_vehicel_status" sequence="203 "/>
+        <menuitem id="fleet_vehicle_driver_calendar" name="Calendar" parent="fleet_driver_view"
+                  action="fleet_vehicle_assignation_log_action" sequence="202"/>
+    </data>
+    `
+</odoo>

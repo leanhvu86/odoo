@@ -1,0 +1,12 @@
+<odoo>
+    <template id="assets_frontend_oc" inherit_id="website.assets_frontend" name="Website Order Customer script">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss"
+                  href="/website_order_customer/static/src/scss/profile_customer.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/website_order_customer/static/src/scss/order_customer.scss"/>
+            <script type="text/javascript" src="/website_order_customer/static/src/js/list_orders.js"/>
+            <script type="text/javascript" src="/website_order_customer/static/src/js/profile_customer.js"/>
+            <script type="text/javascript" src="/website_order_customer/static/src/js/search_controller.js"/>
+        </xpath>
+    </template>
+</odoo>

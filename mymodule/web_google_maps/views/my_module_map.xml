@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="view_my_module_map" model="ir.ui.view">
+        <field name="name">my_module my_module map</field>
+        <field name="model">my_module.my_module</field>
+        <field name="arch" type="xml">
+            <map class="o_res_partner_map" library="geometry" string="Map" lat="latitude" lng="longitude" colors="blue:value=='1';green:value=='2';">
+                <field name="name"/>
+                <field name="value"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="value2"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_res_partner_kanban">
+                                 <div class="oe_kanban_details">
+                                        <strong class="o_kanban_record_title oe_partner_heading">
+                                            <field name="name"/>
+                                        </strong>
+                                </div>
+                        </div>
+                    </t>
+                </templates>
+            </map>
+        </field>
+    </record>
+<!--    <record id="base.action_partner_form" model="ir.actions.act_window">-->
+<!--        <field name="view_mode">kanban,tree,form,map</field>-->
+<!--    </record>-->
+
+
+    <record id="my_module_form_map_view" model="ir.actions.act_window.view">
+            <field eval="3" name="sequence"/>
+            <field name="view_mode">map</field>
+            <field name="view_id" ref="view_my_module_map"/>
+            <field name="act_window_id" ref="my_module.action_window"/>
+    </record>
+
+
+
+<!--    <record id="action_partner_form_view3" model="ir.actions.act_window.view">-->
+<!--        <field eval="3" name="sequence"/>-->
+<!--        <field name="view_mode">map</field>-->
+<!--        <field name="view_id" ref="view_res_partner_map"/>-->
+<!--        <field name="act_window_id" ref="base.action_partner_form"/>-->
+<!--    </record>-->
+</odoo>

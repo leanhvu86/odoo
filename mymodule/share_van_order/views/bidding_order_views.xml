@@ -1,0 +1,254 @@
+<odoo>
+    <data>
+        <record id='sharevan_bidding_order_tree' model='ir.ui.view'>
+            <field name="name">sharevan.bidding.order.tree</field>
+            <field name="model">sharevan.bidding.order</field>
+            <field name="arch" type="xml">
+                <tree string="State">
+                    <field name="bidding_package_id"/>
+                    <field name="bidding_order_number"/>
+                    <field name="bidding_package_type"/>
+                    <field name="type"/>
+                    <field name="status"/>
+                    <field name="company_id"/>
+                    <field name="from_depot_id"/>
+                    <field name="to_depot_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id='longhaul_bill_lading_detail_tree' model='ir.ui.view'>
+            <field name="name">sharevan.bill.lading.detail.tree</field>
+            <field name="model">sharevan.bill.lading.detail</field>
+            <field name="arch" type="xml">
+                <tree string="State">
+                    <field name="name"/>
+                    <field name="total_weight" widget="weight_unit"/>
+                    <field name="from_depot_id" string="From Depot"/>
+                    <field name="depot_id" string="To Depot"/>
+                    <!--                    <field name="total_weight"/>-->
+                    <!--                    <field name="total_cargo"/>-->
+                    <!--                    <field name="price"/>-->
+                    <!--                    <field name="distance"/>-->
+                    <!--                    <field name="type"/>-->
+                    <!--                    <field name="status"/>-->
+                    <!--                    <field name="note"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_bidding_order_form' model='ir.ui.view'>
+            <field name="name">sharevan.bidding.order.form</field>
+            <field name="model">sharevan.bidding.order</field>
+            <field name="arch" type="xml">
+                <form string="Bidding Order">
+                    <sheet>
+                        <div attrs="{'invisible': [('type', '!=', '1')]}">
+                            <span class="badge badge-warning float-right">Approved</span>
+                        </div>
+                        <div attrs="{'invisible': [('type', '!=', '-1')]}">
+                            <span class="badge badge-warning float-right">Cancel</span>
+                        </div>
+                        <div attrs="{'invisible': [('type', '!=', '2')]}">
+                            <span class="badge badge-warning float-right">Waitting Approve</span>
+                        </div>
+                        <div class="oe_title">
+                            <label for="Bidding order number" class="oe_edit_only" string="Title"/>
+                            <h1>
+                                <field name="bidding_order_number" placeholder="ABC123456789"/>
+                            </h1>
+                        </div>
+                        <group col="2" string="Main Infomations">
+                            <group>
+                                <field name="from_depot_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="company_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="total_weight" widget="weight_unit"
+                                       options="{'no_create': True, 'no_open': True}"/>
+                                <field name="total_cargo" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="type"/>
+                                <field name="max_confirm_time"/>
+                            </group>
+                            <group>
+                                <field name="to_depot_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="bidding_package_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="price" widget="monetary"
+                                       options="{'no_create': True, 'no_open': True}"/>
+                                <field name="distance"/>
+                                <field name="status" options='{"bg_color": "red: status == 1"}'/>
+                            </group>
+                        </group>
+                        <group col="2" string="Extra Infromations">
+                            <group>
+                                <field name="from_receive_time"/>
+                                <field name="to_receive_time"/>
+                                <field name="actual_time"/>
+                            </group>
+                            <group>
+                                <field name="from_return_time"/>
+                                <field name="to_return_time"/>
+                                <field name="to_actual_time"/>
+                            </group>
+                        </group>
+                        <div>
+                            <field name="bidding_vehicle_id"/>
+                        </div>
+                        <button name="is_approved_check"
+                                class="btn btn-primary mr-5"
+                                string="Approved"
+                                type="object"
+                                attrs="{'invisible':  [('type', '!=', '2')]}"
+                                confirm="Are you sure you want to approved this bidding order?"
+                        />
+                        <button name="is_unapproved_check"
+                                class="btn btn-primary"
+                                string="Unapprove"
+                                type="object"
+                                attrs="{'invisible':  [('type', '!=', '2')]}"
+                                confirm="Are you sure you want to unapproved this bidding order?"
+                        />
+                        <group string="Note">
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sharevan_bidding_order_view_search" model="ir.ui.view">
+            <field name="name">sharevan.bidding.order.search</field>
+            <field name="model">sharevan.bidding.order</field>
+            <field name="arch" type="xml">
+                <search string="Bidding Order Infomation">
+                    <group expand="0" string="Group By">
+                        <filter string="Price" name="price" domain="[]"
+                                context="{'group_by' : 'price'}"/>
+                        <filter string="Is real" name="bidding_package_type" domain="[]"
+                                context="{'group_by': 'bidding_package_type'}"/>
+                        <filter string="Bidding package number" name="bidding_package_id" domain="[]"
+                                context="{'group_by': 'bidding_package_id'}"/>
+                        <filter string="Type" name="type" domain="[]"
+                                context="{'group_by': 'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='bidding_order_action' model='ir.actions.act_window'>
+            <field name="name">Bidding Order</field>
+            <field name="res_model">sharevan.bidding.order</field>
+            <field name="context">{'search_default_status': 1,'search_default_bidding_package_type' : True,
+                'search_default_bidding_package_id' : True, 'search_default_type' : True }
+            </field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>
+                    Here you can add Bidding Order
+                </p>
+            </field>
+        </record>
+
+        <record id='sharevan_cargo_tree' model='ir.ui.view'>
+            <field name="name">sharevan.cargo.tree</field>
+            <field name="model">sharevan.cargo</field>
+            <field name="arch" type="xml">
+                <tree string="State">
+                    <field name="code"/>
+                    <field name="cargo_number"/>
+                    <field name="from_depot_id"/>
+                    <field name="to_depot_id"/>
+                    <field name="distance"/>
+                    <field name="size_id"/>
+                    <field name="from_latitude"/>
+                    <field name="from_longitude"/>
+                    <field name="to_latitude"/>
+                    <field name="to_longitude"/>
+                    <field name="bidding_package_id"/>
+                    <field name="weight"/>
+                    <field name="price" widget="monetary"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_cargo_form' model='ir.ui.view'>
+            <field name="name">sharevan.cargo.form</field>
+            <field name="model">sharevan.cargo</field>
+            <field name="arch" type="xml">
+                <form string="Model">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="code" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group col="2" string="Register information">
+                            <group>
+                                <field name="from_depot_id"/>
+                                <field name="cargo_number" readonly="1" force_save="1"/>
+                                <field name="from_latitude" readonly="1" force_save="1" invisible="1"/>
+                                <field name="from_longitude" readonly="1" force_save="1" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="bidding_package_id" attrs="{'invisible': [('id','=',False)]}"/>
+                                <field name="to_depot_id"/>
+                                <field name="to_latitude" readonly="1" force_save="1" invisible="1"/>
+                                <field name="to_longitude" readonly="1" force_save="1" invisible="1"/>
+                            </group>
+                        </group>
+                        <group col="2" string="Detail information">
+                            <group>
+                                <field name="distance"/>
+                                <field name="size_id"/>
+                                <field name="status_cargo"/>
+                            </group>
+                            <group>
+                                <field name="weight"/>
+                                <field name="price" widget="monetary"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="routing_plan_day_id"
+                                   attrs="{'readonly': ['|','|',('from_depot_id', '=', False),('to_depot_id', '=', False),('size_id','=',False)]}"
+                                   domain="[('depot_id', '=',from_depot_id),('to_depot_id', '=', to_depot_id)]"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_cargo_view_search" model="ir.ui.view">
+            <field name="name">sharevan.cargo.search</field>
+            <field name="model">sharevan.cargo</field>
+            <field name="arch" type="xml">
+                <search string="Cargo Infomation">
+                    <!--                            <filter string="status" name="status" domain="[('status', '=', 'running')]"/>-->
+                    <group expand="0" string="Group By">
+                        <!--                        <filter name="groupby_max_date" context="{'group_by' : 'max_date'}" string="Max date    "/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_cargo_action' model='ir.actions.act_window'>
+            <field name="name">Cargo manager</field>
+            <field name="res_model">sharevan.cargo</field>
+            <field name="view_mode">tree,form</field>
+            <!--            <field name="context">{'search_default_status': 1}</field>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Bidding Cargo
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Cargo manager" id="bidding_order_menu_1" parent="sharevan_order_menu_9" sequence="11120"/>
+        <menuitem name="Bidding Order" id="bidding_order" parent="bidding_package"
+                  action="bidding_order_action" sequence="111111"/>
+        <menuitem name="Cargo" id="cargo_manager" parent="bidding_order_menu_1"
+                  action="sharevan_cargo_action" sequence="111112"/>
+        <menuitem name="Customer" id="bidding_order_menu_2" parent="sharevan_order_menu_9" sequence="11121"/>
+        <menuitem name="Config" id="bidding_order_menu_3" parent="sharevan_order_menu_9" sequence="1234"/>
+    </data>
+</odoo>

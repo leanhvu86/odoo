@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="ordercustomer" name="Order customer">
+            <t t-call="website.layout">
+
+            </t>
+        </template>
+
+
+        <record id="order_customer" model="website.menu">
+            <field name="name">Order customer</field>
+            <field name="url">/order_customer</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">61</field>
+        </record>
+
+<!--        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Profile customer script">-->
+<!--            <xpath expr="//script[last()]" position="after">-->
+<!--                <script type="text/javascript" src="/theme_order_customer/static/src/js/customer_profile.js"/>-->
+<!--                <link rel="stylesheet" type="text/scss" href="/theme_order_customer/static/src/js/profile_customer.scss"/>-->
+<!--            </xpath>-->
+<!--        </template>-->
+    </data>
+</odoo>

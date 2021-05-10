@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+        <record id="fleet_request_time_off_tree" model="ir.ui.view">
+            <field name="name">fleet.request.time.off.tree</field>
+            <field name="model">fleet.request.time.off</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false" default_order="request_day desc">
+                    <field name="driver_name"/>
+                    <field name="request_day"/>
+                    <field name="reason"/>
+                    <field name="approver_id"/>
+                    <field name="type"/>
+                    <field name="status"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fleet_request_time_off_form" model="ir.ui.view">
+            <field name="name">fleet.request.time.off.form</field>
+            <field name="model">fleet.request.time.off</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Fleet Driver" create="false" edit="false" delete="false">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="driver_id"/>
+                                <field name="request_day"/>
+                                <field name="create_date"/>
+                            </group>
+                            <group>
+                                <field name="type"/>
+                                <field name="status" invisible="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="reason"/>
+                        </group>
+                        <field name="status" invisible="1"/>
+                        <field name="can_approve" invisible="1"/>
+                        <footer class="d-flex justify-content-center"
+                                attrs="{'invisible': [('can_approve','!=', True)]}">
+                            <button name="deny_request"
+                                    class="btn btn-danger"
+                                    string="Deny"
+                                    type="object"
+                                    confirm="Are you sure you want to do this?"
+                            />
+                            <div style="width:20px;height:auto;display:inline-block;"/>
+                            <button name="approve_request"
+                                    class="btn btn-primary"
+                                    string="Accept"
+                                    type="object"
+                                    confirm="Are you sure you want to do this?"
+                            />
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fleet_request_time_off_search" model="ir.ui.view">
+            <field name="name">Request time off</field>
+            <field name="model">fleet.request.time.off</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="driver_id"/>
+                    <field name="company_id"/>
+                    <field name="status"/>
+                    <group expand="1" string="Group By">
+                        <filter name="groupby_status" string="Group by status"
+                                context="{'group_by': 'status'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fleet_request_time_off_calendar">
+            <field name="name">fleet.request.time.off.calendar</field>
+            <field name="model">fleet.request.time.off</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendar request time off view" date_start="request_day"
+                          color="driver_id" event_limit="5" quick_add="False" mode="month" all_day="all_day">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="reason"/>
+                    <field name="status"/>
+                    <field name="create_date"/>
+                    <field name="request_day" invisible="1"/>
+                    <field name="can_approve" invisible="1"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id='fleet_request_time_off_action' model='ir.actions.act_window'>
+            <field name="name">Request time off</field>
+            <field name="res_model">fleet.request.time.off</field>
+            <field name="context">{'search_default_groupby_status': 1}</field>
+            <field name="limit">20</field>
+            <field name="domain">[('status', '!=', '4')]</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Request day off from drivers
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Request time off" id="menu_fleet_request_time_off" parent="fleet_driver_view"
+                  action="fleet_request_time_off_action" sequence="1"/>
+    </data>
+</odoo>

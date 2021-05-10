@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- create -->
+    <record id='fleet_management_view_form' model='ir.ui.view'>
+        <field name="name">fleet.management.form</field>
+        <field name="model">fleet.management</field>
+        <field name="arch" type="xml">
+            <form string="Model" duplicate="0" delete="0">
+                <sheet>
+                    <group col="2" string="Team member management">
+                        <group>
+                            <field name="name"/>
+                            <field name="parking_point_id" attrs="{'invisible': [('team_check','==',True)]}"/>
+                            <field name="organization_level" attrs="{'readonly': [('team_check','==',False)]}"/>
+                            <field name="manager_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="from_date" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                            <field name="team_check"/>
+                            <field name="parent_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="status" readonly="1"/>
+                            <field name="to_date" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Employee management" attrs="{'invisible': [('team_check','==',True)]}">
+                        <div class="o_row">
+                            <field name="fleet_driver_lines" attrs="{'readonly': [('status','=', 'deactive')]}">
+                                <tree editable="bottom">
+                                    <field name="fleet_driver_id" attrs="{'readonly': [('id', '!=', False)],'required': [('from_date','!=', False)]}"/>
+                                    <field name="phone"/>
+                                    <field name="class_driver" string = "License class "/>
+                                    <field name="address"/>
+                                    <field name="point"  widget="rating_start" attrs="{'invisible': [('fleet_driver_id','==',False)]}" optional="hide"/>
+                                    <field name="award_id"/>
+                                    <field name="from_date" string="From date" invisible="1"/>
+                                    <field name="to_date" string="To date" invisible="1"/>
+                                </tree>
+                            </field>
+                        </div>
+                        <!--                        <field name = "fleet_driver_id"/>-->
+                    </group>
+                    <group string="Fleet management" attrs="{'invisible': [('team_check','==',False)]}">
+                        <div class="o_row">
+                            <field name="fleet_management">
+                                <tree editable="bottom" delete="false">
+                                    <field name="name"/>
+                                    <field name="manager_id"/>
+                                    <field name="total_driver"/>
+                                    <field name="total_vehicle"/>
+                                </tree>
+                            </field>
+                        </div>
+                        <!--                        <field name = "fleet_driver_id"/>-->
+                    </group>
+                    <group string="Vehicle management" attrs="{'invisible': [('team_check','==',True)]}">
+                        <div class="o_row">
+                            <field name="fleet_vehicle_lines" attrs="{'readonly': [('status','=', 'deactive')]}">
+                                <tree editable="bottom" decoration-danger="available_driver &lt;= 0" >
+                                    <field name="fleet_vehicle_id" attrs="{'readonly': [('id', '!=', False)],'required': [('from_date','!=', False)]}"
+                                           string="Vehicle name"/>
+                                    <field name="name" invisible="1"/>
+                                    <field name ="state_vehicle" string = "State vehicle"/>
+                                    <field name = "fleet_vehicle_type" string ="Vehicle type"/>
+                                    <field name = "tonnage_id" string ="Vehicle tonnage"/>
+                                    <field name="amortization_period" />
+                                    <field name="activity_duration_average" />
+                                    <field name="available_driver"/>
+                                    <field name="from_date" string="From date" invisible="1"/>
+                                    <field name="to_date" string="To date" invisible="1"/>
+                                </tree>
+                            </field>
+                        </div>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+      <record id="fleet_management_view_search" model="ir.ui.view">
+        <field name="name">fleet.management.search</field>
+        <field name="model">fleet.management</field>
+        <field name="arch" type="xml">
+            <search string="All team member">
+                <filter string="status" name="status" domain="[('status', '=', 'active')]"/>
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Code" name="groupby_code" context="{'group_by': 'code'}"/>
+                    <filter string="Name" name="groupby_name" context="{'group_by': 'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='fleet_management_view_tree' model='ir.ui.view'>
+        <field name="name">fleet.management.tree</field>
+        <field name="model">fleet.management</field>
+        <field name="arch" type="xml">
+            <tree string="Fleet management" default_order="organization_level">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="manager_id"/>
+                <field name="parking_point_id"/>
+                <field name="total_driver"/>
+                <field name="total_vehicle"/>
+                <field name="parent_id" optional="hide"/>
+                <field name="status" optional="hide"/>
+<!--                <field name="from_date"/>-->
+<!--                <field name="to_date"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id='fleet_management_action' model='ir.actions.act_window'>
+        <field name="name">Fleet management</field>
+        <field name="res_model">fleet.management</field>
+        <field name="view_mode">tree,form,search</field>
+        <field name="context">{'search_default_status': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new contract
+            </p>
+            <p>
+                Manage all your contracts (leasing, insurances, etc.) with
+                their related services, costs. Odoo will automatically warn
+                you when some contracts have to be renewed.
+            </p>
+            <p>
+                Each contract (e.g.: leasing) may include several services
+                (reparation, insurances, periodic maintenance).
+            </p>
+        </field>
+    </record>
+    <menuitem name="Fleet management" parent="menu_root"
+              id="fleet_management" sequence="896" groups="fleet_group_user"/>
+    <menuitem name="Team member management" parent="fleet_management" action="fleet_management_action"
+              id="shipping_team" sequence="90888" groups="fleet_group_user"/>
+    <menuitem name="Team member" parent="shipping_team" action="fleet_management_action"
+              id="team_member" sequence="908" groups="fleet_group_user"/>
+
+</odoo>

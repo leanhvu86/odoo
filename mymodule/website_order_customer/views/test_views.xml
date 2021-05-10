@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="test_page_template" name="Test page">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="container">
+                        <form class="order-form" action="/#">
+                            <div class="col-8">
+                                <t t-call="website_order_customer.order_table">
+                                </t>
+                            </div>
+                            <!--                                Text input-->
+                            <div class="col-4">
+                                <t t-call="website_order_customer.order_input">
+                                    <t t-set="input_label">Test input label</t>
+                                    <t t-set="input_icon">fa-mail</t>
+                                    <t t-set="input_id">input_email</t>
+                                    <t t-set="placeholder">Placeholder input...</t>
+                                </t>
+                            </div>
+                            <!--                                Text area-->
+                            <div class="col-5">
+                                <t t-call="website_order_customer.order_textarea">
+                                    <t t-set="input_label">Test textarea label</t>
+                                    <t t-set="input_id">input_description</t>
+                                    <t t-set="placeholder">Placeholder textarea...</t>
+                                </t>
+                            </div>
+                            <!-- Button in area-->
+                            <t t-call="website_order_customer.order_button_dash">
+                                <t t-set="image_url">/theme_order_customer/static/src/img/image_car.png</t>
+                                <t t-set="button_icon">play</t>
+                                <t t-set="button_label">Botan in area</t>
+                            </t>
+
+                            <t t-call="website_order_customer.order_button">
+                                <t t-set="button_icon">fa-close</t>
+                                <t t-set="button_label">Test set button label</t>
+                            </t>
+                            <t t-call="website_order_customer.order_button">
+                                <t t-set="button_icon">fa-user</t>
+                                <t t-set="button_label">User button</t>
+                            </t>
+                        </form>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

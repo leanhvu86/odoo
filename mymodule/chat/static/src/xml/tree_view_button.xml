@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <template id="template" xml:space="preserve">
+          <t t-extend="ListView.buttons">
+            <t t-jquery="button.o_list_button_save" t-operation="after">
+                <t t-if="widget.modelName == 'sharevan.bidding.vehicle'">
+                  <button id="custom_print_btn" class="btn btn-primary o_list_button_custom_print" type="button" >Download excel</button>
+                </t>
+            </t>
+          </t>
+      </template>

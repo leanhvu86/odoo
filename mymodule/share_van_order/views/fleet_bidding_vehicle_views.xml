@@ -1,0 +1,65 @@
+<odoo>
+    <data>
+
+        <record id="fleet_vehicle_view_form_inherit" model="ir.ui.view">
+            <field name="name">fleet.vehicle.form</field>
+            <field name="model">fleet.vehicle</field>
+
+            <field name="arch" type="xml">
+                <form string="Vehicle">
+
+                </form>
+            </field>
+        </record>
+        <record id="fleet_vehicle_view_search_inherit" model="ir.ui.view">
+            <field name="name">fleet.vehicle.search</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="arch" type="xml">
+                <search string="All vehicles">
+                    <field string="Vehicle" name="name"
+                           filter_domain="['|', ('name', 'ilike', self), ('license_plate', 'ilike', self)]"/>
+                    <field string="Drivers" name="log_drivers"
+                           filter_domain="[('log_drivers.driver_id.name', 'ilike', self)]"/>
+                    <field name="tag_ids"/>
+                    <field name="location"/>
+                    <field string="Status" name="state_id"/>
+                    <separator/>
+                    <filter string="Need Action" name="alert_true"
+                            domain="['|', ('contract_renewal_due_soon', '=', True), ('contract_renewal_overdue', '=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <filter invisible="1" string="Late Activities" name="activities_overdue"
+                            domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                            help="Show all records which has next action date is before today"/>
+                    <filter invisible="1" string="Today Activities" name="activities_today"
+                            domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter invisible="1" string="Future Activities" name="activities_upcoming_all"
+                            domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Model" name="groupby_model" context="{'group_by': 'model_id'}"/>
+                        <filter string="Status" name="groupby_status" context="{'group_by': 'state_id'}"/>
+                        <filter string="Brand" name="groupby_make" context="{'group_by': 'brand_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_fleet_bidding_vehicle_view' model='ir.actions.act_window'>
+            <field name="name">Fleet vehicle</field>
+            <field name="res_model">fleet.vehicle</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a vehicle
+                </p>
+                <p>
+                    Here you can add vehicle
+                </p>
+            </field>
+        </record>
+
+<!--        <menuitem name="Vehicle" id="sharevan_fleet_bidding_menu" parent="sharevan_order_menu_9" sequence="1167"-->
+<!--                  action="sharevan_fleet_bidding_vehicle_view"/>-->
+    </data>
+</odoo>

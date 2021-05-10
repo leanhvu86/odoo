@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <record id="view_driver_form_inherit" model="ir.ui.view">
+            <field name="name">fleet.driver.form</field>
+            <field name="model">fleet.driver</field>
+
+            <field name="arch" type="xml">
+                <form string="Driver">
+
+                </form>
+            </field>
+        </record>
+
+        <record id='sharevan_fleet_driver_view' model='ir.actions.act_window'>
+            <field name="name">Fleet Driver</field>
+            <field name="res_model">fleet.driver</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a company
+                </p>
+                <p>
+                    Here you can add company
+                </p>
+            </field>
+        </record>
+
+<!--        <menuitem name="Driver" id="sharevan_fleet_driver_menu" parent="sharevan_order_menu_9" sequence="1017"-->
+<!--                  action="sharevan_fleet_driver_view"/>-->
+    </data>
+</odoo>

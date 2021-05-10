@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+
+        <record id='tonnage_vehicle_form' model='ir.ui.view'>
+            <field name="name">sharevan.tonnage.vehicle.form</field>
+            <field name="model">sharevan.tonnage.vehicle</field>
+            <field name="arch" type="xml">
+                <form string="Tonnage Vehicle">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="code"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="max_tonnage" options="{'no_create': True}"/>
+                                <field name="type_unit"/>
+                            </group>
+                        </group>
+                        <field name="description"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_tonnage_vehicle_search" model="ir.ui.view">
+            <field name="name">sharevan.tonnage.vehicle.search</field>
+            <field name="model">sharevan.tonnage.vehicle</field>
+            <field name="arch" type="xml">
+                <search string="Vehicle tonnage">
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_tonnage_vehicle_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.tonnage.vehicle.tree</field>
+            <field name="model">sharevan.tonnage.vehicle</field>
+            <field name="arch" type="xml">
+                <tree string="Tonnage Vehicle">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="max_tonnage"/>
+                    <field name="type_unit"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='tonnage_vehicle_action' model='ir.actions.act_window'>
+            <field name="name">Tonnage Vehicle</field>
+            <field name="res_model">sharevan.tonnage.vehicle</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new tonnage vehicle
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="Tonnage Vehicle" id="tonnage_vehicle" parent="sharevan_billing"
+                  action="tonnage_vehicle_action" sequence="1235"/>
+
+    </data>
+</odoo>

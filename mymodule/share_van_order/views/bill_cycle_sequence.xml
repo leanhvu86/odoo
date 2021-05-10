@@ -1,0 +1,68 @@
+<odoo>
+    <data noupdate ="1">
+          <record id="sequence_self_sharevan_bill_cycle" model="ir.sequence">
+            <field name="name">Bill Cycle Sequence</field>
+            <field name="code">self.sharevan.bill.cycle</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">BC</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="sequence_self_sharevan_zone" model="ir.sequence">
+            <field name="name">Zone Sequence</field>
+            <field name="code">self.sharevan.zone</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ZE</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="sequence_self_sharevan_area" model="ir.sequence">
+            <field name="name">Area Sequence</field>
+            <field name="code">self.sharevan.area</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">AE</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="sequence_self_sharevan_hub" model="ir.sequence">
+            <field name="name">Hub Sequence</field>
+            <field name="code">self.sharevan.hub</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">HB</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="sequence_self_sharevan_distance_compute" model="ir.sequence">
+            <field name="name">Distance Compute Sequence</field>
+            <field name="code">self.sharevan.distance.compute</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">DIC</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="sequence_sharevan_bill_package" model="ir.sequence">
+            <field name="name">Bill package name sequence</field>
+            <field name="code">self.sharevan.bill.package.name</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">BPN</field>
+            <field name="padding">12</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="sequence_bill_package_routing_plan" model="ir.sequence">
+            <field name="name">Bill package routing plan sequence</field>
+            <field name="code">self.sharevan.bill.package.plan</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">BPR</field>
+            <field name="padding">12</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

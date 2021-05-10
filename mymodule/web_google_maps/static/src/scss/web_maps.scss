@@ -1,0 +1,353 @@
+/* https://github.com/twbs/bootstrap/issues/4160 */
+/* put google places autocomplete dropdown results above the bootstrap modal 1050 zindex. */
+.pac-container {
+  z-index: 1051 !important;
+}
+
+.o_field_x2many_map {
+  margin-top: 10px;
+}
+
+.o_map_container {
+  display: flex;
+  align-content: stretch;
+  overflow-x: visible;
+  min-height: 550px;
+  height: 100%;
+
+  .drag_seperator {
+    background: #5fa2dd;
+    width: 35px;
+    min-width: 10px;
+    display: none;
+
+    &.closed {
+      display: none;
+      width: 0px;
+      min-width: 0px !important;
+      transition: 0.5s;
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+    }
+  }
+
+  .drag_seperator:hover {
+    cursor: pointer;
+  }
+
+  .hover_show_position {
+    cursor: pointer;
+  }
+
+  .hover_show_chat {
+    cursor: pointer;
+  }
+
+  .o_map_view {
+    width: 100%;
+    min-width: 10px;
+
+    .gm-style-iw {
+      min-width: 300px;
+    }
+
+    .o_chat_view {
+      width: 1300px;
+
+      .gm-style-iw {
+        min-width: 300px;
+      }
+    }
+  }
+
+  .pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+  }
+
+  .o_map_left_sidenav {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 400px;
+    width: 400px;
+    position: absolute;
+    z-index: 1;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    transition: 0.5s;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    min-width: 10px;
+
+    &.closed {
+      transform: translate3d(-100%, 0, 0);
+      -webkit-transform: translate3d(-100%, 0, 0);
+
+      .sidenav-body .panel {
+        border: none;
+      }
+    }
+  }
+
+  .o_map_left_sidebar {
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+
+    .size_status_vehicle {
+      font-size: 10px;
+    }
+
+    &.btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    &.btn:hover {
+      background-color: RoyalBlue;
+    }
+
+    &.closed {
+      width: 0;
+      transition: 0.5s;
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+    }
+
+    &.open {
+      width: 500px;
+      //height: 100%;
+      //transition: 0.5s;
+      //transform: translateX(0);
+      //-webkit-transform: translateX(0);
+      //overflow-x: auto;
+      min-width: 0px;
+    }
+
+    .o_map_filter_left ul li:hover {
+      cursor: pointer;
+    }
+
+    .active {
+      border: #019afc 1px solid;
+    }
+
+    //.o_map_filter_left ul li:hov {
+    //  background: red;
+    //  cursor: pointer;
+    //}
+
+    ul {
+      margin-top: 10px;
+      padding-left: 3px;
+      list-style: none;
+      font-size: 12px;
+
+      li {
+        padding-bottom: 8px;
+
+        span {
+          padding: 3px 6px;
+
+          &.total {
+            font-size: 10px;
+            background: #ddd;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+
+  }
+
+  /* CSS for the Delete Button. */
+  .deleteOverlayButton {
+    background: #dee0df;
+    color: #000;
+    /* font-family: 'Helvetica', 'Arial', sans-serif; */
+    font-size: 11.4px;
+    font-weight: bold;
+    text-align: center;
+    width: 14px;
+    height: 15px;
+    border-radius: 8px;
+    box-shadow: 1px 0px -1px rgba(0, 0, 0, .3);
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    margin-top: 7px;
+    margin-left: 8px;
+    border: 1px solid #999;
+    cursor: pointer;
+  }
+
+  .deleteOverlayButton:hover {
+    background: #eee;
+  }
+
+  .o_report_right_sidebar {
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+    width: 400px;
+
+    &.btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    &.btn:hover {
+      background-color: RoyalBlue;
+    }
+
+    &.closed {
+      width: 0;
+      transition: 0.5s;
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+    }
+
+    &.open {
+      //height: 100%;
+      //transition: 0.5s;
+      //transform: translateX(0);
+      //-webkit-transform: translateX(0);
+      //overflow-x: auto;
+      overflow-x: auto;
+      min-width: 0px;
+    }
+  }
+
+  .o_map_right_sidebar {
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+
+    &.closed {
+      width: 0;
+      transition: 0.5s;
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+    }
+
+    &.open {
+      width: 250px;
+      transition: 0.5s;
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      overflow-x: auto;
+    }
+  }
+
+  .o_map_button {
+    cursor: pointer;
+    text-align: center;
+    width: auto;
+    padding: 0px 6px;
+    margin: 0px 15px 5px 0px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    line-height: 25px;
+    font-family: 'Roboto,Arial,sans-serif';
+  }
+
+  .o_map_filter_items {
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+    width: 250px;
+    transition: 0.5s;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    overflow-x: auto;
+
+
+    .o_map_filter_item {
+      margin-top: 10px;
+      padding-left: 3px;
+      list-style: none;
+      font-size: 12px;
+
+      label {
+        padding-bottom: 8px;
+      }
+
+      span {
+        padding: 3px 6px;
+
+        &.total {
+          font-size: 10px;
+          background: #ddd;
+          border-radius: 3px;
+        }
+      }
+
+      cursor: pointer;
+      overflow: hidden;
+
+      input {
+        z-index: -1;
+        opacity: 0;
+      }
+
+      .o_cw_filter_input_bg {
+        @include size(1.3em);
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 1px;
+        overflow: hidden;
+
+        &.o_beside_avatar {
+          @include size($o-cw-filter-avatar-size);
+          border-radius: 2px;
+        }
+      }
+
+      input:not(:checked) + label .o_cw_filter_input_bg {
+        background: transparent !important;
+
+        i.fa {
+          visibility: hidden;
+        }
+      }
+
+
+      .o_cw_filter_avatar {
+        @include size($o-cw-filter-avatar-size);
+        border-radius: 2px;
+
+        &.fa {
+          padding: 4px 3px;
+        }
+      }
+
+
+      button.o_remove {
+        @include o-position-absolute(0, 0, 0);
+        transform: translateX(100%);
+        transition: transform 0.2s;
+      }
+
+      &:hover {
+        button.o_remove {
+          transform: translateX(0%);
+        }
+      }
+    }
+  }
+}
+

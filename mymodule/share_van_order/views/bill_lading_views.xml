@@ -1,0 +1,772 @@
+<odoo>
+    <data>
+
+        <record id='sharevan_bill_lading_view_form' model='ir.ui.view'>
+            <field name="name">sharevan.bill.lading.form</field>
+            <field name="model">sharevan.bill.lading</field>
+            <field name="arch" type="xml">
+                <form string="Bill of Lading" delete="false" create="false" edit="false"  duplicate="false">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name_seq" invisible="1"/>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group col="2" string="Subscribe">
+                            <!--                            <group>-->
+                            <!--                                <field name="recurrent_id"/>-->
+                            <!--                                <field name="start_date"/>-->
+                            <!--                            </group>-->
+                            <!--                            <group>-->
+                            <!--                                <field name="subscribe"/>-->
+                            <!--                                <field name="end_date"/>-->
+                            <!--                            </group>-->
+                            <!--                            <group>-->
+                            <group>
+                                <field name="subscribe_id" attrs="{'invisible': [('cycle_type', '>', '3')]}"/>
+                                <field name="cycle_type"/>
+                                <field name="week_choose" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                                <field name="start_date"/>
+                                <field name="end_date" attrs="{'invisible': [('cycle_type', '>', '3')]}" readonly="1"/>
+                                <field name="order_num" readonly="True"></field>
+                            </group>
+                            <group>
+                                <field name="frequency" readonly="True" force_save="1" invisible="1"/>
+                                <field name="day_of_month" readonly="True" force_save="1"
+                                       attrs="{'invisible': [('cycle_type', '!=', '3')]}"/>
+                                <field name="chooseDay" attrs="{'invisible': [('cycle_type', '!=', '3')]}"/>
+<!--                                <field name="day_of_week" readonly="True" force_save="1"-->
+<!--                                       attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                                <field name="day_of_week_view" force_save="1"
+                                       attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                            </group>
+                        </group>
+                        <!--                        <group col="4">-->
+                        <!--                            <group>-->
+                        <!--                                <field name="start_date" widget="daterange"-->
+                        <!--                                       options="{'related_end_date': 'end_date'}"-->
+                        <!--                                       attrs="{'invisible': [('cycle_type', '=', '4')]}"/>-->
+                        <!--                                <field name="end_date" widget="daterange"-->
+                        <!--                                       options="{'related_start_date': 'start_date'}"-->
+                        <!--                                       attrs="{'invisible': [('cycle_type', '=', '4')]}"/>-->
+
+                        <!--                            </group>-->
+                        <!--                            <group>-->
+                        <!--                                <field name="monday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="thursday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="sunday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                            </group>-->
+
+                        <!--                            <group>-->
+                        <!--                                <field name="tuesday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="friday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="week1" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="week2" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                            </group>-->
+                        <!--                            <group>-->
+                        <!--                                <field name="wednesday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="saturday" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="week3" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                                <field name="week4" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>-->
+                        <!--                            </group>-->
+                        <!--                        </group>-->
+                        <group string="Information">
+                            <group>
+                                <field name="company_id" filter_domain="(('company_type', 'in', ['1', '2']))"/>
+                                <field name="award_company_id" readonly="1"/>
+                                <field name="company_type"/>
+                                <field name="insurance_id"/>
+                            </group>
+                            <group>
+                                <field name="status"/>
+                                <field name="order_package_id"/>
+                                <field name="sbl_type" invisible="1"/>
+                                <field name="qr_code" attrs="{'invisible': [('sbl_type', '!=', 'SO')]}"/>
+                            </group>
+
+                        </group>
+                        <group string="Total">
+                            <group>
+                                <field name="total_weight" readonly="1" widget="weight_unit"/>
+                                <field name="total_volume" readonly="1" widget="volume_unit"/>
+                                <field name="total_parcel" readonly="1" widget="parcel_unit"/>
+                            </group>
+                            <group>
+                                <field name="promotion_code"/>
+                                <field name="price_not_discount" readonly="1" widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"/>
+                                <field name="tolls" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="surcharge" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="insurance_price" readonly="1" widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"/>
+                                <field name="service_price" readonly="1" widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"/>
+                                <field name="total_amount" readonly="1" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                        <group string="List bill of lading detail">
+                            <field name="bill_lading_detail_ids" mode="kanban"
+                                   context="{'default_bill_lading_id': active_id, 'default_only_with_bill_lading': True}">
+                                <kanban>
+                                    <field name="name_seq"/>
+                                    <field name="warehouse_id"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div t-att-class="color + ' oe_kanban_global_click'">
+                                                <!--                                                <div class="o_kanban_image">-->
+                                                <!--                                                    <img alt=""-->
+                                                <!--                                                         t-att-src="kanban_image('sharevan.warehouse', 'image_128', record.id.raw_value)"/>-->
+                                                <!--                                                </div>-->
+                                                <div class="oe_kanban_details">
+                                                    <div t-att-style="'color:red'">
+                                                        <field name="name_seq"/>
+                                                    </div>
+                                                    <field name="total_weight" widget="weight_unit" readonly="1"/>
+                                                    <div t-if="record.warehouse_id.raw_value">
+                                                        <div class="float-right" t-att-style="'color:orange'">
+                                                            <a>
+                                                                <field name="warehouse_type"/>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div t-if="record.service_id.raw_value">
+                                                        Dịch vụ tại kho:
+                                                        <field name="service_id" widget="many2many_tags"
+                                                               options="{'color_field': 'id', 'no_create_edit': True}"/>
+                                                    </div>
+
+                                                    <!--                                                    <div>-->
+                                                    <!--                                                        <field name="expected_from_time"/>-->
+                                                    <!--                                                        <span class="float-right">-->
+                                                    <!--                                                            <field name="expected_to_time"/>-->
+                                                    <!--                                                        </span>-->
+                                                    <!--                                                    </div>-->
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <form string="Bill of lading detail">
+                                    <sheet>
+                                        <field name="qr_code" widget="image" class="oe_avatar" readonly="1"/>
+                                        <div class="oe_title">
+                                            <label for="name_seq" class="oe_edit_only"/>
+                                            <h1>
+                                                <field name="name_seq"/>
+                                            </h1>
+                                        </div>
+                                        <notebook>
+                                            <page string="Main information">
+                                                <group>
+                                                    <group>
+                                                        <field name="warehouse_id"/>
+                                                        <field name="warehouse_type"/>
+                                                        <field name="total_weight" widget="weight_unit" readonly="1"/>
+                                                        <field name="warehouse_name"
+                                                               attrs="{'invisible': [('warehouse_id', '!=', None)]}"/>
+                                                        <field name="from_warehouse_id" invisible="1"/>
+
+
+                                                        <field name="street" invisible="1" widget="gplaces_address_autocomplete"
+                                                               options="{'fillfields': {'street2': ['route', 'street_number']}}"/>
+                                                        <field name="zip" invisible="1"/>
+                                                        <field name="city_name" invisible="1"/>
+                                                        <field name="country_id" invisible="1"/>
+                                                        <field name="state_id"
+                                                               attrs="{'invisible': [('street', '=', False)]}"/>
+                                                        <field name="district"
+                                                               attrs="{'invisible': [('street', '=', False)]}"/>
+                                                        <field name="ward"
+                                                               attrs="{'invisible': [('street', '=', False)]}"/>
+                                                    </group>
+                                                    <group>
+                                                        <field name="address" readonly="1" force_save="1"/>
+                                                        <field name="street2" invisible="1"/>
+                                                        <field name="phone"/>
+                                                        <field name="zone_area_id" readonly="1" force_save="1"/>
+                                                        <field name="area_id" readonly="1" force_save="1"/>
+                                                        <field name="order_type"/>
+                                                    </group>
+                                                </group>
+                                            </page>
+                                            <page string="Extra information">
+                                                <group>
+                                                    <group>
+                                                        <field name="hub_id" readonly="1" force_save="1"/>
+                                                        <field name="depot_id" readonly="1" force_save="1"/>
+                                                        <field name="latitude" readonly="1" force_save="1"/>
+                                                        <field name="longitude" readonly="1" force_save="1"/>
+                                                    </group>
+                                                </group>
+                                            </page>
+                                        </notebook>
+                                        <group string="Detail">
+                                            <group>
+                                                <field name="expected_from_time" sum="Total time" invisible="1"/>
+                                                <field name="service_id" class="oe_inline" widget="many2many_tags"
+                                                       context="{'default_status': 'running'}"/>
+                                            </group>
+                                            <group>
+                                                <field name="price" widget="monetary"/>
+                                                <field name="expected_to_time" sum="Total time" invisible="1"/>
+                                            </group>
+                                        </group>
+                                        <group attrs="{'invisible': [('warehouse_type', '=', '1'), ('id', '=', False)]}">
+                                            <field name="bill_package_line"
+                                                   widget="section_and_note_one2many"
+                                                   context="{'default_bill_lading_detail_id':active_id,'default_only_with_bill_lading': True}"
+                                                   mode="tree">
+                                                <tree create="true">
+                                                    <control>
+                                                        <create string="Add a product package"/>
+                                                    </control>
+                                                    <field name="product_type_id"/>
+                                                    <field name="net_weight" widget="weight_unit"/>
+                                                    <field name="quantity_package" widget="parcel_unit"/>
+                                                    <field name="length" widget="length_unit"/>
+                                                    <field name="width" widget="length_unit"/>
+                                                    <field name="height" widget="length_unit"/>
+
+                                                    <field name="capacity"/>
+                                                    <!--<field name="product_package_type_id"/>-->
+                                                </tree>
+                                                <form string="Bill Package">
+                                                    <sheet>
+                                                        <field name="qr_code" widget="image" class="oe_avatar"
+                                                               readonly="1"/>
+                                                        <group>
+                                                            <group string="Bill Package">
+                                                                <field name="name" readonly="1"/>
+                                                                <field name="product_type_id"/>
+                                                                <!--<field name="product_package_type_id"/>-->
+                                                                <field name="net_weight" widget="weight_unit"/>
+                                                                <field name="quantity_package" widget="parcel_unit"/>
+                                                                <field name="item_name"/>
+                                                            </group>
+                                                            <group string="Measure">
+                                                                <field name="length" widget="length_unit"/>
+                                                                <field name="width" widget="length_unit"/>
+                                                                <field name="height" widget="length_unit"/>
+                                                                <field name="capacity"/>
+                                                            </group>
+                                                        </group>
+                                                        <group>
+                                                            <field name="description"
+                                                                   placeholder="Write here any other information"/>
+                                                        </group>
+                                                    </sheet>
+                                                </form>
+                                            </field>
+                                        </group>
+                                        <div attrs="{'invisible': [('id', '!=', False)]}">
+                                            <group attrs="{'invisible': [('warehouse_type', '=', '0')]}">
+                                                <field name="bill_package_import"
+                                                       widget="section_and_note_one2many"
+                                                       context="{'default_bill_lading_detail_id':active_id,
+                                                    'default_only_with_bill_lading': True}"
+                                                       mode="tree">
+                                                    <tree create="false" edit="false" delete="false">
+                                                        <control>
+                                                            <update string="Select bill package"/>
+                                                        </control>
+                                                        <field name="product_type_id"/>
+                                                        <field name="net_weight" widget="weight_unit"/>
+                                                        <field name="length" widget="length_unit"/>
+                                                        <field name="width" widget="length_unit"/>
+                                                        <field name="height" widget="length_unit"/>
+                                                        <field name="capacity"/>
+                                                        <field name="quantity_package" widget="parcel_unit"/>
+                                                        <!--<field name="product_package_type_id"/>-->
+                                                    </tree>
+                                                    <form string="Bill Package">
+                                                        <sheet>
+                                                            <group>
+                                                                <group string="Bill Package">
+                                                                    <field name="name" readonly="1"/>
+                                                                    <field name="product_type_id" readonly="1"/>
+                                                                    <!--<field name="product_package_type_id"/>-->
+                                                                    <field name="net_weight" widget="weight_unit"
+                                                                           readonly="1"/>
+                                                                    <field name="total_quantity" readonly="1"/>
+                                                                    <field name="quantity_package"
+                                                                           widget="parcel_unit"/>
+                                                                    <field name="item_name" readonly="1"/>
+                                                                </group>
+                                                                <group string="Measure" readonly="1">
+                                                                    <field name="length" widget="length_unit"
+                                                                           readonly="1"/>
+                                                                    <field name="width" widget="length_unit"
+                                                                           readonly="1"/>
+                                                                    <field name="height" widget="length_unit"
+                                                                           readonly="1"/>
+                                                                    <field name="capacity" readonly="1"/>
+                                                                </group>
+                                                            </group>
+                                                            <group>
+                                                                <field name="description" readonly="1"
+                                                                       placeholder="Write here any other information"/>
+                                                            </group>
+                                                        </sheet>
+                                                    </form>
+                                                </field>
+                                            </group>
+                                        </div>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_bill_lading_view_search" model="ir.ui.view">
+            <field name="name">sharevan.bill.lading.search</field>
+            <field name="model">sharevan.bill.lading</field>
+            <field name="arch" type="xml">
+                <search string="Bill of Lading">
+                    <field name="name"/>
+                    <field name="insurance_id"/>
+                    <field name="company_id"/>
+                    <field name="total_amount" widget="monetary"/>
+                    <filter string="Status" name="status" domain="[('status', '=', 'running')]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_bill_lading" context="{'group_by' : 'sbl_type'}" string="Bill of lading"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_bill_lading_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.bill.lading.tree</field>
+            <field name="model">sharevan.bill.lading</field>
+            <field name="arch" type="xml">
+                <tree string=" Bill of Lading" default_order='id desc'  delete="false" create="false" edit="false"  duplicate="false">
+                    <field name="name"/>
+                    <field name="insurance_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="company_id"/>
+                    <field name="total_weight" widget="weight_unit"/>
+                    <field name="total_volume" widget="volume_unit"/>
+                    <!--                    <field name="vat"/>-->
+                    <field name="create_date"/>
+                    <field name="tolls" optional="hide"/>
+                    <field name="surcharge" optional="hide"/>
+                    <field name="total_amount" widget="monetary"/>
+                    <field name="status" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='sharevan_bill_routing_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.bill.routing.tree</field>
+            <field name="model">sharevan.bill.routing</field>
+            <field name="arch" type="xml">
+                <tree string="Bill routing" create="false" default_order='status_routing, id desc'>
+                    <field name="code"/>
+                    <field name="company_id"/>
+                    <field name="total_weight" widget="weight_unit"/>
+                    <field name="total_amount" widget='monetary'/>
+                    <field name="status_routing"/>
+                    <field name="trouble_type"/>
+                    <field name="start_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sharevan_bill_routing_view_form" model="ir.ui.view">
+            <field name="name">sharevan.bill.routing.form</field>
+            <field name="model">sharevan.bill.routing</field>
+            <field name="arch" type="xml">
+                <form string="Bill routing" delete="false" edit="false" create="false">
+                    <sheet>
+                        <field name="problem_image" widget='image' class="oe_avatar"/>
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group col="2" string="Customer information">
+                            <group>
+                                <field name="company_id"/>
+                                <field name="insurance_id"/>
+                            </group>
+                            <group>
+                                <field name="order_package_id"/>
+                                <field name="award_company_id"/>
+                            </group>
+                        </group>
+                        <group col="2" string="Main information">
+                            <group>
+                                <field name="subscribe_id"/>
+                                <field name="cycle_type"/>
+                                <field name="start_date"/>
+                                <field name="week_choose" attrs="{'invisible': [('cycle_type', '!=', '2')]}"/>
+                                <field name="trouble_type" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="sbl_type"/>
+                                <field name="from_bill_lading_id"/>
+                                <field name="end_date"/>
+                                <field name="chooseDay" attrs="{'invisible': [('cycle_type', '!=', '3')]}"/>
+                                <field name="status_routing" readonly="1"/>
+                            </group>
+                        </group>
+                        <group col="2" string="Detail information">
+                            <group>
+                                <field name="total_weight" widget="weight_unit"/>
+                                <field name="total_volume" widget="volume_unit"/>
+                                <field name="total_parcel" widget="parcel_unit"/>
+                                <field name="promotion_code"/>
+                                <field name="vat"/>
+                                <field name="tolls" widget='monetary'/>
+                            </group>
+                            <group>
+                                <field name="surcharge" widget='monetary'/>
+                                <field name="total_amount" widget='monetary'/>
+                                <field name="price_actual" widget='monetary'/>
+                                <field name="routing_scan"/>
+                                <field name="qr_code" attrs="{'invisible': [('sbl_type', '=', 'DLP')]}"/>
+                                <field name="toogle" invisible="1"/>
+                                <button style="float:left" name="cancel_routing_dlp"
+                                        class="btn btn-info"
+                                        attrs="{'invisible': ['|',('toogle', '=', True),('id','=',False)]}"
+                                        string="Check bill"
+                                        type="object"
+                                        context="{'search_default_status': 1}"
+                                />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="routing_plan_day_ids" mode="tree">
+                                <tree decoration-danger="status &gt; '2'" default_order="order_number asc">
+                                    <field name="vehicle_id"/>
+                                    <field name="driver_id" optional="hide"/>
+                                    <field name="warehouse_id" style='width:200px;'/>
+                                    <field name="phone" optional="hide"/>
+                                    <field name="status"/>
+                                    <field name="trouble_type" optional="hide"/>
+                                    <!--                                    <field name="claim_type"/>-->
+                                    <field name="order_number" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sharevan_bill_routing_search" model="ir.ui.view">
+            <field name="name">sharevan.bill.routing.search</field>
+            <field name="model">sharevan.bill.routing</field>
+            <field name="arch" type="xml">
+                <search string="Bill routing">
+                    <field name="status_routing"/>
+                    <!--                    <filter string="Status" name="status" domain="[('status', '=', 'active')]"/>-->
+                    <group expand="0" string="Group By">
+                        <!--                        <filter name="groupby_claim_type" context="{'group_by' : 'claim_type'}" string="Claim type"/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='sharevan_bill_lading_view_action' model='ir.actions.act_window'>
+            <field name="name">Bill of Lading</field>
+            <field name="res_model">sharevan.bill.lading</field>
+            <field name="view_mode">tree,form</field>
+            <field name="limit">20</field>
+            <field name="context">{'search_default_groupby_bill_lading' : True}</field>
+            <field name="domain">[('status', '=', 'running')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Bill of Lading
+                </p>
+                <p>
+                    Here you can add Bill of Lading
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="BOL" id="sharevan_order_menu_6" parent="sharevan_order_menu_root"
+                  sequence="10"/>
+
+
+        <menuitem name="Bill of Lading" id="sharevan_order_bill_lading" parent="sharevan_order_menu_6"
+                  action="sharevan_bill_lading_view_action" sequence="9489"/>
+
+        <record id='sharevan_bill_routing_action' model='ir.actions.act_window'>
+            <field name="name">Bill Routing</field>
+            <field name="res_model">sharevan.bill.routing</field>
+            <field name="view_mode">tree,form</field>
+            <!--            <field name="context">{'groupby_claim_type' : True}</field>-->
+        </record>
+
+        <menuitem name="Bill Routing" id="sharevan_bill_routing" parent="sharevan_order_menu_6"
+                  action="sharevan_bill_routing_action" sequence="9440"/>
+
+        <menuitem name="Routing Plan Day" id="sharevan_routing_plan_day" parent="sharevan_order_menu_6"
+                  action="share_van_routing_plan_day_view_action" sequence="11034"/>
+
+        <record id='sharevan_driver_sos_view_form' model='ir.ui.view'>
+            <field name="name">sharevan.driver.sos</field>
+            <field name="model">sharevan.driver.sos</field>
+            <field name="arch" type="xml">
+                <form string="Model">
+                    <sheet>
+                        <!--                    <field name="image_128" widget='image' class="oe_avatar"/>-->
+                        <div class="oe-title">
+                            <h1>
+                                <field name="code"/>
+                            </h1>
+                        </div>
+                        <group col="2" string="Driver SOS Details">
+
+                            <group>
+                                <field name="name"/>
+                                <field name="driver_id"/>
+                                <field name="vehicle_id"/>
+                                <field name="latitude"/>
+                            </group>
+                            <group>
+                                <field name="routing_plan_day_name"/>
+                                <field name="status"/>
+                                <field name="date_plan"/>
+                                <field name="longitude"/>
+
+
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Map">
+                                <group col="2">
+                                    <group>
+                                        <field name="routing_plan_day_ids" mode="tree" default_order="order_number">
+                                            <tree>
+                                                <field name="routing_plan_day_code" optional="hide"/>
+                                                <field name="warehouse_name"/>
+                                                <field name="phone"/>
+                                                <field name="capacity_expected" optional="hide"/>
+                                                <field name="total_volume" widget="volume_unit" optional="hide"/>
+                                                <field name="depot_id" optional="hide"/>
+                                                <field name="address" optional="hide"/>
+                                                <field name="partner_id" optional="hide"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <group>
+                                        <widget name="gmap_route" vehicle="vehicle_id" lat="latitude" lng="longitude"
+                                                date="date_plan"/>
+                                    </group>
+                                </group>
+
+                            </page>
+                            <page string="Attach file">
+                                <field name="attach_image"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='sharevan_driver_sos_view_tree' model='ir.ui.view'>
+            <field name="name">sharevan.driver.sos.tree</field>
+            <field name="model">sharevan.driver.sos</field>
+            <field name="arch" type="xml">
+                <tree string="SOS">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="driver_id"/>
+                    <field name="vehicle_id"/>
+                    <field name="routing_plan_day_id"/>
+                    <field name="warning_type_id"/>
+                    <field name="status"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="attach_image"/>
+                    <field name="date_plan"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='sharevan_driver_sos_action' model='ir.actions.act_window'>
+            <field name="name">Sharevan driver sos</field>
+            <field name="res_model">sharevan.driver.sos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new contract
+                </p>
+                <p>
+                    Manage all your contracts (leasing, insurances, etc.) with
+                    their related services, costs. Odoo will automatically warn
+                    you when some contracts have to be renewed.
+                </p>
+                <p>
+                    Each contract (e.g.: leasing) may include several services
+                    (reparation, insurances, periodic maintenance).
+                </p>
+            </field>
+        </record>
+        <menuitem name="Driver SOS" parent="sharevan_order_menu_6" action="sharevan_driver_sos_action"
+                  id="sharevan_driver_sos" sequence="199876"/>
+
+        <record id='sharevan_routing_vehicle_form' model='ir.ui.view'>
+            <field name="name">sharevan.routing.vehicle.form</field>
+            <field name="model">sharevan.routing.vehicle</field>
+            <field name="arch" type="xml">
+                <form string="Routing Vehicle" edit="false">
+                    <sheet>
+                        <group col="3">
+                            <group>
+                                <field name="name" readonly="1"/>
+                                <field name="date_plan" required="1" attrs="{'readonly': [('id', '!=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="start_routing" required="1" attrs="{'readonly': [('id', '!=', False)]}"/>
+                                <field name="end_routing" readonly="1"/>
+                                <field name="create_driver_calendar" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="redirect_routing" readonly="1"
+                                       attrs="{'invisible': ['|',('redirect_routing', '=', False),('routing_scanning', '=', True)]}"/>
+                                <field name="routing_check" invisible="1"/>
+                                <field name="checking_user_id" readonly="1"
+                                       attrs="{'invisible': ['|',('redirect_routing', '=', False),('routing_scanning', '=', True)]}"/>
+                                <field name="toogle" invisible="1"/>
+                                <field name="latitude" invisible="1"/>
+                                <field name="longitude" invisible="1"/>
+                                <field name="routing_note" invisible="1"/>
+                                <field name="routing_scanning" readonly="1"
+                                       attrs="{'invisible': [('routing_scanning', '=', False)]}"/>
+                            </group>
+                        </group>
+                        <group col="2">
+                            <group>
+                                <field name="company_id" required="1"
+                                       attrs="{'invisible': [('date_plan', '=', False)], 'readonly': [('id', '!=', False)]}"/>
+                                <field name="vehicle_id"
+                                       attrs="{'invisible': [('company_id', '=', False)], 'readonly': [('id', '!=', False)]}"
+                                       required="1"/>
+                                <field name="driver_id"
+                                       attrs="{'invisible': [('vehicle_id', '=', False)], 'readonly': [('id', '!=', False)]}"
+                                       required="1"/>
+                                <field name="solution_day_id" readonly="1"
+                                       attrs="{'invisible': [('routing_check', '=', False)]}"/>
+                            </group>
+                            <group>
+                                <button name="redirect_routing_check"
+                                        class="btn btn-primary"
+                                        attrs="{'invisible': ['|',('toogle', '=', True)]}"
+                                        string="Check routing"
+                                        type="object"
+                                        context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                        confirm="Are you sure you want to check this vehicle routing?"
+                                />
+                                <button name="end_check_routing"
+                                        class="btn btn-warning"
+                                        attrs="{'invisible': ['|',('toogle', '=', True),('redirect_routing', '=', False)]}"
+                                        string="End check"
+                                        type="object"
+                                        context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                        confirm="Are you sure you want to end check routing?"
+                                />
+                                <button name="create_new_calendar_for_vehicle"
+                                        class="btn btn-danger"
+                                        attrs="{'invisible': [('create_driver_calendar', '=', True)]}"
+                                        string="Create calendar"
+                                        type="object"
+                                        context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                        confirm="Are you sure you want to create vehicle calendar?"
+                                />
+                                <button name="send_routing_request"
+                                        class="btn btn-secondary"
+                                        style="border: 1px solid red"
+                                        attrs="{'invisible': ['|',('toogle', '=', True),('redirect_routing', '=', False)]}"
+                                        string="Routing check"
+                                        type="object"
+                                        context="{'search_default_status': 1,'search_default_groupby_vehicle': True}"
+                                        confirm="Are you sure you want to send routing request?"
+                                />
+                                <field name="depot_id" required="1"
+                                       attrs="{'invisible': [('vehicle_id', '=', False)], 'readonly': [('id', '!=', False)]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="routing_id" mode="tree"
+                                   attrs="{'invisible': ['|',('id', '=', False)]}">
+                                <tree editable="bottom" default_order="order_number">
+                                    <!--                                        <field name="routing_vehicle_id"/>-->
+                                    <field name="order_number" string="No"/>
+                                    <field name="routing_plan_day_code" optional="hide" readonly="1"/>
+                                    <field name="warehouse_name" readonly="1"/>
+                                    <field name="type" readonly="1"/>
+                                    <field name="capacity_vehicle" readonly="1"/>
+                                    <field name="phone" optional="hide" readonly="1"/>
+                                    <field name="capacity_expected" optional="hide" readonly="1"/>
+                                    <field name="total_volume" widget="volume_unit" optional="hide" readonly="1"/>
+                                    <field name="depot_id" optional="hide" readonly="1"/>
+                                    <field name="address" optional="hide" readonly="1"/>
+                                    <field name="partner_id" optional="hide" readonly="1"/>
+                                    <field name="order_number"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="routing_vehicle_ids">
+                                <tree editable="top">
+                                    <field name="bill_routing_id"/>
+                                    <field name="date_plan"/>
+                                    <field name="date_plan"/>
+                                    <field name="on_request_by_user"/>
+                                    <field name="claim_type"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <widget attrs="{'invisible': [('id', '=', False)]}" name="gmap_route" vehicle="vehicle_id"
+                                    lat="latitude" lng="longitude"
+                                    date="date_plan"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id='sharevan_routing_vehicle_action' model='ir.actions.act_window'>
+            <field name="name">Sharevan routing vehicle</field>
+            <field name="res_model">sharevan.routing.vehicle</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_status': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a vehicle routing
+                </p>
+                <!--                <p>-->
+                <!--                    Manage all your contracts (leasing, insurances, etc.) with-->
+                <!--                    their related services, costs. Odoo will automatically warn-->
+                <!--                    you when some contracts have to be renewed.-->
+                <!--                </p>-->
+                <p>
+                    Each contract (e.g.: leasing) may include several services
+                    (reparation, insurances, periodic maintenance).
+                </p>
+            </field>
+        </record>
+        <menuitem name="Routing vehicle" parent="sharevan_order_menu_6" action="sharevan_routing_vehicle_action"
+                  id="sharevan_routing_vehicle" sequence="19946"/>
+    </data>
+</odoo>

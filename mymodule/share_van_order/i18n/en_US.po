@@ -1,0 +1,3731 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* share_van_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-29 03:57+0000\n"
+"PO-Revision-Date: 2021-01-29 03:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_country__status
+#: model:ir.model.fields,help:share_van_order.field_sharevan_zone_province__status
+msgid " 1:running , 2:deleted"
+msgstr " 1:running , 2:deleted"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid " must does not contain special character"
+msgstr " must does not contain special character"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_rating_badges
+msgid " rating badges"
+msgstr " rating badges"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_routing_plan_day
+msgid " routing .plan. day"
+msgstr " routing plan day"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__in_province_price
+msgid "100 km"
+msgstr "100 km"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__in_zone_price
+msgid "300 km"
+msgstr "300 km"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "<span class=\"badge badge-warning float-right\">Approved</span>"
+msgstr "<span class=\"badge badge-warning float-right\">Approved</span>"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "<span class=\"badge badge-warning float-right\">Unapproved</span>"
+msgstr "<span class=\"badge badge-warning float-right\">Unapproved</span>"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "<span class=\"badge badge-warning float-right\">Waitting</span>"
+msgstr "<span class=\"badge badge-warning float-right\">Waitting</span>"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__out_zone_price
+msgid "> 300 km"
+msgstr "> 300 km"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "ABC123456789"
+msgstr "ABC123456789"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__accept_firebase_notification
+msgid "Accept Firebase Notification"
+msgstr "Accept Firebase Notification"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.action_log_action
+#: model_terms:ir.ui.view,arch_db:share_van_order.action_log_tree
+msgid "Action Log"
+msgstr "Action Log"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__active
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__active
+msgid "Active"
+msgstr "Active"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_product_type__active_shipping
+msgid "Active shipping"
+msgstr "Active shipping"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Add a export package routing"
+msgstr "Add a export package routing"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Add a import package routing"
+msgstr "Add a import package routing"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_approve_action
+msgid "Add a new maintenance request"
+msgstr "Add a new maintenance request"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Add a product package"
+msgstr "Add a product package"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Address"
+msgstr "Address"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Admin has not approved the bidding order!"
+msgstr "Admin has not approved the bidding order!"
+
+#. module: share_van_order
+#: model:res.groups,name:share_van_order.share_van_order_group_manager
+msgid "Administrator"
+msgstr "Administrator"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+msgid "All DLP Area"
+msgstr "All DLP Area"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+msgid "All Price Quotation"
+msgstr "All Price Quotation"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "All Service Weight Fee"
+msgstr "All Service Weight Fee"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_search
+msgid "All Zone"
+msgstr "All Zone"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_partner__lang
+#: model:ir.model.fields,help:share_van_order.field_res_partner_log__lang
+#: model:ir.model.fields,help:share_van_order.field_res_users__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "All vehicles"
+msgstr "All vehicles"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+msgid "AllService Weight Fee"
+msgstr "AllService Weight Fee"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_awards_level__amount
+msgid "Amount"
+msgstr "Amount"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Archived"
+msgstr "Archived"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+msgid "Are you sure you want to do this?"
+msgstr "Are you sure you want to do this?"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Are you sure you want to start checking this bill?"
+msgstr "Are you sure you want to start checking this bill?"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_area
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_recurrent_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_form
+msgid "Area"
+msgstr "Area"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_hub_view_action
+msgid "Area group"
+msgstr "Area group"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_hub
+msgid "Area group manager"
+msgstr "Area group manager"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__driver_arrived_time
+msgid "Arrived time"
+msgstr "Arrived time"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Attach File"
+msgstr "Attach File"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__attach_image
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_plan__attach_image
+msgid "Attach Image"
+msgstr "Attach Image"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+msgid "Attach file"
+msgstr "Attach file"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Attachment"
+msgstr "Attachment"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Attention: Maintenance high level"
+msgstr "Attention: Maintenance high level"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Authentication failed!"
+msgstr "Authentication failed!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_kanban
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Availble capacity"
+msgstr "Availble capacity"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__name
+msgid "Award"
+msgstr "Award"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__award_company_id
+msgid "Award Company"
+msgstr "Award Company"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_award_company
+msgid "Award company "
+msgstr "Award company "
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_sharevan_awardslevel_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_sharevan_awards_level
+msgid "Awards level"
+msgstr "Awards level"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_6
+msgid "BOL"
+msgstr "BOL"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_approve_action
+#: model:ir.ui.menu,name:share_van_order.bidding_approve
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Bidding Approve"
+msgstr "Bidding Approve"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_order
+msgid "Bidding Order"
+msgstr "Bidding Order"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_view_search
+msgid "Bidding Order Infomation"
+msgstr "Bidding Order Infomation"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_order_receive_action
+#: model:ir.ui.menu,name:share_van_order.bidding_order_receive
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_order_receive_view_tree
+msgid "Bidding Order Receive"
+msgstr "Bidding Order Receive"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Order does not existed!"
+msgstr "Bidding Order does not existed!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_package_action
+#: model:ir.ui.menu,name:share_van_order.bidding_package
+msgid "Bidding Package"
+msgstr "Bidding Package"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Package does not existed!"
+msgstr "Bidding Package does not existed!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_order_receive_view_form
+msgid "Bidding Receive Details"
+msgstr "Bidding Receive Details"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_vehicle
+msgid "Bidding Vehicle"
+msgstr "Bidding Vehicle"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Vehicle does not existed with id "
+msgstr "Bidding Vehicle does not existed with id "
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding Vehicle does not existed with id vehicle_id"
+msgstr "Bidding Vehicle does not existed with id vehicle_id"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding Vehicle does not existed!"
+msgstr "Bidding Vehicle does not existed!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bidding_vehicle_action
+msgid "Bidding Vehicles"
+msgstr "Bidding Vehicles"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding has been approved"
+msgstr "Bidding has been approved"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding id can not null!"
+msgstr "Bidding id can not null!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_order_action
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_package
+msgid "Bidding order"
+msgstr "Bidding order"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order does not approved!"
+msgstr "Bidding order does not approved!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order does not existed!"
+msgstr "Bidding order does not existed!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order has been cancelled!"
+msgstr "Bidding order has been cancelled!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order has been returned!"
+msgstr "Bidding order has been returned!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding order id can not null!"
+msgstr "Bidding order id can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order id does not exist!"
+msgstr "Bidding order id does not exist!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding order must have Cargo!"
+msgstr "Bidding order must have Cargo!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding order not existed!"
+msgstr "Bidding order not existed!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_bidding_notification
+msgid "Bidding order notification"
+msgstr "Bidding order notification"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_order_receive
+msgid "Bidding order receive"
+msgstr "Bidding order receive"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "Bidding order received does not existed!"
+msgstr "Bidding order received does not existed!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_order_return
+msgid "Bidding order return"
+msgstr "Bidding order return"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order return  does not existed!"
+msgstr "Bidding order return  does not existed!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order status null!"
+msgstr "Bidding order status null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Bidding order type null!"
+msgstr "Bidding order type null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding package does not existed!"
+msgstr "Bidding package does not existed!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Bidding package has already been bidded! Bidding package id: "
+msgstr "Bidding package has already been bidded! Bidding package id: "
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Bidding package id does not exist!"
+msgstr "Bidding package id does not exist!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_vehicle
+msgid "Bidding vehicle"
+msgstr "Bidding vehicle"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "Bidding vehicle does not existed!"
+msgstr "Bidding vehicle does not existed!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding vehicle id can not can not null!"
+msgstr "Bidding vehicle id can not can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "Bidding vehicle id can not null!"
+msgstr "Bidding vehicle id can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/cargo.py:0
+#, python-format
+msgid "Bidding vehicle not existed!"
+msgstr "Bidding vehicle not existed!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Bill Package"
+msgstr "Bill Package"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill Package routing export"
+msgstr "Bill Package routing export"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill Package routing import"
+msgstr "Bill Package routing import"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bill_routing_action
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__bill_routing_id
+#: model:ir.ui.menu,name:share_van_order.sharevan_bill_routing
+msgid "Bill Routing"
+msgstr "Bill Routing"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__name
+msgid "Bill Routing Code"
+msgstr "Bill Routing Code"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_subscribe_action
+msgid "Bill Subscribe"
+msgstr "Bill Subscribe"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__change_bill_lading_detail_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__change_bill_lading_detail_id
+msgid "Bill detail change"
+msgstr "Bill detail change"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bill_lading_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_bill_lading
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_tree
+msgid "Bill of Lading"
+msgstr "Bill of Lading"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+msgid "Bill of lading"
+msgstr "Bill of lading"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Bill of lading detail"
+msgstr "Bill of lading detail"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Bill of lading detail does not exist!"
+msgstr "Bill of lading detail does not exist!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/routing_plan_day.py:0
+#, python-format
+msgid "Bill of lading id can not null !"
+msgstr "Bill of lading id can not null !"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/routing_plan_day.py:0
+#, python-format
+msgid "Bill of lading id does not exist"
+msgstr "Bill of lading id does not exist"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_bill_order_package_action
+msgid "Bill order package"
+msgstr "Bill order package"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_bill_order_package
+msgid "Bill order package "
+msgstr "Bill order package "
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Bill package does not exist!"
+msgstr "Bill package does not exist!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill package routing export"
+msgstr "Bill package routing export"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Bill package routing import"
+msgstr "Bill package routing import"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_tree
+msgid "Bill routing"
+msgstr "Bill routing"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__code
+msgid "Bill routing Code"
+msgstr "Bill routing Code"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_billing
+msgid "Billing config"
+msgstr "Billing config"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__birthday
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__birthday
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__birthday
+msgid "Birthday"
+msgstr "Birthday"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Brand"
+msgstr "Brand"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__1
+msgid "Business"
+msgstr "Business"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_3
+msgid "CMS"
+msgstr "CMS"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_9
+msgid "CODE SHARE"
+msgstr "CODE SHARE"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__customer_manager
+msgid "CUSTOMER_MANAGER"
+msgstr "CUSTOMER_MANAGER"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__customer_stockman
+msgid "CUSTOMER_STOCKMAN"
+msgstr "CUSTOMER_STOCKMAN"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_employee_warehouse_view
+#: model:ir.ui.menu,name:share_van_order.sharevan_calandar_employee_menu
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_calendar
+msgid "Calendar employee"
+msgstr "Calendar employee"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__-1
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__cancel_check
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__toogle
+msgid "Cancel check"
+msgstr "Cancel check"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_kanban
+msgid "Capacity"
+msgstr "Capacity"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__capacity_actual
+msgid "Capacity actual"
+msgstr "Capacity actual"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__capacity_vehicle
+msgid "Capacity vehicle"
+msgstr "Capacity vehicle"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_package__cargo_ids
+#: model:ir.ui.menu,name:share_van_order.cargo_manager
+msgid "Cargo"
+msgstr "Cargo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_view_search
+msgid "Cargo Infomation"
+msgstr "Cargo Infomation"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.conf_cargoPrice
+msgid "Cargo Price"
+msgstr "Cargo Price"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Cargo can not null!"
+msgstr "Cargo can not null!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__code
+msgid "Cargo code"
+msgstr "Cargo code"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_cargo_detail
+msgid "Cargo detail"
+msgstr "Cargo detail"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Cargo does not exist!"
+msgstr "Cargo does not exist"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Cargo id is null!"
+msgstr "Cargo id is null!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_cargo_action
+#: model:ir.ui.menu,name:share_van_order.bidding_order_menu_1
+msgid "Cargo manager"
+msgstr "Cargo manager"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.conf_cargoPrice_action
+#: model:ir.model,name:share_van_order.model_sharevan_cargo_price
+msgid "Cargo price"
+msgstr "Cargo price"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Cargo with id does not existed in Bidding Order!"
+msgstr "Cargo with id does not existed in Bidding Order!"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_cargo_price_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_price_view_tree
+msgid "CargoPrice"
+msgstr "CargoPrice"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+msgid "Check bill"
+msgstr "Check bill"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__chooseDay
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__chooseDay
+msgid "Choose Date"
+msgstr "Choose Date"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__0
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__1
+msgid "Chủ nhật"
+msgstr "SUNDAY"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__city_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__city_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__city_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__name
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__city_name
+msgid "City name"
+msgstr "City name"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__claim_type
+msgid "Claim type"
+msgstr "Claim type"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+msgid "Close time (Hours)"
+msgstr "Close time (Hours)"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__code
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__code
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__code
+msgid "Code"
+msgstr "Code"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__company_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__company_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__partner_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__company_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__company_id
+msgid "Company"
+msgstr "Company"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_career
+msgid "Company Career"
+msgstr "Company Career"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_company__company_type
+msgid "Company Type"
+msgstr "Company Type"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_company_award
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__company_award_id
+msgid "Company award"
+msgstr "Company award"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Company does not exist!"
+msgstr "Company does not exist!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "Company does not existed!"
+msgstr "Company does not existed!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__company_ranking
+msgid "Company ranking"
+msgstr "Company ranking"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__company_type
+msgid "Company type"
+msgstr "Company type"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Company's driver does not existed!"
+msgstr "Company's driver does not existed!"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_order_menu_3
+msgid "Config"
+msgstr "Config"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_2
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+msgid "Cost"
+msgstr "Cost"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_country
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__country_id
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+msgid "Country"
+msgstr "Country"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__create_bol
+msgid "Create BOL"
+msgstr "Create BOL"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.conf_cargoPrice_action
+msgid "Create a cargo price"
+msgstr "Create a cargo price"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_employee_warehouse_view
+msgid "Create a clandar employee"
+msgstr "Create a clandar employee"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_company_view
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_driver_view
+msgid "Create a company"
+msgstr "Create a company"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_reward_point_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_sharevan_awardslevel_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_title_award_action
+msgid "Create a new"
+msgstr "Create a new"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_action
+msgid "Create a new  Bidding Order"
+msgstr "Create a new  Bidding Order"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_cargo_action
+msgid "Create a new Bidding Cargo"
+msgstr "Create a new Bidding Cargo"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bill_lading_view_action
+msgid "Create a new Bill of Lading"
+msgstr "Create a new Bill of Lading"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bill_order_package_action
+msgid "Create a new Bill order package"
+msgstr "Create a new Bill order package"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_insurance_action
+msgid "Create a new Insurance"
+msgstr "Create a new Insurance"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_channel_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_notification_action
+msgid "Create a new Notifications"
+msgstr "Create a new Notifications"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_notification_type_action1
+msgid "Create a new Notifications type"
+msgstr "Create a new Notifications type"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_price_action
+msgid "Create a new Zone price"
+msgstr "Create a new Zone price"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_routing_plan_day_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_area_view_action
+msgid "Create a new area"
+msgstr "Create a new area"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_receive_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_package_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bidding_vehicle_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_driver_sos_action
+#: model_terms:ir.actions.act_window,help:share_van_order.size_standard_action
+msgid "Create a new contract"
+msgstr "Create a new contract"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_rating_badges_action
+msgid "Create a new depot"
+msgstr "Create a new depot"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_hub_view_action
+msgid "Create a new hub"
+msgstr "Create a new hub"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_view_action
+msgid "Create a new product"
+msgstr "Create a new product"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_type_view_action
+msgid "Create a new product type"
+msgstr "Create a new product type"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_service_type_view_action
+msgid "Create a new service type"
+msgstr "Create a new service type"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_vehicle_action
+msgid "Create a new vehicle"
+msgstr "Create a new vehicle"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_view_action
+msgid "Create a new warehouse"
+msgstr "Create a new warehouse"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_service_view_action
+msgid "Create a new warehouse"
+msgstr "Create a new warehouse"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_recurrent_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_view_action
+msgid "Create a new zone"
+msgstr "Create a new zone"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_assign_routing
+msgid "Create a sharevan driver assign routing"
+msgstr "Create a sharevan driver assign routing"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_received
+msgid "Create a sharevan driver received revenue"
+msgstr "Create a sharevan driver received revenue"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_bidding_vehicle_view
+msgid "Create a vehicle"
+msgstr "Create a vehicle"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+msgid "Created Date"
+msgstr "Created Date"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__create_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__create_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__credit_limit
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__credit_limit
+msgid "Credit Limit"
+msgstr "Credit Limit"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_company_view
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__company_type__1
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__type__customer
+#: model:ir.ui.menu,name:share_van_order.bidding_order_menu_2
+#: model:ir.ui.menu,name:share_van_order.sharevan_company_menu
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+msgid "Customer"
+msgstr "Customer"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_company__customer_type
+#: model:ir.model.fields,help:share_van_order.field_sharevan_bill_lading__company_type
+msgid "Customer Type"
+msgstr "Customer Type"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__3
+msgid "Customer cancel"
+msgstr "Customer cancel"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+msgid "Customer information"
+msgstr "Customer information"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__1
+msgid "Customer not found"
+msgstr "Customer not found"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__customer_type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_lading__company_type
+msgid "Customer type"
+msgstr "Customer type"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__cycle_type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__cycle_type
+msgid "Cycle type"
+msgstr "Cycle type"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__company_type__2
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__type__dlp
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__sbl_type__dlp
+msgid "DLP"
+msgstr "DLP"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_area_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_area
+msgid "DLP Area"
+msgstr "DLP Area"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_compute_tree
+msgid "DLP Distance Compute"
+msgstr "DLP Distance Compute"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_geography
+msgid "DLP Geography"
+msgstr "DLP Geography"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_zone_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_zone
+msgid "DLP Zone"
+msgstr "DLP Zone"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_zone_price_action
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_tree
+msgid "DLP Zone Price"
+msgstr "DLP Zone Price"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_root
+msgid "DLP system"
+msgstr "DLP system"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_goods_tree
+msgid "Date"
+msgstr "Date"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__day_of_month
+msgid "Day In Month"
+msgstr "Day In Month"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__day_of_week
+msgid "Day Of Week"
+msgstr "Day Of Week"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Delete"
+msgstr "Delete"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_country__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_distance_fee__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_weight_fee__status__deleted
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_zone_province__status__deleted
+msgid "Deleted"
+msgstr "Deleted"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__department_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__department_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__department_name
+msgid "Department Name"
+msgstr "Department Name"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.conf_depot_action
+#: model:ir.actions.act_window,name:share_van_order.sharevan_depot_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_depot_view
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_assign_routing_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+msgid "Depot"
+msgstr "Depot"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+msgid "Depot Name"
+msgstr "Depot Name"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__depot_supply
+msgid "Depot Supply"
+msgstr "Depot Supply"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_depot_goods_action
+#: model:ir.ui.menu,name:share_van_order.menu_sharevan_depot_goods
+msgid "Depot goods"
+msgstr "Depot goods"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_depot_pricing_action
+#: model:ir.ui.menu,name:share_van_order.menu_sharevan_depot_pricing
+msgid "Depot pricing"
+msgstr "Depot pricing"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__description
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__description
+msgid "Description"
+msgstr "Description"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Detail"
+msgstr "Detail"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_form
+msgid "Detail information"
+msgstr "Detail information"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__discount_amount
+msgid "Discount amount"
+msgstr "Discount amount"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__display_name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_distance_compute_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_distance_compute
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_compute_form
+msgid "Distance compute"
+msgstr "Distance compute"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.distance_unit_action
+#: model:ir.ui.menu,name:share_van_order.distance_unit
+msgid "Distance unit"
+msgstr "Distance unit"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__district
+msgid "District"
+msgstr "District"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+msgid "Districts"
+msgstr "Districts"
+
+#. module: share_van_order
+#. openerp-web
+#: code:addons/share_van_order/static/src/xml/tree_view_button.xml:0
+#, python-format
+msgid "Download excel"
+msgstr "Download excel"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__status__draft
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__status__draft
+msgid "Draft"
+msgstr "Draft"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__driver_id
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_driver_form_inherit
+msgid "Driver"
+msgstr "Driver"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+msgid "Driver Infomation"
+msgstr "Driver Infomation"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.driver_license
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_license_view_tree
+msgid "Driver License"
+msgstr "Driver License"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_driver_sos
+msgid "Driver SOS"
+msgstr "Driver SOS"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+msgid "Driver SOS Details"
+msgstr "Driver SOS Details"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__driver_supply
+msgid "Driver Supply"
+msgstr "Driver Supply"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_130
+msgid "Driver assign routing"
+msgstr "Driver assign routing"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_driver_assign_routing
+msgid "Driver assign routing in market place"
+msgstr "Driver assign routing in market place"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.driver_license_action
+msgid "Driver license"
+msgstr "Driver license"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_131
+msgid "Driver received"
+msgstr "Driver received"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Driver sos"
+msgstr "Driver sos"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Drivers"
+msgstr "Drivers"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Dropdown menu"
+msgstr "Dropdown menu"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Dịch vụ tại kho:"
+msgstr "Services at the warehouse:"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_driver_sos_action
+msgid ""
+"Each contract (e.g.: leasing) may include several services\n"
+"                    (reparation, insurances, periodic maintenance)."
+msgstr ""
+"Each contract (e.g.: leasing) may include several services\n"
+"                    (reparation, insurances, periodic maintenance)."
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_receive_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_package_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bidding_vehicle_action
+#: model_terms:ir.actions.act_window,help:share_van_order.size_standard_action
+msgid ""
+"Each contract (e.g.: leasing) may include several services\n"
+"                (reparation, insurances, periodic maintenance)."
+msgstr ""
+"Each contract (e.g.: leasing) may include several services\n"
+"                (reparation, insurances, periodic maintenance)."
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__economy
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__economy
+msgid "Economy"
+msgstr "Economy"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Edit"
+msgstr "Edit"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__end_date
+msgid "End Date"
+msgstr "End Date"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__engagement_point
+msgid "Engagement point"
+msgstr "Engagement point"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_depot_goods__type__1
+msgid "Export"
+msgstr "Export"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__express
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__express
+msgid "Express"
+msgstr "Express"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "Extra Information"
+msgstr "Extra Information"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Extra Infromations"
+msgstr "Extra Infromations"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__extra_amount_percent
+msgid "Extra amount percent"
+msgstr "Extra amount percent"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__extra_cost
+msgid "Extra cost"
+msgstr "Extra cost"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Extra information"
+msgstr "Extra information"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_product_type__extra_percent
+msgid "Extra per distance unit"
+msgstr "Extra per distance unit"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_product_type__extra_price
+msgid "Extra price per distance unit"
+msgstr "Extra price per distance unit"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__extra_weight_cost
+msgid "Extra weight cost"
+msgstr "Extra weight cost"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__extra_weight_price
+msgid "Extra weight price"
+msgstr "Extra weight price"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__fleet_driver
+msgid "FLEET_DRIVER"
+msgstr "FLEET_DRIVER"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__fleet_manager
+msgid "FLEET_MANAGER"
+msgstr "FLEET_MANAGER"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Fee"
+msgstr "Fee"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_service_weight_fee
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__fee
+msgid "Fee by weight"
+msgstr "Fee by weight"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__gender__female
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__gender__female
+msgid "Female"
+msgstr "Female"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__2
+msgid "Finished"
+msgstr "Finished"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__fcm_token
+msgid "Firebase token"
+msgstr "Firebase token"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__company_type__0
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__type__fleet
+msgid "Fleet"
+msgstr "Fleet"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_fleet_driver_view
+msgid "Fleet Driver"
+msgstr "Fleet Driver"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_fleet_driver
+msgid "Fleet driver"
+msgstr "Fleet driver"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_fleet_bidding_vehicle_view
+msgid "Fleet vehicle"
+msgstr "Fleet vehicle"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_approve_action
+msgid ""
+"Follow the process of the request and communicate with the collaborator."
+msgstr ""
+"Follow the process of the request and communicate with the collaborator."
+#. module: share_van_order
+#: code:addons/share_van_order/models/models.py:0
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "Format email address \"Name <email@domain>"
+msgstr "Format email address \"Name <email@domain>"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "Format website address e.g. https://www.odoo.com"
+msgstr "Format website address e.g. https://www.odoo.com"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "Format zip code e.g. 1111111111"
+msgstr "Format zip code e.g. 1111111111"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__frequency
+msgid "Frequency"
+msgstr "Frequency"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__fromD
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__fromW
+msgid "From"
+msgstr "From"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__from_date
+msgid "From Date"
+msgstr "From Date"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.longhaul_bill_lading_detail_tree
+msgid "From Depot"
+msgstr "From Depot"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+msgid "From Distance"
+msgstr "From Distance"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "From Weight"
+msgstr "From Weight"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__from_bill_lading_id
+msgid "From bill of lading"
+msgstr "From bill of lading"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Future Activities"
+msgstr "Future Activities"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Gen QR code"
+msgstr "Gen QR code"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__gender
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__gender
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__gender
+msgid "Gender"
+msgstr "Gender"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__latitude
+msgid "Geo Latitude"
+msgstr "Geo Latitude"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__longitude
+msgid "Geo Longitude"
+msgstr "Geo Longitude"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__4
+msgid "Giao nhanh"
+msgstr "Fast delivery"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__good_transport_price
+msgid "Good transport area"
+msgstr "Good transport area"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__good_transport_price
+msgid ""
+"Good transport price, province have a lot of trading and good price. For "
+"example: Ha Noi, HCM, Da Nang "
+msgstr ""
+"Good transport price, province have a lot of trading and good price. For "
+"example: Ha Noi, HCM, Da Nang "
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Group By"
+msgstr "Group By"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_reward_point_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_sharevan_awardslevel_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_title_award_action
+msgid "Here you can add"
+msgstr "Here you can add"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bill_lading_view_action
+msgid "Here you can add Bill of Lading"
+msgstr "Here you can add Bill of Lading" 
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_price_action
+msgid "Here you can add Zone price"
+msgstr "Here you can add Zone price"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.conf_cargoPrice_action
+msgid "Here you can add a cargo price"
+msgstr "Here you can add a cargo price"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_routing_plan_day_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_area_view_action
+msgid "Here you can add area"
+msgstr "Here you can add area"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_company_view
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_employee_warehouse_view
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_driver_view
+msgid "Here you can add company"
+msgstr "Here you can add company"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_rating_badges_action
+msgid "Here you can add depot"
+msgstr "Here you can add depot"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_hub_view_action
+msgid "Here you can add hub"
+msgstr "Here you can add hub"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_view_action
+msgid "Here you can add product"
+msgstr "Here you can add product"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_product_type_view_action
+msgid "Here you can add product type"
+msgstr "Here you can add product type"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_service_type_view_action
+msgid "Here you can add service type"
+msgstr "Here you can add service type"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_assign_routing
+msgid "Here you can add sharevan driver assign routing"
+msgstr "Here you can add sharevan driver assign routing"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.action_sharevan_driver_received
+msgid "Here you can add sharevan driver received revenue"
+msgstr "Here you can add sharevan driver received revenue"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_fleet_bidding_vehicle_view
+msgid "Here you can add vehicle"
+msgstr "Here you can add vehicle"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_view_action
+msgid "Here you can add warehouse"
+msgstr "Here you can add warehouse"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_warehouse_service_view_action
+msgid "Here you can add warehouse service"
+msgstr "Here you can add warehouse service"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_recurrent_view_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_zone_view_action
+msgid "Here you can add zone"
+msgstr "Here you can add zone"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__hire_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__hire_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__hire_date
+msgid "Hire Date"
+msgstr "Hire Date"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_goods_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_depot_pricing_action
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_goods_tree
+msgid "History of goods moving in and out of depots"
+msgstr "History of goods moving in and out of depots"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_tree
+msgid "Hub"
+msgstr "Hub"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+msgid "Hub Name"
+msgstr "Hub Name"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__1
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__cycle_type__1
+msgid "Hàng ngày"
+msgstr "daily"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__3
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__cycle_type__3
+msgid "Hàng tháng"
+msgstr "Monthly"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__2
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__cycle_type__2
+msgid "Hàng tuần"
+msgstr "Weekly"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__id
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__id
+msgid "ID"
+msgstr "ID"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__identify_number
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__identify_number
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__identify_number
+msgid "Identify Number"
+msgstr "Identify Number"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__image_256
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_export__qr_code
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__qr_code
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_plan__qr_code
+msgid "Image"
+msgstr "Image"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "Image identify"
+msgstr "Image identify"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__image_identify_backsite
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__image_identify_backsite
+msgid "Image identify back side"
+msgstr "Image identify back side"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__image_identify_frontsite
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__image_identify_frontsite
+msgid "Image identify front side"
+msgstr "Image identify front side"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_depot_goods__type__0
+msgid "Import"
+msgstr "Import"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__0
+msgid "In Claim"
+msgstr "In Claim"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__in_province_price
+msgid "In province price"
+msgstr "In province price"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__in_zone_price
+msgid "In zone price"
+msgstr "In zone price"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__2
+msgid "Individual"
+msgstr "Individual"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__6
+msgid "Individual fleet"
+msgstr "Individual fleet"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__career_ids
+msgid "Industry"
+msgstr "Industry"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_assign_routing_form
+msgid "Infomation"
+msgstr "Infomation"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Information"
+msgstr "Information"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_insurance
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__insurance_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day_detail__insurance_name
+msgid "Insurance"
+msgstr "Insurance"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_insurances
+msgid "Insurance "
+msgstr "Insurance"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+msgid "Insurance Infomation"
+msgstr "Insurance Infomation"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_insurance_action
+msgid "Insurance Name"
+msgstr "Insurance Name"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__function
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__function
+msgid "Job Position"
+msgstr "Job Position"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__just_in_time
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__just_in_time
+msgid "Just In Time"
+msgstr "Just In Time"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_depot_goods
+msgid "Keep track of the good stored in warehouse"
+msgstr "Keep track of the good stored in warehouse"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__lang
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__lang
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__lang
+msgid "Language"
+msgstr "Language"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee____last_update
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province____last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__write_uid
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bidding_award_rel__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__write_date
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Late Activities"
+msgstr "Late Activities"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__leave_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__leave_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__leave_date
+msgid "Leave Date"
+msgstr "Leave Date"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__level
+msgid "Level"
+msgstr "Level"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+msgid "List Cargo"
+msgstr "List Cargo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "List bill of lading detail"
+msgstr "List bill of lading detail"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "List bill package id null"
+msgstr "List bill package id null"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_export__qr_char_confirms
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__qr_char_confirms
+msgid "List char comfirm"
+msgstr "List char comfirm"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__3
+msgid "Logistics"
+msgstr "Logistics"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Main Infomations"
+msgstr "Main Infomations"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_routing_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Main information"
+msgstr "Main information"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Maintenance(s)"
+msgstr "Maintenance(s)"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__gender__male
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__gender__male
+msgid "Male"
+msgstr "Male"
+
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_driver_sos_action
+msgid ""
+"Manage all your contracts (leasing, insurances, etc.) with\n"
+"                    their related services, costs. Odoo will automatically warn\n"
+"                    you when some contracts have to be renewed."
+msgstr ""
+"Manage all your contracts (leasing, insurances, etc.) with\n"
+"                    their related services, costs. Odoo will automatically warn\n"
+"                    you when some contracts have to be renewed."
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_order_receive_action
+#: model_terms:ir.actions.act_window,help:share_van_order.bidding_package_action
+#: model_terms:ir.actions.act_window,help:share_van_order.sharevan_bidding_vehicle_action
+#: model_terms:ir.actions.act_window,help:share_van_order.size_standard_action
+msgid ""
+"Manage all your contracts (leasing, insurances, etc.) with\n"
+"                their related services, costs. Odoo will automatically warn\n"
+"                you when some contracts have to be renewed."
+msgstr ""
+"Manage all your contracts (leasing, insurances, etc.) with\n"
+"                their related services, costs. Odoo will automatically warn\n"
+"                you when some contracts have to be renewed."
+#. module: share_van_order
+#: model_terms:ir.actions.act_window,help:share_van_order.share_van_vehicle_action
+msgid ""
+"Manage your fleet by keeping track of the contracts, services, odometers and fuel logs associated to\n"
+"                    each vehicle."
+msgstr ""
+"Manage your fleet by keeping track of the contracts, services, odometers and fuel logs associated to\n"
+"                    each vehicle."
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_depot_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_hub_map
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_warehouse_map
+msgid "Map"
+msgstr "Map"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_101
+msgid "Market place"
+msgstr "Market place"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_type__max_person
+msgid "Max person"
+msgstr "Max person"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_type__max_weight
+msgid "Max weight"
+msgstr "Max weight"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Measure"
+msgstr "Measure"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.action_log_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_order_receive_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_order_package_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.size_standard_form
+msgid "Model"
+msgstr "Model"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "More Information"
+msgstr "More Information"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__cycle_type__5
+msgid "Một lần"
+msgstr "Once"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__name
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Name"
+msgstr "Name"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_plan__name
+msgid "Name code"
+msgstr "Name code"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__nationality
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__nationality
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__nationality
+msgid "Nationality"
+msgstr "Nationality"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Need Action"
+msgstr "Need Action"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__net_weight
+msgid "Net weight level"
+msgstr "Net weight level"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_package_routing.py:0
+#: code:addons/share_van_order/models/bill_package_routing.py:0
+#: code:addons/share_van_order/models/company_award.py:0
+#: code:addons/share_van_order/models/sharevan_recurrent.py:0
+#: code:addons/share_van_order/models/sharevan_recurrent.py:0
+#, python-format
+msgid "New"
+msgstr "New"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_form
+msgid "New depot pricing"
+msgstr "New depot pricing"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__type__normal
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__0
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__type__normal
+msgid "Normal"
+msgstr "Normal"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.menu_action_sharevan_notification
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_channel_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_notification_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_channel_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_tree
+msgid "Notification"
+msgstr "Notification"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_channel_action
+msgid "Notification channel"
+msgstr "Notification channel"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.menu_notification
+msgid "Notification config"
+msgstr "Notification config"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_notification
+msgid "Notification send to users"
+msgstr "Notification send to users"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.menu_users_sharevan_type_notification1
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_search
+msgid "Notification type"
+msgstr "Notification type"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.bidding_notification_action
+msgid "Notifications"
+msgstr "Notifications"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_notification_type_action1
+msgid "Notifications type"
+msgstr "Notifications type"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__online
+msgid "Online"
+msgstr "Online"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+msgid "Open time (Hours)"
+msgstr "Open time (Hours)"
+
+#. module: share_van_order
+#: model:ir.module.category,name:share_van_order.module_share_van_order_category
+msgid "Order"
+msgstr "Order"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "Order has been confirmed to received !"
+msgstr "Order has been confirmed to received !"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "Order has been confirmed!"
+msgstr "Order has been confirmed!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_lading__order_package_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__order_package_id
+msgid "Order package"
+msgstr "Order package"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__2
+msgid "Order package change"
+msgstr "Order package change"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__gender__other
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__gender__other
+msgid "Other"
+msgstr "Other"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__out_zone_price
+msgid "Out zone price"
+msgstr "Out zone price"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.bidding_package_menu
+msgid "Package"
+msgstr "Package"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_search
+msgid "Package Type"
+msgstr "Package Type"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "Parameters are invalid!"
+msgstr "Parameters are invalid!"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.parcel_unit_action
+#: model:ir.ui.menu,name:share_van_order.parcel_unit
+msgid "Parcel unit"
+msgstr "Parcel unit"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__parity_price
+msgid "Parity price"
+msgstr "Parity price"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_package_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_vehicle_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_weight_fee_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.size_standard_tree
+msgid "Parking point"
+msgstr "Parking point"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__pay_check
+msgid "Pay check"
+msgstr "Pay check"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__phone
+msgid "Phone"
+msgstr "Phone"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__4
+msgid "Pick up fail"
+msgstr "Pick up fail"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__point
+msgid "Point"
+msgstr "Point"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__point_expiration_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__point_expiration_date
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__point_expiration_date
+msgid "Point expiration date"
+msgstr "Point expiration date"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__staff_type
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__staff_type
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__staff_type
+msgid "Position"
+msgstr "Position"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_view_search
+msgid "Price"
+msgstr "Price"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.open_form_price_quotation
+#: model:ir.model,name:share_van_order.model_sharevan_price_quotation
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_price_quotation
+msgid "Price Quotation"
+msgstr "Price Quotation"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__name
+msgid "Price Quotation Name"
+msgstr "Price Quotation Name"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__price_actual
+msgid "Price actual"
+msgstr "Price Quotation Name"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_tree
+msgid "Pricing for depot"
+msgstr "Pricing for depot"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__problem_image
+msgid "Problem image"
+msgstr "Problem image"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_product_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_product
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_type_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_view_tree
+msgid "Product"
+msgstr "Product"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_product_type_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_product_type
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_type_view_tree
+msgid "Product Type"
+msgstr "Product Type"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_product_type_view_form
+msgid "Product type"
+msgstr "Product Type"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__promotion_code
+msgid "Promotion code"
+msgstr "Promotion code"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__province
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__province_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__province_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__province_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__province_id
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_hub_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "Province"
+msgstr "Province"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__qr_code
+msgid "QR Code"
+msgstr "QR Code"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__rating_count
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__rating_count
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__rating_count
+#: model:ir.ui.menu,name:share_van_order.sharevan_rating_config
+msgid "Rating"
+msgstr "Rating"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_rating_badges_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_rating_badges
+msgid "Rating badges"
+msgstr "Rating badges"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_rating_driver_badges
+msgid "Rating driver badges"
+msgstr "Rating driver badges"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__rating_point
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__rating_point
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__rating_point
+msgid "Rating point"
+msgstr "Rating point"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__reason
+msgid "Reason"
+msgstr "Reason"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__receive_type
+msgid "Receive Type"
+msgstr "Receive Type"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__receive_type__0
+msgid "Received"
+msgstr "Received"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__recurrent_code
+msgid "Recurrent code"
+msgstr "Recurrent code"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_recurrent
+msgid "Recurrent description"
+msgstr "Recurrent description"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_form
+msgid "Register information"
+msgstr "Register information"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__release_type
+msgid "Release type"
+msgstr "Release type"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__2
+msgid "Retry"
+msgstr "Retry"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__3
+msgid "Return"
+msgstr "Return"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_reward_point
+msgid "Reward point"
+msgstr "Reward point"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_export__routing_package_plan
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__routing_package_plan
+msgid "Routing Package plan"
+msgstr "Routing Package plan"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.share_van_routing_plan_day_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_routing_plan_day
+msgid "Routing Plan Day"
+msgstr "Routing Plan Day"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_package_routing_import__routing_plan_code
+msgid "Routing code"
+msgstr "Routing code"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__routing_plan_day_ids
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_routing_plan_day_view_tree
+msgid "Routing plan day"
+msgstr "Routing plan day"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "Routing plan day be evaluated !"
+msgstr "Routing plan day be evaluated !"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "Routing plan day not exits !"
+msgstr "Routing plan day not exits !"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_rating
+msgid "Routing rate driver"
+msgstr "Routing rate driver"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__routing_scan
+msgid "Routing scan"
+msgstr "Routing scan"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_country__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_partner_log__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_order_package__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_price_quotation__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_distance_fee__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_service_weight_fee__status__running
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_zone_province__status__running
+msgid "Running"
+msgstr "Running"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__sharevan_manager
+msgid "SHAREVAN_MANAGER"
+msgstr "SHAREVAN_MANAGER"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_staff_type__code__sharevan_stockman
+msgid "SHAREVAN_STOCKMAN"
+msgstr "SHAREVAN_STOCKMAN"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__sbl_type__so
+msgid "SO"
+msgstr "SO"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_sos_view_tree
+msgid "SOS"
+msgstr "SOS"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_form
+msgid "Save to file"
+msgstr "Save to file"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__sbl_type
+msgid "Sbl type"
+msgstr "Sbl type"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+msgid "Scan distance"
+msgstr "Scan distance"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.driver_license_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_search
+msgid "Search"
+msgstr "Search"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_rating_badges_search
+msgid "Search rating"
+msgstr "Search rating"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_reward_point_search
+msgid "Search reward point"
+msgstr "Search reward point"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_awards_level_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_title_award_search
+msgid "Search title award"
+msgstr "Search title award"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Select bill package"
+msgstr "Select bill package"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_form
+msgid "Send e-mail"
+msgstr "Send e-mail"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_search
+msgid "Sent date"
+msgstr "Sent date"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Service Code"
+msgstr "Service Code"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Service Name"
+msgstr "Service Name"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_service_type_view_action
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day_detail__service_name
+#: model:ir.ui.menu,name:share_van_order.sharevan_service_type
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_tree
+msgid "Service Type"
+msgstr "Service Type"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_service_distance_fee_action
+msgid "Service distance fee"
+msgstr "Service distance fee"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_service_distance_fee
+msgid "Service fee"
+msgstr "Service fee"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+msgid "Service type's name"
+msgstr "Service type's name"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_service_weight_fee_action
+msgid "Service weight fee"
+msgstr "Service weight fee"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_temp
+msgid "Share Van Chat"
+msgstr "Share Van Chat"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_recurrent_view_action
+msgid "Share Van Recurrent"
+msgstr "Share Van Recurrent"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_driver_received
+msgid "ShareVan driver received"
+msgstr "ShareVan driver received"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_driver
+msgid "Sharevan Bidding Driver"
+msgstr "Sharevan Bidding Driver"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_lading_detail
+msgid "Sharevan Bill of Lading detail"
+msgstr "Sharevan Bill of Lading detail"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_career_action
+msgid "Sharevan Company Career"
+msgstr "Sharevan Company Career"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_service_type
+msgid "Sharevan Service Type"
+msgstr "Sharevan Service Type"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.action_sharevan_driver_received
+msgid "Sharevan drive revenue received"
+msgstr "Sharevan drive revenue received"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.action_sharevan_driver_assign_routing
+msgid "Sharevan driver assign routing"
+msgstr "Sharevan driver assign routing"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_driver_sos_action
+msgid "Sharevan driver sos"
+msgstr "Sharevan driver sos"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_8
+msgid "Sharing DC"
+msgstr "Sharing DC"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__fee
+msgid "Shipment fee"
+msgstr "Shipment fee"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__1
+msgid "Shipping"
+msgstr "Shipping"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bidding_award_rel
+msgid "Show all awards of company"
+msgstr "Show all awards of company"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Show all records which has next action date is before today"
+msgstr "Show all records which has next action date is before today"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_bidding_notification_user_rel
+#: model:ir.model,name:share_van_order.model_sharevan_notification_user_rel
+msgid "Show the individual receiver and if they have read or not"
+msgstr "Show the individual receiver and if they have read or not"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.size_standard_action
+#: model:ir.ui.menu,name:share_van_order.size_standard
+msgid "Size standard"
+msgstr "Size standard"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.size_standard_form
+msgid "Size standard  Details"
+msgstr "Size standard  Details"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bill_lading_detail.py:0
+#, python-format
+msgid "Some thing wrong when create cargo!"
+msgstr "Some thing wrong when create cargo!"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__1
+msgid "Sos"
+msgstr "Sos"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.staff_config
+msgid "Staff Config"
+msgstr "Staff Config"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.staff_type_action
+#: model:ir.model,name:share_van_order.model_res_staff_type
+#: model:ir.ui.menu,name:share_van_order.staff_type
+#: model_terms:ir.ui.view,arch_db:share_van_order.staff_type_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.staff_type_tree
+msgid "Staff Type"
+msgstr "Staff Type"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "Star rating must be less than 5 and greater than 0 !"
+msgstr "Star rating must be less than 5 and greater than 0 !"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+msgid "Start Check"
+msgstr "Start Check"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__start_date
+msgid "Start Date"
+msgstr "Start Date"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.longhaul_bill_lading_detail_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bidding_order_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_cargo_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_price_quotation_tree
+msgid "State"
+msgstr "State"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_company_award__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_country__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__status
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__status_routing
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_driver_received__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__status
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_zone_province__status
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Status"
+msgstr "Status"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__street
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__street
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__street
+msgid "Street"
+msgstr "Street"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__street2
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__street2
+msgid "Street2"
+msgstr "Street2"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__subscribe_id
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__subscribe_id
+#: model:ir.ui.menu,name:share_van_order.sharevan_subscribe
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Subscribe"
+msgstr "Subscribe"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_subscribe
+msgid "Subscribe the bill of lading regularly"
+msgstr "Subscribe the bill of lading regularly"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__surcharge
+msgid "Surcharge"
+msgstr "Surcharge"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__reason__4
+msgid "System not satisfy"
+msgstr "System not satisfy"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "SĐT:"
+msgstr "SĐT:"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_amount
+msgid "Temporary amount"
+msgstr "Temporary amount"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_res_partner__user_id
+#: model:ir.model.fields,help:share_van_order.field_res_users__user_id
+msgid "The internal user in charge of this contact."
+msgstr "The internal user in charge of this contact."
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "The phone number is wrong format.(eg. 0123456789)"
+msgstr "The phone number is wrong format.(eg. 0123456789)"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/utils/validate_utils.py:0
+#, python-format
+msgid "The phone number must be equals 11 numbers"
+msgstr "The phone number must be equals 11 numbers"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__2
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__3
+msgid "Thứ ba"
+msgstr "Tuesday"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__6
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__7
+msgid "Thứ bảy"
+msgstr "Saturday"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__1
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__2
+msgid "Thứ hai"
+msgstr "Thứ hai"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__4
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__5
+msgid "Thứ năm"
+msgstr "Thursday"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__5
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__6
+msgid "Thứ sáu"
+msgstr "Friday"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__week_choose__3
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_recurrent__week_choose__4
+msgid "Thứ tư"
+msgstr "Wednesday"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__title
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__title
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_form
+msgid "Title"
+msgstr "Title"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_title_award_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_title_award
+msgid "Title award"
+msgstr "Title award"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__toD
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__toW
+msgid "To"
+msgstr "To"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__to_date
+msgid "To Date"
+msgstr "To Date"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.longhaul_bill_lading_detail_tree
+msgid "To Depot"
+msgstr "To Depot"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+msgid "To Distance"
+msgstr "To Distance"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "To Weight"
+msgstr "To Weight"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+msgid "Today Activities"
+msgstr "Today Activities"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__tolls
+msgid "Tolls"
+msgstr "Tolls"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.tonnage_vehicle_action
+#: model:ir.ui.menu,name:share_van_order.tonnage_vehicle
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_tonnage_vehicle_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.tonnage_vehicle_form
+msgid "Tonnage Vehicle"
+msgstr "Tonnage Vehicle"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Total"
+msgstr "Total"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_award_company__total_point
+msgid "Total Point"
+msgstr "Total Point"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_parcel
+msgid "Total package"
+msgstr "Total package"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+msgid "Total time"
+msgstr "Total time"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_volume
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_routing_plan_day__total_volume
+msgid "Total volume"
+msgstr "Total volume"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__total_weight
+msgid "Total weight"
+msgstr "Total weight"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_46
+msgid "Transport operator"
+msgstr "Transport operator"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__4
+msgid "Transportation company"
+msgstr "Transportation company"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__trouble_type
+msgid "Trouble type"
+msgstr "Trouble type"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__res_company__customer_type__5
+msgid "Truck Group"
+msgstr "Truck Group"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_bill_routing__cancel_check
+msgid "True: DLP employee cancel, False: Customer cancel"
+msgstr "True: DLP employee cancel, False: Customer cancel"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_staff_type__type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__type
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_depot_goods__type
+msgid "Type"
+msgstr "Type"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_price_quotation__type
+msgid "Type Package"
+msgstr "Type Package"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_distance_fee__unit
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_weight_fee__unit
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_distance_fee_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_weight_fee_search
+msgid "Unit"
+msgstr "Unit"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_distance_unit
+msgid "Unit measuring distance"
+msgstr "Unit measuring distance"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_weight_unit
+msgid "Unit measuring weight"
+msgstr "Unit measuring weight"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Unit system config"
+msgstr "Unit system config"
+
+#. module: share_van_order
+#: model:res.groups,name:share_van_order.share_van_order_group_user
+msgid "User"
+msgstr "User"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.open_form_employee
+msgid "User Info"
+msgstr "User Info"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "User does not exist !"
+msgstr "User does not exist "
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "User does not exist!"
+msgstr "User does not exist"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "User does not existed!"
+msgstr "User does not existed"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "User id not found!"
+msgstr "User id not found!"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_customer
+msgid "User information"
+msgstr "User information"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__user_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__user_id
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__user_id
+msgid "User login from app"
+msgstr "User login from app"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "User not does existed!"
+msgstr "User not does existed!"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_users
+msgid "Users"
+msgstr "Users"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__vat
+msgid "VAT(%)"
+msgstr "VAT(%)"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner_log__vat
+msgid "Vat"
+msgstr "Vat"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_fleet_vehicle
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_form_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.fleet_vehicle_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Vehicle"
+msgstr "Vehicle"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__vehicle_supply
+msgid "Vehicle Supply"
+msgstr "Vehicle Supply"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.share_van_vehicle_action
+msgid "Vehicles"
+msgstr "Vehicles"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_awards_level__vendor_id
+#: model:ir.ui.menu,name:share_van_order.sharevan_order_menu_45
+msgid "Vendor"
+msgstr "Vendor"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_service_type__vendor_service_code
+msgid "Vendor service code"
+msgstr "Vendor service code"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.volume_unit_action
+#: model:ir.ui.menu,name:share_van_order.volume_unit
+msgid "Volume unit"
+msgstr "Volume unit"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__status_routing__3
+msgid "Waiting"
+msgstr "Waiting"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_bill_routing__trouble_type__5
+msgid "Waiting confirm"
+msgstr "Waiting confirm"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__ward
+msgid "Ward"
+msgstr "Ward"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_warehouse_view_action
+#: model:ir.ui.menu,name:share_van_order.sharevan_warehouse
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Warehouse"
+msgstr "Warehouse"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Warehouse Name"
+msgstr "Warehouse Name"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_tree
+msgid "Warehouse Service"
+msgstr "Warehouse Service"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__warehouse_supply
+msgid "Warehouse Supply"
+msgstr "Warehouse Supply"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_warehouse_service_view_form
+msgid "Warehouse service"
+msgstr "Warehouse service"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_warehouse_service_view_action
+msgid "Warehouse services"
+msgstr "Warehouse services"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_company__warehouse_ids
+msgid "Warehouses"
+msgstr "Warehouses"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.warning_type_action
+#: model:ir.model,name:share_van_order.model_sharevan_warning_type
+#: model:ir.ui.menu,name:share_van_order.sharevan_warning_type
+msgid "Warning type"
+msgstr "Warning type"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_fleet_map_inherited
+msgid "Warning: Maintenance low level"
+msgstr "Warning: Maintenance low level"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__week_choose
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__week_choose
+msgid "Week choose"
+msgstr "Week choose"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__net_weight
+msgid "Weight level change price limit"
+msgstr "Weight level change price limit"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.weight_unit_action
+#: model:ir.ui.menu,name:share_van_order.weight_unit
+msgid "Weight unit"
+msgstr "Weight unit"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__sharevan_driver_received__receive_type__1
+msgid "Withdrawal"
+msgstr "Withdrawal"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.share_van_routing_plan_day_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_bill_lading_view_form
+msgid "Write here any other information"
+msgstr "Write here any other information"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/res_partner.py:0
+#, python-format
+msgid "You are not allow rating for driver !"
+msgstr "You are not allow rating for driver !"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid ""
+"You can not received item because bidding order number is not approved!"
+msgstr ""
+"You can not received item because bidding order number is not approved!"
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid ""
+"You cannot confirm return order number because the bidding order number is "
+"not approved!"
+msgstr ""
+"You cannot confirm return order number because the bidding order number is "
+"not approved!"
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "You must update confirm, not create!"
+msgstr "You must update confirm, not create!"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_res_partner__zip
+#: model:ir.model.fields,field_description:share_van_order.field_res_users__zip
+msgid "Zip"
+msgstr "Zip"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_zone
+msgid "Zone"
+msgstr "Zone"
+
+#. module: share_van_order
+#: model:ir.ui.menu,name:share_van_order.sharevan_zone_price
+msgid "Zone Price"
+msgstr "Zone Price"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_zone_province
+msgid "Zone province"
+msgstr "Zone province"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_form
+msgid "ZonePrice"
+msgstr "ZonePrice"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__company_award__status__1
+msgid "active"
+msgstr "active"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_warehouse__areaInfo
+msgid "areaInfo"
+msgstr "areaInfo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_assign_routing_form
+msgid "attach_File"
+msgstr "attach_File"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_bidding_channel
+msgid "bidding channel"
+msgstr "bidding channel"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order.py:0
+#, python-format
+msgid "bidding_order_id can not null"
+msgstr "bidding_order_id can not null"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "bidding_order_id can not null!"
+msgstr "bidding_order_id can not null"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "bidding_package_id can not null!"
+msgstr "bidding_package_id can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "bidding_return_id parameter can not null!"
+msgstr "bidding_return_id parameter can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "bidding_vehicle_id can not null"
+msgstr "bidding_vehicle_id can not null"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_package.py:0
+#: code:addons/share_van_order/models/bidding_package.py:0
+#, python-format
+msgid "bidding_vehicle_ids is null!"
+msgstr "bidding_vehicle_ids is null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_return.py:0
+#, python-format
+msgid "biddng_id parameter can not null!"
+msgstr "biddng_id parameter can not null"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_lading
+msgid "bill of lading"
+msgstr "bill of lading"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_order_package
+msgid "bill order package description"
+msgstr "bill order package description"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package
+msgid "bill package"
+msgstr "bill package"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package_routing_plan
+msgid "bill package routing by plan "
+msgstr "bill package routing by plan"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package_routing_export
+msgid "bill package routing when export"
+msgstr "bill package routing when export"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_package_routing_import
+msgid "bill package routing when import"
+msgstr "bill package routing when import"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_routing
+msgid "bill routing"
+msgstr "bill routing"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_bill_service
+msgid "bill service"
+msgstr "bill service"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_cargo
+msgid "cargo"
+msgstr "cargo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.bidding_approve_view_tree
+msgid "company_id Request"
+msgstr "company_id Request"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_career
+msgid "customer career"
+msgstr "customer career"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+msgid "customer_type"
+msgstr "customer_type"
+
+#. module: share_van_order
+#: model:ir.model.fields.selection,name:share_van_order.selection__company_award__status__0
+msgid "deleted"
+msgstr "deleted"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_depot_pricing_search
+msgid "depot"
+msgstr "depot"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_distance_compute
+msgid "distance compute"
+msgstr "distance compute"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_partner_form
+msgid "e.g. NVBH"
+msgstr "e.g. NVBH"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+msgid "employee"
+msgstr "employee"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_employee_warehouse
+msgid "employee warehouse calendar"
+msgstr "employee warehouse calendar"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__extra_weight_price
+msgid "extra weight per weight cost"
+msgstr "extra weight per weight cost"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.distance_unit_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.distance_unit_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_distance_fee_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_distance_fee_kanban
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_distance_fee_tree
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_weight_fee_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_subscribe_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.weight_unit_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.weight_unit_tree
+msgid "fee"
+msgstr "fee"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_hub
+msgid "hub"
+msgstr "hub"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_order_receive.py:0
+#, python-format
+msgid "id paramater can not null!"
+msgstr "id paramater can not null!"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "license_plate does not existed!"
+msgstr "license_plate does not existed"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_order_package__name
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_recurrent__name
+msgid "name"
+msgstr "name"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__parity_price
+msgid "parity price with express package only"
+msgstr "parity price with express package only"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_product_package_type
+msgid "product package type"
+msgstr "product package type"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_product_type
+msgid "product type"
+msgstr "product type"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_res_partner_log
+msgid "res.partner.log"
+msgstr "res.partner.log"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_routing_plan_day_detail
+msgid "routing plan day detail"
+msgstr "routing plan day detail"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_routing_plan_day_service
+msgid "routing plan day service"
+msgstr "routing plan day service"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_awards_level
+msgid "sharevan awards level"
+msgstr "sharevan awards level"
+
+#. module: share_van_order
+#: model:ir.actions.act_window,name:share_van_order.sharevan_reward_point_action
+msgid "sharevan reward point"
+msgstr "sharevan reward point"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_size_standard
+msgid "size standard for cargo"
+msgstr "size standard for cargo"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_area_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_awards_level_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_driver_received_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_insurance_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_notification_type_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_rating_badges_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_reward_point_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_service_type_view_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_title_award_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_price_search
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_search
+msgid "status"
+msgstr "status"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_title_award
+msgid "title award driver"
+msgstr "title award driver"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__inzone_num
+msgid "total bill of lading type inzone"
+msgstr "total bill of lading type inzone"
+
+#. module: share_van_order
+#: model:ir.model.fields,field_description:share_van_order.field_sharevan_bill_routing__outzone_num
+msgid "total bill of lading type outzone"
+msgstr "total bill of lading type outzone"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_company_search
+msgid "type"
+msgstr "type"
+
+#. module: share_van_order
+#: code:addons/share_van_order/models/bidding_vehicle.py:0
+#, python-format
+msgid "user_id is of type int !"
+msgstr "user_id is of type int !"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_warehouse
+msgid "warehouse"
+msgstr "warehouse"
+
+#. module: share_van_order
+#: model:ir.model.fields,help:share_van_order.field_sharevan_price_quotation__extra_weight_cost
+msgid "weight cost unit"
+msgstr "weight cost unit"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_awards_level_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_employee_warehouse_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_rating_badges_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_reward_point_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_title_award_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_form
+#: model_terms:ir.ui.view,arch_db:share_van_order.sharevan_zone_view_tree
+msgid "zone"
+msgstr "zone"
+
+#. module: share_van_order
+#: model:ir.model,name:share_van_order.model_sharevan_zone_price
+msgid "zone price"
+msgstr "zone price"
+
+#. module: share_van_order
+#: model_terms:ir.ui.view,arch_db:share_van_order.view_company_form_new
+msgid "Địa chỉ:"
+msgstr "Address:"

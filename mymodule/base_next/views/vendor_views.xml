@@ -1,0 +1,176 @@
+<odoo>
+    <data>
+        <record id='sharevan_vendor_tree' model='ir.ui.view'>
+            <field name="name">sharevan.vendor.tree</field>
+            <field name="model">sharevan.vendor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="city_name"/>
+                    <field name="district"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">sharevan.vendor.form</field>
+            <field name="model">sharevan.vendor</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Partners">
+                    <sheet>
+                        <field name="image_1920" widget='image' class="oe_avatar"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name_seq"/>
+                            </h1>
+                            <h1>
+                                <field name="name" placeholder="Name"
+                                />
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page string="Main information">
+                                <group>
+                                    <group>
+                                        <label for="" name="address_name">
+                                            <b>Address</b>
+                                        </label>
+                                        <div class="o_address_format">
+                                            <field name="country_id" placeholder="Country" class="o_address_country"
+                                                   options='{"no_open": True, "no_create": True}'
+                                            />
+                                            <field name="state_id" class="o_address_state" placeholder="State"
+                                                   options='{"no_open": True}'
+                                                   context="{'country_id': country_id, 'zip': zip}"/>
+                                            <field name="city_name" placeholder="City" class="o_address_city"
+                                            />
+                                            <field name="zip" placeholder="ZIP" class="o_address_zip"
+                                            />
+                                            <field name="street" placeholder="Street..." class="o_address_street"
+                                            />
+                                            <field name="street2" placeholder="Street 2..." class="o_address_street"
+                                            />
+                                        </div>
+                                        <field name="vat" placeholder="e.g. BE0477472701"
+                                        />
+                                        <field name="type"  attrs="{'invisible': [('id', '!=', False)]}"/>
+                                        <field name="company_id"/>
+                                    </group> 
+                                    <group>
+                                        <field name="phone" widget="phone"/>
+                                        <field name="mobile" widget="phone"/>
+                                        <field name="user_ids" invisible="1"/>
+                                        <field name="email" widget="email" context="{'gravatar_image': True}"
+                                               attrs="{'required': [('user_ids','!=', [])]}"/>
+                                        <field name="website" widget="url" placeholder="e.g. https://www.odoo.com"/>
+<!--                                        <field name="title" options='{"no_open": True}' placeholder="e.g. Mister"/>-->
+                                        <field name="active_lang_count" invisible="1"/>
+                                        <field name="partner_latitude" invisible="1"/>
+                                        <field name="partner_longitude" invisible="1"/>
+                                        <label for="lang"/>
+                                        <div class="o_row">
+                                            <field name="lang"/>
+                                            <button
+                                                    type="action"
+                                                    name="%(base.res_lang_act_window)d"
+                                                    class="btn-sm btn-link mb4 fa fa-globe"
+                                                    aria-label="More languages"
+                                                    groups="base.group_system"
+                                                    title="More languages"
+                                            />
+                                        </div>
+                                        <field name="category_id" widget="many2many_tags"
+                                               options="{'color_field': 'color', 'no_create_edit': True}"
+                                               placeholder="Tags..."/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Attach file">
+                                <group>
+                                    <field name="attach_file" widget="many2many_binary"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hare_van_order_vendor_view_search" model="ir.ui.view">
+            <field name="name">sharevan.vendor.search</field>
+            <field name="model">sharevan.vendor</field>
+            <field name="arch" type="xml">
+                <search string="Vendor Infomation">
+                    <field name="name"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="city_name"/>
+                    <field name="district"/>
+                    <field name="phone"/>
+                    <filter string="status" name="status" domain="[('status', '=', 'running')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Type" name="groupby_type" context="{'group_by': 'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id='vendor_view_kanban' model='ir.ui.view'>
+            <field name="name">sharevan.vendor.kanban</field>
+            <field name="model">sharevan.vendor</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="name">
+                    <field name="id"/>
+                    <field name="street"/>
+                    <field name="phone"/>
+                    <field name="status"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('sharevan.vendor', 'image_1920', record.id.raw_value)"
+                                         alt="Vehicle" style="max-height: 90px; max-width: 60px;"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                        :
+                                        <field name="street"/>
+                                    </strong>
+
+
+                                </div>
+                                <div class="o_kanban_button" t-if="!selection_mode">
+
+                                </div>
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id='open_form_vendor' model='ir.actions.act_window'>
+            <field name="name">Vendor</field>
+            <field name="res_model">sharevan.vendor</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{'search_default_status': 1, 'group_by': 'type'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a Vendor
+                </p>
+                <p>
+                    Here you can add a Vendor
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

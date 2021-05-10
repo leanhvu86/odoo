@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- create -->
+    <record id='action_log_form' model='ir.ui.view'>
+        <field name="name">action.log.form</field>
+        <field name="model">action.log</field>
+        <field name="arch" type="xml">
+            <form string="Model">
+                <sheet>
+                    <group>
+                        <field name="van_id"/>
+                        <field name="latitude"/>
+                        <field name="longitude"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='action_log_tree' model='ir.ui.view'>
+        <field name="name">action.log.tree</field>
+        <field name="model">action.log</field>
+        <field name="arch" type="xml">
+            <tree string="Action Log">
+                <field name="van_id"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='action_log_action' model='ir.actions.act_window'>
+        <field name="name">Action Log</field>
+        <field name="res_model">action.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    <menuitem name="Action Log" id="action_log" parent="sharevan_order_menu_9"-->
+<!--              action="action_log_action" sequence="125"/>-->
+
+    <!-- create -->
+    <record id='sharevan_bidding_form' model='ir.ui.view'>
+        <field name="name">sharevan.bidding.vehicle.form</field>
+        <field name="model">sharevan.bidding.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Model">
+                <header>
+
+                    <button name="send_mail_template" string="Send e-mail" type="object" class="oe_highlight"/>
+
+                </header>
+                <sheet>
+                    <field name="image_128" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group col="2">
+                        <group>
+                            <field name="res_user_id" invisible="1"/>
+                            <field name="company_id"/>
+                            <field name="res_partner_id"/>
+                            <field name="lisence_plate"/>
+                            <field name="vehicle_type"/>
+                            <field name="tonnage"/>
+                            <field name="weight_unit"/>
+                            <field name="latitude"/>
+                            <field name="longitude"/>
+                        </group>
+                        <group>
+                            <field name="driver_phone_number"/>
+                            <field name="driver_name"/>
+                            <field name="id_card"/>
+                            <field name="expiry_time"/>
+                            <field name="description"/>
+                            <button name="save_to_file" string="Save to file" type="object"
+                                    class="oe_stat_button oe_read_only" icon="fa-download"/>
+                        </group>
+
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='bidding_vehicle_view_tree' model='ir.ui.view'>
+        <field name="name">sharevan.bidding.vehicle.tree</field>
+        <field name="model">sharevan.bidding.vehicle</field>
+        <field name="arch" type="xml">
+            <tree string="Parking point">
+                <field name="code"/>
+                <field name="res_user_id"/>
+                <field name="lisence_plate"/>
+                <field name="driver_phone_number"/>
+                <field name="driver_name"/>
+                <field name="id_card"/>
+                <field name="company_id"/>
+                <field name="status"/>
+                <field name="expiry_time" widget="timepicker"/>
+                <field name="tonnage"/>
+                <field name="weight_unit"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id='sharevan_bidding_vehicle_action' model='ir.actions.act_window'>
+        <field name="name">Bidding Vehicles</field>
+        <field name="res_model">sharevan.bidding.vehicle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_status': 'running'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new contract
+            </p>
+            <p>
+                Manage all your contracts (leasing, insurances, etc.) with
+                their related services, costs. Odoo will automatically warn
+                you when some contracts have to be renewed.
+            </p>
+            <p>
+                Each contract (e.g.: leasing) may include several services
+                (reparation, insurances, periodic maintenance).
+            </p>
+        </field>
+    </record>
+    <menuitem name="Bidding Vehicle" id="bidding_vehicle" parent="bidding_package"
+              action="sharevan_bidding_vehicle_action" sequence="1111199"/>
+
+<!--    <record id='sharevan_company_view' model='ir.actions.act_window'>-->
+<!--        <field name="name">Customer</field>-->
+<!--        <field name="res_model">res.company</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="context">{'search_default_type': 1}</field>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                Create a company-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                Here you can add company-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <menuitem name="Company" id="bidding_company" parent="sharevan_order_menu_9"-->
+<!--              action="sharevan_company_view" sequence="119898"/>-->
+
+</odoo>

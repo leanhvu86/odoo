@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- src https://apps.odoo.com/apps/modules/14.0/web_widget_sparklines_barchart-->
+    <template id="assets_backend" name="web_widget_sparklines_barchart assets"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/base_next/static/src/scss/style.scss"></link>
+            <script type="text/javascript" src="/base_next/static/src/js/web_widget_sparlines_barchart.js"/>
+            <link rel="stylesheet" href="/base_next/static/src/scss/widget.css"/>
+            <script type="text/javascript" src="/base_next/static/src/js/widget_time_count.js"></script>
+        </xpath>
+    </template>
+
+</odoo>

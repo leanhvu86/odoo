@@ -1,0 +1,40 @@
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_service_type" model="ir.sequence">
+            <field name="name">Service Type</field>
+            <field name="code">sharevan.service.type</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">ST</field>
+            <field name="padding">6</field>
+        </record>
+        <record id="sequence_sharevan_insurance" model="ir.sequence">
+            <field name="name">Insurance</field>
+            <field name="code">sharevan.insurance</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">INS</field>
+            <field name="padding">6</field>
+        </record>
+        <record id="sequence_sharevan_subscribe" model="ir.sequence">
+            <field name="name">Subscribe</field>
+            <field name="code">sharevan.subscribe</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">SUB</field>
+            <field name="padding">6</field>
+        </record>
+        <record id="sequence_sharevan_recurrent" model="ir.sequence">
+            <field name="name">Recurrent</field>
+            <field name="code">self.sharevan.recurrent</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">RCU</field>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="sequence_sharevan_depot_pricing" model="ir.sequence">
+            <field name="name">Depot pricing</field>
+            <field name="code">self.sharevan.depot.pricing</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">DPP</field>
+            <field name="padding">6</field>
+        </record>
+    </data>
+</odoo>

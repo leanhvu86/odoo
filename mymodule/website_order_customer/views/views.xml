@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="introduction" model="ir.ui.view">
+            <field name="name">Introduction</field>
+            <field name="type">qweb</field>
+            <field name="key">website_order_customer.introduction</field>
+            <field name="arch" type="xml">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="oe_structure">
+                            <div class="test_detail" style="background:#F0F2F5">
+                                <p class="leuleu">hhuuuuuuuuuuuuhuhuhuhuhuuhu</p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </field>
+        </record>
+
+        <template id="order_customer_page" name="oc_customer_layout">
+            <t t-call="website.layout">
+                <div class="profile-customer">
+                    <div class="tab">
+                        <div class="customer-name">
+                            <div class="customer-name-left">
+                                <p class="span-name-left">Q</p>
+                            </div>
+                            <div class="customer-name-right">
+                                <span class="span-name-right">Trananhquang197@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="tablinks-left">
+                            <div class="tablinks active">
+                                <div class="tablinks-icon">
+                                    <img style="width: 31px;margin-left: 18%;margin-top: 17%;"
+                                         src="/theme_order_customer/static/src/img/delivery-truck.png"/>
+                                </div>
+                                <div class="tablinks-name">
+                                    <p style="padding: 14px;margin:0">Tạo đơn hàng mới</p>
+                                </div>
+                            </div>
+                            <div class="tablinks">
+                                <div class="tablinks-icon" style="margin-left: 14px;">
+                                    <img style="width: 31px;margin-left: 18%;margin-top: 17%;"
+                                         src="/theme_order_customer/static/src/img/list-order.png"/>
+                                </div>
+                                <div class="tablinks-name">
+                                    <p style="padding: 14px;margin:0">Danh sách đơn hàng</p>
+                                </div>
+                            </div>
+                            <div class="tablinks">
+                                <div class="tablinks-icon" style="margin-left: 14px;">
+                                    <img style="width: 31px;margin-left: 18%;margin-top: 17%;"
+                                         src="/theme_order_customer/static/src/img/warehouse-customer.png"/>
+                                </div>
+                                <div class="tablinks-name">
+                                    <p style="padding: 14px;margin:0">Danh sách kho hàng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="London" class="tabcontent" style="display:block;">
+                        <div class="tabcontent-header">
+                            <div class="tabcontent-header-steps" style="width:40%">
+                                <span class="step-one">1</span>
+                                <span style="font-size: 1em;font-weight: 700;">Thông tin điểm nhận hàng</span>
+                            </div>
+                            <div class="tabcontent-header-steps">
+                                <span class="step-one">2</span>
+                                <span style="font-size: 1em;font-weight: 700;">Thông tin điểm tra hàng</span>
+                            </div>
+                            <div class="tabcontent-header-steps">
+                                <span class="step-one">3</span>
+                                <span style="font-size: 1em;font-weight: 700;">Xác nhận đơn hàng</span>
+                            </div>
+                        </div>
+                        <div class="tabcontent-sub">
+                            <div class="warehouse-receiving">
+                                <p class="warehouse-receiving-p">Thông tin kho nhận hàng</p>
+                                <button class="warehouse-receiving-close" style="display:none;">x</button>
+                                <div class="warehouse-receiving-bts">
+                                    <button id="warehouse-receiving-bt-1" class="warehouse-receiving-bt"
+                                            style="margin-left: 21%;">Chọn kho có sẵn
+                                    </button>
+                                    <button class="warehouse-receiving-bt">Thêm kho mới</button>
+                                </div>
+                                <div style="width:30%;margin: 0 4.8%;">
+                                    <div class="searchable" style="display:none;">
+                                        <input class="form-control" id="warehouse-input" model="sharevan_warehouse"
+                                               type="text" placeholder="Chọn kho hàng "/>
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="info-warehouses" style="display:none;">
+                                    <div class="info-warehouse-detail">
+                                        <i class="fa fa fa-home"
+                                           style="float: left;font-size: 21px;margin-top: 2%;margin-left:3%;"></i>
+                                        <p id="info-warehouses-name" style="padding:6px;margin:0;margin-left: 12%;">Kho
+                                            A
+                                        </p>
+                                    </div>
+                                    <div class="info-warehouse-detail">
+                                        <i class="fa fa fa-user"
+                                           style="float: left;font-size: 21px;margin-top: 2%;margin-left:3%;"></i>
+                                        <p id="info-warehouses-employee" style="padding:6px;margin:0;margin-left: 12%;">
+                                            Trần Mạnh Quang
+                                        </p>
+                                    </div>
+                                    <div class="info-warehouse-detail">
+                                        <i class="fa fa fa-phone"
+                                           style="float: left;font-size: 21px;margin-top: 2%;margin-left:3%;"></i>
+                                        <p id="info-warehouses-phone" style="padding:6px;margin:0;margin-left: 12%;">
+                                            0982966238
+                                        </p>
+                                    </div>
+                                    <div class="info-warehouse-detail">
+                                        <span style="font-weight:700;float: left;margin: 6px 5px 0px 6px;">Tỉnh/Thành
+                                            phố :
+                                        </span>
+                                        <p id="info-warehouses-province" style="padding:6px;margin:0"></p>
+                                    </div>
+                                    <div class="info-warehouse-detail">
+                                        <span style="font-weight:700;float: left;margin: 6px 5px 0px 6px;">Quận/Huyện
+                                            :
+                                        </span>
+                                        <p id="info-warehouses-district" style="padding:6px;margin:0"></p>
+                                    </div>
+                                    <div class="info-warehouse-detail">
+                                        <span style="font-weight:700;float: left;margin: 6px 5px 0px 6px;">Xã/Phường :
+                                        </span>
+                                        <p id="info-warehouses-award" style="padding:6px;margin:0"></p>
+                                    </div>
+                                    <div class="info-warehouse-detail">
+                                        <span style="font-weight:700;float: left;margin: 6px 5px 0px 6px;">Số nhà :
+                                        </span>
+                                        <p id="info-warehouses-alley" style="padding:6px;margin:0"></p>
+                                    </div>
+                                    <div class="info-warehouse-detail" style="width: 58.8%;">
+                                        <span style="font-weight:700;float: left;margin: 6px 5px 0px 6px;">Địa chỉ chi
+                                            tiết :
+                                        </span>
+                                        <p id="info-warehouses-address-detail" style="padding:6px;margin:0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services-packages">
+                                <div class="services">
+                                    <div class="services-bt">
+                                        <img style="    width: 51px;margin-left: 41%;margin-top: 5%;height: 40px;"
+                                             src="/theme_order_customer/static/src/img/service.png"/>
+                                        <br/>
+                                        <button class="services-button-add">
+                                            <i class="fa fa fa-plus"></i>
+                                            <span>Thêm dịch vụ</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="services-select" style="display:none;">
+                                    <p style="font-size: 1rem;text-align: center;font-weight: 600;margin-top: 3%;">Chọn
+                                        dịch
+                                        vụ
+                                    </p>
+                                    <button class="service-select-bt-close">x</button>
+                                    <hr style="margin-top: 3%;"/>
+                                    <ul class="service-ul service-ul-select">
+                                    </ul>
+                                    <div class="services-select-div">
+                                        <button class="service-select-bt-save">
+                                            <span>Lưu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="services-selected" style="display:none;">
+                                    <p style="font-size: 1rem;text-align: center;font-weight: 600;margin-top: 3%;">Dịch
+                                        vụ
+                                        đã chọn
+                                    </p>
+                                    <button class="service-select-bt-addd">+
+                                    </button>
+
+                                    <hr style="margin-top: 3%;"/>
+                                    <ul class="service-ul service-ul-selected">
+                                    </ul>
+                                </div>
+
+                                <div class="packages" style="display:none;">
+                                    <div class="packages-bt">
+                                        <img style="    width: 51px;margin-left: 41%;margin-top: 5%;height: 40px;"
+                                             src="/theme_order_customer/static/src/img/box.png"/>
+                                        <button class="packages-button" data-toggle="modal"
+                                                data-target="#exampleModalCenter">
+                                            <i class="fa fa fa-plus"></i>
+                                            <span>Thêm gói hàng</span>
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered"
+                                                 style="display: flex;justify-content: center;" role="document">
+                                                <div class="modal-content" style="width: 83%;">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" style="font-weight:600"
+                                                            id="exampleModalLongTitle">Thông tin gói hàng
+                                                        </h5>
+                                                        <button type="button" class="button-close-modal-add-package"
+                                                                data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span>X</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input type="email"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;"
+                                                               class="form-control" id="exampleInputEmail1"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Nhập tên sản phẩm"/>
+                                                        <input type="email"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;"
+                                                               class="form-control" id="exampleInputEmail2"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Nhập loại hàng"/>
+                                                        <input type="email"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;"
+                                                               class="form-control" id="exampleInputEmail3"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Nhập số lượng"/>
+                                                        <input type="email"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;float: left;margin-right: 6%;"
+                                                               class="form-control" id="exampleInputEmail4"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Dài                                          Cm"/>
+                                                        <input type="email"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;"
+                                                               class="form-control" id="exampleInputEmail5"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Rộng                                        Cm"/>
+                                                        <input type="email"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;float: left;margin-right: 6%;"
+                                                               class="form-control" id="exampleInputEmail6"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Cao                                         Cm"/>
+                                                        <input type="email"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;"
+                                                               class="form-control" id="exampleInputEmail7"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Trọng lượng                            Kg"/>
+                                                    </div>
+                                                    <div class="modal-footer" style="justify-content: center;">
+                                                        <button data-dismiss="modal" aria-label="Close" type="button"
+                                                                class="btn-save-new-package">Lưu
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packages-selected">
+                                    <p style="font-size: 1rem;text-align: center;font-weight: 600;margin-top: 2%;">Gói
+                                        hàng đã chọn
+                                    </p>
+                                    <button class="packages-selected-add" data-toggle="modal"
+                                            data-target="#exampleModalCenter1">+
+                                    </button>
+
+                                    <form id="myform">
+                                        <div class="modal fade form-group" id="exampleModalCenter1" tabindex="-1"
+                                             role="dialog"
+                                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered"
+                                                 style="display: flex;justify-content: center;" role="document">
+                                                <div class="modal-content" style="width: 83%;">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" style="font-weight:600"
+                                                            id="exampleModalLongTitle1">Thông tin gói hàng
+                                                        </h5>
+                                                        <button type="button" class="button-close-modal-add-package"
+                                                                data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span>X</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input
+                                                                style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;"
+                                                                class="form-control inputName "
+                                                                placeholder="Nhập tên sản phẩm" required=""/>
+                                                        <div class="searchable" style="margin-bottom: 3%;">
+                                                            <input class="form-control inputProductType"
+                                                                   model="sharevan_product_type"
+                                                                   id="product-type-input"
+                                                                   type="text"
+                                                                   style="height: 49px;"
+                                                                   placeholder="Chọn loại sản phẩm "
+                                                                   required=""
+                                                            />
+                                                            <ul>
+                                                            </ul>
+                                                        </div>
+                                                        <input type="number" min="1"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;"
+                                                               class="form-control inputAmount"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Nhập số lượng" required=""/>
+                                                        <input type="number" min="1"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;float: left;margin-right: 6%;"
+                                                               class="form-control inputLong"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Dài                                          Cm"
+                                                               required=""/>
+                                                        <input type="number" min="1"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;"
+                                                               class="form-control inputWidth"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Rộng                                        Cm"
+                                                               required=""/>
+                                                        <input type="number" min="1"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;float: left;margin-right: 6%;"
+                                                               class="form-control inputHeight"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Cao                                         Cm"
+                                                               required=""/>
+                                                        <input type="number" min="1"
+                                                               style="height: calc(2.5em + 0.75rem + 2px);margin-bottom: 3%;width: 47%;"
+                                                               class="form-control inputWeight"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Trọng lượng                            Kg"
+                                                               required=""/>
+                                                    </div>
+                                                    <div class="modal-footer" style="justify-content: center;">
+                                                        <button type="submit" id="btn-save-new-package" types="add"
+                                                                class="btn-save-new-package">Lưu
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr style="margin-top: 2%;"/>
+                                    <div class="list-package">
+                                        <!--                                        <div class="item-packagess">-->
+                                        <!--                                            <div class="item-package-name">-->
+                                        <!--                                                <span class="item-package-name-left">Tên</span>-->
+                                        <!--                                                <span class="item-package-name-right">Mỳ tôm</span>-->
+                                        <!--                                            </div>-->
+                                        <!--                                            <div class="item-package-name">-->
+                                        <!--                                                <span class="item-package-name-left">Loại hàng</span>-->
+                                        <!--                                                <span class="item-package-name-right">Hàng thông thường</span>-->
+                                        <!--                                            </div>-->
+                                        <!--                                            <div class="item-package-name">-->
+                                        <!--                                                <span class="item-package-name-left">Số lượng</span>-->
+                                        <!--                                                <span class="item-package-name-right">2</span>-->
+                                        <!--                                            </div>-->
+                                        <!--                                            <div class="item-package-name">-->
+                                        <!--                                                <span class="item-package-name-left">Kích thước</span>-->
+                                        <!--                                                <span class="item-package-name-right">100x50x20cm(DxRxC)</span>-->
+                                        <!--                                            </div>-->
+                                        <!--                                            <div class="item-package-name">-->
+                                        <!--                                                <span class="item-package-name-left">Trọng lượng</span>-->
+                                        <!--                                                <span class="item-package-name-right">200kg</span>-->
+                                        <!--                                            </div>-->
+                                        <!--                                            <button title = "Delete" class ="bt-close">-->
+                                        <!--                                                <i class="fa fa-trash abc"></i>-->
+                                        <!--                                            </button>-->
+
+                                        <!--                                            <button title = "Update" class ="bt-update" data-toggle="modal"-->
+                                        <!--                                            data-target="#exampleModalCenter1">-->
+                                        <!--                                                <i class="fa fa-pencil abc"></i>-->
+                                        <!--                                            </button>-->
+
+                                        <!--                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="point-delivery">
+                                <button class="point-delivery-button">
+                                    <span>Thông tin điểm trả hàng</span>
+                                    <i class="fa fa-angle-right" style="float:right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Tokyo" class="tabcontent" style="display:none;">
+                        <div class="tabcontent-header d-flex align-items-center justify-content-center">
+                            <h2 class="order-header">
+                                Danh sách đơn hàng
+                            </h2>
+                        </div>
+                        <div class="tabcontent-sub bg-white">
+                            <t t-call="website_order_customer.search_bill_lading">
+                            </t>
+                        </div>
+                    </div>
+                    <div id="search_warehouse" class="tabcontent" style="display:none;">
+                        <div class="tabcontent-header d-flex align-items-center justify-content-center">
+                            <h2 class="order-header">
+                                Danh sách kho hàng
+                            </h2>
+                        </div>
+                        <div class="tabcontent-sub bg-white">
+                            <t t-call="website_order_customer.search_warehouse">
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+            </t>
+
+
+        </template>
+    </data>
+
+    <data noupdate="1">
+
+        <record id="order_customer_website" model="website">
+            <field name="name">Order_customer</field>
+            <field name="domain">website2.localhost:8070</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="user_id" ref="base.public_user"/>
+            <!-- Correct homepage will be set during bootstraping -->
+        </record>
+
+        <record id="introduction_page" model="website.page">
+            <field name="is_published">True</field>
+            <field name="url">/introduction</field>
+            <field name="view_id" ref="introduction"/>
+            <!--            <field name="track">True</field>-->
+            <field name="website_id" ref="website_order_customer.order_customer_website"/>
+        </record>
+
+        <record id="oc_menu_introduction" model="website.menu">
+            <field name="name">Introduction</field>
+            <field name="url">/introduction</field>
+            <field name="parent_id" search="[('website_id', '=', 2), ('url', '=', '/default-main-menu')]"/>
+            <field name="sequence" type="int">11</field>
+            <field name="website_id" ref="website_order_customer.order_customer_website"/>
+        </record>
+
+        <record id="oc_order_customer_url" model="website.menu">
+            <field name="name">Order customer</field>
+            <field name="url">/order_customer</field>
+            <field name="parent_id" search="[('website_id', '=', 2), ('url', '=', '/default-main-menu')]"/>
+            <field name="sequence" type="int">12</field>
+            <field name="website_id" ref="website_order_customer.order_customer_website"/>
+        </record>
+
+        <record id="test_page_template" model="website.menu">
+            <field name="name">Test page</field>
+            <field name="url">/test</field>
+            <field name="parent_id" search="[('website_id', '=', 2), ('url', '=', '/default-main-menu')]"/>
+            <field name="website_id" ref="website_order_customer.order_customer_website"/>
+            <field name="sequence" type="int">99</field>
+        </record>
+    </data>
+</odoo>
