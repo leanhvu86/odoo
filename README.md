@@ -1,0 +1,2 @@
+# odoo
+Dynamic logistic platform
